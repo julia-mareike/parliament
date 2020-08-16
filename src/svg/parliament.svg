@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.0" width="360" height="500">
+<title>New Zealand Parliament seats, 2014</title>
+<desc>Diagrammatic representation of New Zealand House of Representatives seating plan after 2014 general election</desc>
+<g>
+
+<polygon fill="#FFF" points="0,0 360,0 360,500 0,500"/>
+
+<polygon fill="#EEEEEE" points="110,200 250,200 250,390 110,390"/>
+
+<text x="140" y="225" style="font-size:16px;font-weight:bold;text-align:left;text-anchor:left;font-family:Arial">National  </text>
+<text x="140" y="250" style="font-size:16px;font-weight:bold;text-align:left;text-anchor:left;font-family:Arial">Labour  </text>
+<text x="140" y="275" style="font-size:16px;font-weight:bold;text-align:left;text-anchor:left;font-family:Arial">Green  </text>
+<text x="140" y="300" style="font-size:16px;font-weight:bold;text-align:left;text-anchor:left;font-family:Arial">NZ First  </text>
+<text x="140" y="325" style="font-size:16px;font-weight:bold;text-align:left;text-anchor:left;font-family:Arial">Māori  </text>
+<text x="140" y="350" style="font-size:16px;font-weight:bold;text-align:left;text-anchor:left;font-family:Arial">ACT  </text>
+<text x="140" y="375" style="font-size:16px;font-weight:bold;text-align:left;text-anchor:left;font-family:Arial">United Future  </text>
+
+<line stroke="#999" x1="110" y1="200" x2="110" y2="390"/>
+<line stroke="#999" x1="110" y1="200" x2="250" y2="200"/>
+<line stroke="#999" x1="250" y1="200" x2="250" y2="390"/>
+<line stroke="#999" x1="110" y1="390" x2="250" y2="390"/>
+
+</g>
+
+<circle cx="125" cy="245" r="8.00"/>
+
+<circle cx="16" cy="220" r="10.00"/>
+<circle cx="18.77" cy="190.74" r="10.00"/>
+<circle cx="26.96" cy="162.60" r="10.00"/>
+
+<circle cx="40" cy="220" r="10.00"/>
+<circle cx="44.09" cy="187.65" r="10.00"/>
+
+<circle cx="16" cy="460" r="10.00"/>
+<circle cx="40" cy="460" r="10.00"/>
+<circle cx="64" cy="460" r="10.00"/>
+
+<circle cx="16" cy="435" r="10.00"/>
+<circle cx="40" cy="435" r="10.00"/>
+<circle cx="64" cy="435" r="10.00"/>
+
+<circle cx="16" cy="410" r="10.00"/>
+<circle cx="40" cy="410" r="10.00"/>
+<circle cx="64" cy="410" r="10.00"/>
+
+<circle cx="16" cy="385" r="10.00"/>
+<circle cx="40" cy="385" r="10.00"/>
+<circle cx="64" cy="385" r="10.00"/>
+
+<circle cx="16" cy="360" r="10.00"/>
+<circle cx="40" cy="360" r="10.00"/>
+<circle cx="64" cy="360" r="10.00"/>
+
+<circle cx="16" cy="335" r="10.00"/>
+<circle cx="40" cy="335" r="10.00"/>
+<circle cx="64" cy="335" r="10.00"/>
+
+<circle cx="16" cy="310" r="10.00"/>
+<circle cx="40" cy="310" r="10.00"/>
+<circle cx="64" cy="310" r="10.00"/>
+
+<circle cx="16" cy="285" r="10.00"/>
+<circle cx="40" cy="285" r="10.00"/>
+<circle cx="64" cy="285" r="10.00"/>
+
+<circle cx="16" cy="260" r="10.00"/>
+<circle cx="40" cy="260" r="10.00"/>
+<circle cx="64" cy="260" r="10.00"/>
+
+<circle cx="125" cy="295" r="8.00"/>
+
+<circle cx="47.15" cy="58.20" r="10.00"/>
+
+<circle cx="31.30" cy="107.51" r="10.00"/>
+<circle cx="52.01" cy="85.94" r="10.00"/>
+
+<circle cx="40.27" cy="136.66" r="10.00"/>
+<circle cx="58.18" cy="113.93" r="10.00"/>
+<circle cx="80" cy="95.28" r="10.00"/>
+
+<circle cx="56.08" cy="157.50" r="10.00"/>
+<circle cx="75.15" cy="131.61" r="10.00"/>
+
+<circle cx="82.33" cy="161.22" r="10.00"/>
+<circle cx="68.70" cy="189.10" r="10.00"/>
+<circle cx="64" cy="220" r="10.00"/>
+
+<circle cx="125" cy="270" r="8.00"/>
+
+<circle cx="72.83" cy="41.80" r="10.00"/>
+<circle cx="100.67" cy="29.79" r="10.00"/>
+
+<circle cx="76.00" cy="68.45" r="10.00"/>
+<circle cx="102.54" cy="55.55" r="10.00"/>
+<circle cx="130.83" cy="47.66" r="10.00"/>
+
+<circle cx="104.89" cy="81.42" r="10.00"/>
+<circle cx="131.91" cy="72.88" r="10.00"/>
+<circle cx="160.00" cy="70" r="10.00"/>
+
+<circle cx="100" cy="111.75" r="10.00"/>
+<circle cx="128.94" cy="99.26" r="10.00"/>
+<circle cx="160.00" cy="95" r="10.00"/>
+
+
+<circle cx="103.57" cy="139.10" r="10.00"/>
+<circle cx="130.33" cy="124.89" r="10.00"/>
+<circle cx="160.00" cy="120" r="10.00"/>
+
+<circle cx="125" cy="320" r="8.00"/>
+
+<circle cx="200.00" cy="95" r="10.00"/>
+
+<circle cx="200.00" cy="120" r="10.00"/>
+
+<circle cx="125" cy="370" r="8.00"/>
+
+<circle cx="229.67" cy="124.89" r="10.00"/>
+
+<circle cx="125" cy="345" r="8.00"/>
+
+<circle cx="256.43" cy="139.10" r="10.00"/>
+
+<circle cx="125" cy="220" r="8.00"/>
+
+<circle cx="129.96" cy="22.46" r="10.00"/>
+<circle cx="160" cy="20.00" r="10.00"/>
+<circle cx="200" cy="20.00" r="10.00"/>
+<circle cx="230.04" cy="22.46" r="10.00"/>
+<circle cx="259.33" cy="29.79" r="10.00"/>
+<circle cx="287.17" cy="41.80" r="10.00"/>
+<circle cx="312.85" cy="58.20" r="10.00"/>
+
+<circle cx="160" cy="45.00" r="10.00"/>
+<circle cx="200" cy="45.00" r="10.00"/>
+<circle cx="229.17" cy="47.66" r="10.00"/>
+<circle cx="257.46" cy="55.55" r="10.00"/>
+<circle cx="284.00" cy="68.45" r="10.00"/>
+<circle cx="307.99" cy="85.94" r="10.00"/>
+<circle cx="328.70" cy="107.51" r="10.00"/>
+
+<circle cx="200" cy="70.00" r="10.00"/>
+<circle cx="228.09" cy="72.88" r="10.00"/>
+<circle cx="255.11" cy="81.42" r="10.00"/>
+<circle cx="280" cy="95.28" r="10.00"/>
+<circle cx="301.82" cy="113.93" r="10.00"/>
+<circle cx="319.73" cy="136.66" r="10.00"/>
+<circle cx="333.04" cy="162.60" r="10.00"/>
+<circle cx="341.23" cy="190.74" r="10.00"/>
+<circle cx="344" cy="220" r="10.00"/>
+
+<circle cx="231.06" cy="99.26" r="10.00"/>
+<circle cx="260" cy="111.75" r="10.00"/>
+<circle cx="284.85" cy="131.61" r="10.00"/>
+<circle cx="303.92" cy="157.50" r="10.00"/>
+<circle cx="315.91" cy="187.65" r="10.00"/>
+<circle cx="320" cy="220" r="10.00"/>
+
+<circle cx="277.67" cy="161.22" r="10.00"/>
+<circle cx="291.30" cy="189.10" r="10.00"/>
+<circle cx="296" cy="220" r="10.00"/>
+
+<circle cx="296" cy="260" r="10.00"/>
+<circle cx="320" cy="260" r="10.00"/>
+<circle cx="344" cy="260" r="10.00"/>
+
+<circle cx="296" cy="285" r="10.00"/>
+<circle cx="320" cy="285" r="10.00"/>
+<circle cx="344" cy="285" r="10.00"/>
+
+<circle cx="296" cy="310" r="10.00"/>
+<circle cx="320" cy="310" r="10.00"/>
+<circle cx="344" cy="310" r="10.00"/>
+
+<circle cx="296" cy="335" r="10.00"/>
+<circle cx="320" cy="335" r="10.00"/>
+<circle cx="344" cy="335" r="10.00"/>
+
+<circle cx="296" cy="360" r="10.00"/>
+<circle cx="320" cy="360" r="10.00"/>
+<circle cx="344" cy="360" r="10.00"/>
+
+<circle cx="296" cy="385" r="10.00"/>
+<circle cx="320" cy="385" r="10.00"/>
+<circle cx="344" cy="385" r="10.00"/>
+
+<circle cx="296" cy="410" r="10.00"/>
+<circle cx="320" cy="410" r="10.00"/>
+<circle cx="344" cy="410" r="10.00"/>
+
+<circle cx="296" cy="435" r="10.00"/>
+<circle cx="320" cy="435" r="10.00"/>
+<circle cx="344" cy="435" r="10.00"/>
+
+<circle cx="296" cy="460" r="10.00"/>
+<circle cx="320" cy="460" r="10.00"/>
+<circle cx="344" cy="460" r="10.00"/>
+
+</svg>
