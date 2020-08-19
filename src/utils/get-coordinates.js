@@ -6,20 +6,22 @@ export const getCoordinates = () => {
     coordinates.push({x, y, diameter})
   )
 
+  const fillRow = (column, height) => {
+    fillCircle(column, height)
+    fillCircle(column + 24, height)
+    fillCircle(column + 48, height)
+  }
+
   const getLeftVerticalBlock = (column = 16, height = 460) => {
     if (height >= 260) {
-      fillCircle(column, height)
-      fillCircle(column + 24, height)
-      fillCircle(column + 48, height)
+      fillRow(column, height)
       getLeftVerticalBlock(column, height - 25)
     }
   }
 
   const getRightVerticalBlock = (column = 296, height = 260) => {
     if (height <= 460) {
-      fillCircle(column, height)
-      fillCircle(column + 24, height)
-      fillCircle(column + 48, height)
+      fillRow(column, height)
       getRightVerticalBlock(column, height + 25)
     }
   }

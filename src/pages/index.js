@@ -3,22 +3,19 @@ import React, { useState } from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { Parliament } from '../components/parliament'
-import { getCoordinates } from '../utils'
+import { getCoordinates, calculateVotes, getSeats } from '../utils'
+import { pastPastVotes } from '../utils/data'
 
-const getSeats = () => {
-  // 2017 results
-  return [
-    {name: 'National', value: 56},
-    {name: 'ACT', value: 1},
-    {name: 'Greens', value: 8},
-    {name: 'Labour', value: 46},
-    {name: 'NZFirst', value: 9}
-  ]
+const getSeatAllocations = () => {
+  const totals = calculateVotes(pastPastVotes.electorates, pastPastVotes.votes)
+  const allocations = getSeats(totals)
+  console.log({ allocations })
+  return allocations
 }
 
 const IndexPage = () => {
   const [coordinates, setCoordinates] = useState(getCoordinates())
-  const [seats, setSeats] = useState(getSeats())
+  const [seats, setSeats] = useState(getSeatAllocations())
 
   return (
     <Layout>

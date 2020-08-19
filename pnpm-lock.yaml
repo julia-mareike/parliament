@@ -8,6 +8,7 @@ dependencies:
   gatsby-plugin-sharp: 2.6.27_gatsby@2.24.47
   gatsby-source-filesystem: 2.3.24_gatsby@2.24.47
   gatsby-transformer-sharp: 2.5.13_afacab807aa4269a775ee27e55012225
+  lodash: 4.17.20
   prop-types: 15.7.2
   react: 16.13.1
   react-dom: 16.13.1_react@16.13.1
@@ -15388,6 +15389,7 @@ specifiers:
   gatsby-plugin-sharp: ^2.6.26
   gatsby-source-filesystem: ^2.3.24
   gatsby-transformer-sharp: ^2.5.12
+  lodash: ^4.17.20
   prettier: 2.0.5
   prop-types: ^15.7.2
   react: ^16.12.0

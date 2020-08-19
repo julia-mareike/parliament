@@ -7,21 +7,21 @@ import { styles } from '../utils'
 
 export const Parliament = ({ coordinates, seats }) => {
   let seatCoordinates = coordinates.map((circle, i) => {
-    if (i < seats[0].value) {
-      circle.options = styles[seats[0].name]
-    } else if (i < seats[0].value + seats[1].value) {
-      circle.options = styles[seats[1].name]
-    } else if (i < seats[0].value + seats[1].value + seats[2].value) {
-      circle.options = styles[seats[2].name]
-    } else if (i < seats[0].value + seats[1].value + seats[2].value + seats[3].value) {
-      circle.options = styles[seats[3].name]
-    } else if (i < seats[0].value + seats[1].value + seats[2].value + seats[3].value + seats[4].value) {
-      circle.options = styles[seats[4].name]
-    } else if (seats[5] && i < seats[0].value + seats[1].value + seats[2].value + seats[3].value + seats[4].value + seats[5].value){
-      circle.options = styles[seats[5].name]
+    if (i < seats[0].allocated) {
+      circle.options = styles[seats[0].party]
+    } else if (i < seats[0].allocated + seats[1].allocated) {
+      circle.options = styles[seats[1].party]
+    } else if (i < seats[0].allocated + seats[1].allocated + seats[2].allocated) {
+      circle.options = styles[seats[2].party]
+    } else if (i < seats[0].allocated + seats[1].allocated + seats[2].allocated + seats[3].allocated) {
+      circle.options = styles[seats[3].party]
+    } else if (i < seats[0].allocated + seats[1].allocated + seats[2].allocated + seats[3].allocated + seats[4].allocated) {
+      circle.options = styles[seats[4].party]
+    } else if (seats[5] && i < seats[0].allocated + seats[1].allocated + seats[2].allocated + seats[3].allocated + seats[4].allocated + seats[5].allocated){
+      circle.options = styles[seats[5].party]
       // omg stop
-    } else if (seats[6] && i < seats[0].value + seats[1].value + seats[2].value + seats[3].value + seats[4].value + seats[5].value + seats[6].value){
-      circle.options = styles[seats[6].name]
+    } else if (seats[6] && i < seats[0].allocated + seats[1].allocated + seats[2].allocated + seats[3].allocated + seats[4].allocated + seats[5].allocated + seats[6].allocated){
+      circle.options = styles[seats[6].party]
     }
     return circle
   })
