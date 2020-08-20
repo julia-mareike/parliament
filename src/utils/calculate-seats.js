@@ -14,7 +14,7 @@ export const adjustVotes = list => {
   return adjustedVotes
 }
 
-export const createVoteObject = obj => {
+export const createVoteObject = (obj, electorates) => {
   const array = []
   forEach(obj, (votes, party) => {
     if (votes > 0) {
@@ -23,7 +23,7 @@ export const createVoteObject = obj => {
         votes: votes,
         adjusted: votes,
         allocated: 0,
-        overhang: false
+        electorates: electorates[party]
       }
       array.push(newObject)
     }
@@ -32,39 +32,32 @@ export const createVoteObject = obj => {
 }
 
 export const calculateVotes = (electorates, votes) => {
-  const overhang = []
   const rawVotes = Object.assign({}, votes)
   for (let party in rawVotes) {
-    if (rawVotes[party] < 5) {
-      !electorates[party]
-        ? rawVotes[party] = 0
-        : overhang.push([party, electorates[party]])
-      // this isn't actually how overhang works
+    if (rawVotes[party] < 5 && !electorates[party]) {
+      rawVotes[party] = 0
     }
   }
   const proportional = adjustVotes(rawVotes)
-  let allVotes = createVoteObject(proportional)
-  // for (let party of overhang) {
-  //   const target = findIndex(allVotes, ['party', party[0]])
-  //   allVotes[target].allocated = 1
-  //   allVotes[target].overhang = true
-  // }
-  return allVotes
+  return createVoteObject(proportional, electorates)
 }
 
 // this applies the Saint Lague calculation
+let overhang = 0
 export const getSeats = (totals, idx = 0, seats = 120) => {
   if (seats > 0) {
-    const array = totals.map(party => {
-      // if (!party.overhang)
-        return formula(party.adjusted, idx)
-    })
+    const array = totals.map(party => formula(party.adjusted, idx))
     const current = indexOf(array, _max(array))
-    !totals[current].overhang
-      ? totals[current].allocated++
-      : seats++
+    totals[current].allocated++
     totals[current].adjusted = formula(totals[current].votes, totals[current].allocated)
     getSeats(totals, idx++, --seats)
   }
-  return totals
+  let result = totals.map(party => {
+    if (!party.allocated && party.electorates) {
+      party.overhang = 1
+      overhang++
+    }
+    return party
+  })
+  return { ...result, overhang }
 }
