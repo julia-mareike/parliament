@@ -13,17 +13,17 @@ export const pastVotes = {
     Other: 0.6
   },
   electorates: {
-    National: true,
-    Labour: true,
-    Greens: true,
-    NZFirst: false,
-    Maori: false,
-    ACT: true,
-    TOP: false,
-    Mana: false,
-    UnitedFuture: false,
-    Legalise: false,
-    Other: false
+    National: 41,
+    Labour: 29,
+    Greens: 0,
+    NZFirst: 0,
+    Maori: 0,
+    ACT: 1,
+    TOP: 0,
+    Mana: 0,
+    UnitedFuture: 0,
+    Legalise: 0,
+    Other: 0
   }
 }
 

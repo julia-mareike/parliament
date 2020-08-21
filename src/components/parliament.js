@@ -25,6 +25,19 @@ export const Parliament = ({ coordinates, seats }) => {
     }
     return circle
   })
+  // only handles one overhang
+  if (seats.overhang) {
+    for (let party in seats) {
+      if (seats[party].overhang) {
+        seatCoordinates.push({
+          x: 170,
+          y: 450,
+          diameter: 20,
+          options: styles[seats[party].party]
+        })
+      }
+    }
+  }
   return (
     <svg height={500} width={360}>
     <RoughProvider>

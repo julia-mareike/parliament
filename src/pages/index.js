@@ -4,13 +4,11 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { Parliament } from '../components/parliament'
 import { getCoordinates, calculateVotes, getSeats } from '../utils'
-import { pastPastVotes } from '../utils/data'
+import { pastVotes, pastPastVotes } from '../utils/data'
 
 const getSeatAllocations = () => {
   const totals = calculateVotes(pastPastVotes.electorates, pastPastVotes.votes)
-  const allocations = getSeats(totals)
-  console.log({ allocations })
-  return allocations
+  return getSeats(totals)
 }
 
 const IndexPage = () => {
@@ -28,22 +26,6 @@ const IndexPage = () => {
       <a href='https://www.youtube.com/watch?v=pljoleVHFug'>huh? -> video</a>
     </div>
     <Parliament coordinates={coordinates} seats={seats}/>
-    {/* temporary button to show render changes */}
-    <button
-      onClick={() => {
-        // 2014 results
-        setSeats([
-          {name: 'Labour', value: 32},
-          {name: 'NZFirst', value: 11},
-          {name: 'Greens', value: 14},
-          {name: 'Maori', value: 2},
-          {name: 'UnitedFuture', value: 1},
-          {name: 'ACT', value: 1},
-          {name: 'National', value: 60}
-        ])
-    }}>
-      Button
-    </button>
   </Layout>
   )
 }
