@@ -1,4 +1,28 @@
 export const pastVotes = {
+  2008: {
+    votes: {
+      National: 44.93,
+      Labour: 33.9,
+      Greens: 6.72,
+      NZFirst: 4.07,
+      Maori: 2.39,
+      ACT: 3.65,
+      UnitedFuture: 0.87,
+      JAProgressive: 0.91,
+      Other: 2.48
+    },
+    electorates: {
+      National: 41,
+      Labour: 21,
+      Greens: 0,
+      NZFirst: 0,
+      Maori: 5,
+      ACT: 1,
+      UnitedFuture: 1,
+      JAProgressive: 1,
+      Other: 0
+    }
+  },
   2011: {
     votes: {
       National: 47.31,
