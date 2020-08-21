@@ -24,6 +24,7 @@ const PartyLegend = ({ seats }) => {
       options={{ roughness: 3 }}
     />
       {seatsArray.map((party, i) => {
+        if (party.overhang) party.allocated = party.allocated + party.overhang
         if (party.party) {
           return (
             <>
@@ -38,7 +39,7 @@ const PartyLegend = ({ seats }) => {
               y={textBase + (25 * i)}
               className='legend'
             >
-              {party.party}
+              {party.allocated} - {party.party}
             </text>
               </>
           )
