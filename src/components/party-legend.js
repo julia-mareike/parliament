@@ -6,6 +6,7 @@ import {
 import {styles} from '../utils'
 
 const PartyLegend = ({ seats }) => {
+  let rectangleBase = 180
   let circleBase = 200
   let textBase = 205
   let seatsArray = []
@@ -21,7 +22,7 @@ const PartyLegend = ({ seats }) => {
     <>
     <Rectangle
       x={115}
-      y={180}
+      y={rectangleBase}
       width={130}
       height={seatsArray.length * 27}
       options={{ roughness: 3 }}
@@ -50,7 +51,7 @@ const PartyLegend = ({ seats }) => {
       })}
       <text
         x={142}
-        y={textBase + 25 * (seatsArray.length + 1)}
+        y={rectangleBase - 15}
         className='total-seats'
       >
         {120 + overhang} seats
