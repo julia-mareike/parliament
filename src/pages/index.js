@@ -12,21 +12,20 @@ const getSeatAllocations = () => {
 }
 
 const IndexPage = () => {
-  const [coordinates, setCoordinates] = useState(getCoordinates())
+  const coordinates = getCoordinates()
   const [seats, setSeats] = useState(getSeatAllocations())
 
   return (
     <Layout>
-    <SEO title="Parliament" />
-    <h1>Seats</h1>
+      <SEO title="Parliament" />
+      <Parliament coordinates={coordinates} seats={seats}/>
       <div>
         <a href='https://thespinoff.co.nz/politics/14-09-2017/mmp-maths-how-party-vote-percentages-become-seats-in-parliament/'>what? -> words</a>
       </div>
-    <div>
-      <a href='https://www.youtube.com/watch?v=pljoleVHFug'>huh? -> video</a>
-    </div>
-    <Parliament coordinates={coordinates} seats={seats}/>
-  </Layout>
+      <div>
+        <a href='https://www.youtube.com/watch?v=pljoleVHFug'>huh? -> video</a>
+      </div>
+    </Layout>
   )
 }
 

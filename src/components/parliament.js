@@ -1,8 +1,9 @@
 import React from 'react'
 import {
-  RoughProvider, Circle,
+  RoughProvider, Circle, Rectangle
 } from 'react-roughjs'
 
+import PartyLegend from './party-legend'
 import { styles } from '../utils'
 
 export const Parliament = ({ coordinates, seats }) => {
@@ -50,6 +51,7 @@ export const Parliament = ({ coordinates, seats }) => {
           key={i}
         />
       ))}
+      <PartyLegend seats={seats}/>
     </RoughProvider>
   </svg>
   )
