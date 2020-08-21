@@ -8,4 +8,5 @@ export const styles = {
   National: { fill: 'rgba(0, 0, 255, 0.7)', fillStyle: 'solid', roughness },
   Maori: { fill: 'rgba(255, 0, 0, 1)', fillStyle: 'cross-hatch', roughness },
   UnitedFuture: { fill: 'rgba(128, 0, 128, 0.7)', fillStyle: 'solid', roughness },
+  Mana: { fill: 'rgba(0, 0, 0, 0.7)', fillStyle: 'cross-hatch', roughness }
 }
