@@ -43,7 +43,7 @@ export const calculateVotes = (electorates, votes) => {
 }
 
 // this applies the Saint Lague calculation
-let overhang = 0
+let overhang
 let result
 
 export const getSeats = (totals, idx = 0, seats = 120) => {
@@ -54,6 +54,7 @@ export const getSeats = (totals, idx = 0, seats = 120) => {
     totals[current].adjusted = formula(totals[current].votes, totals[current].allocated)
     getSeats(totals, idx++, --seats)
   } else {
+    overhang = 0
     result = totals.map(party => {
       if (party.electorates > party.allocated) {
         party.overhang = party.electorates - party.allocated

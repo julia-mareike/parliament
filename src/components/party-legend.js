@@ -9,9 +9,12 @@ const PartyLegend = ({ seats }) => {
   let circleBase = 200
   let textBase = 205
   let seatsArray = []
+  let overhang = 0
   for (let party in seats) {
     if (seats[party].party) {
       seatsArray.push(seats[party])
+    } else {
+      overhang += seats[party]
     }
   }
   return (
@@ -45,6 +48,13 @@ const PartyLegend = ({ seats }) => {
           )
         }
       })}
+      <text
+        x={142}
+        y={textBase + 25 * (seatsArray.length + 1)}
+        className='total-seats'
+      >
+        {120 + overhang} seats
+      </text>
   </>
   )
 }
