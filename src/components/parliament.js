@@ -23,6 +23,8 @@ export const Parliament = ({ coordinates, seats }) => {
       // omg stop
     } else if (seats[6] && i < seats[0].allocated + seats[1].allocated + seats[2].allocated + seats[3].allocated + seats[4].allocated + seats[5].allocated + seats[6].allocated){
       circle.options = styles[seats[6].party]
+    } else if (seats[7] && i < seats[0].allocated + seats[1].allocated + seats[2].allocated + seats[3].allocated + seats[4].allocated + seats[5].allocated + seats[6].allocated + seats[7].allocated){
+      circle.options = styles[seats[7].party]
     }
     return circle
   })
