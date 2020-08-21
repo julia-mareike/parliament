@@ -55,8 +55,8 @@ export const getSeats = (totals, idx = 0, seats = 120) => {
     getSeats(totals, idx++, --seats)
   } else {
     result = totals.map(party => {
-      if (!party.allocated && party.electorates) {
-        party.overhang = 1
+      if (party.electorates > party.allocated) {
+        party.overhang = party.electorates - party.allocated
         overhang++
       }
       return party
