@@ -12,9 +12,11 @@ const IndexPage = () => {
 
   const getSeatAllocations = year => {
     const totals = calculateVotes(pastVotes[year].electorates, pastVotes[year].votes)
+    if (!totals) return null
     return getSeats(totals)
   }
 
+  const [activeYear, setActiveYear] = useState(years[0])
   const [seats, setSeats] = useState(getSeatAllocations(years[0]))
   return (
     <Layout>
@@ -25,6 +27,7 @@ const IndexPage = () => {
           name={year}
           onClick={() => {
             setSeats(getSeatAllocations(year))
+            setActiveYear(year)
           }}
         >
           {year}

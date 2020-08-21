@@ -8,6 +8,7 @@ import { styles } from '../utils'
 
 export const Parliament = ({ coordinates, seats }) => {
   let seatCoordinates = coordinates.map((circle, i) => {
+    if (!seats) return circle
     if (i < seats[0].allocated) {
       circle.options = styles[seats[0].party]
     } else if (i < seats[0].allocated + seats[1].allocated) {
@@ -29,7 +30,7 @@ export const Parliament = ({ coordinates, seats }) => {
     return circle
   })
   // only handles one overhang
-  if (seats.overhang) {
+  if (seats && seats.overhang) {
     for (let party in seats) {
       if (seats[party].overhang) {
         seatCoordinates.push({

@@ -100,5 +100,6 @@ export const pastVotes = {
       Legalise: 0,
       Other: 0
     }
-  }
+  },
+  2020: {}
 }

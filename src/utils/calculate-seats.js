@@ -32,6 +32,7 @@ export const createVoteObject = (obj, electorates) => {
 }
 
 export const calculateVotes = (electorates, votes) => {
+  if (!electorates || !votes) return null
   const rawVotes = Object.assign({}, votes)
   for (let party in rawVotes) {
     if (rawVotes[party] < 5 && !electorates[party]) {
