@@ -21,9 +21,9 @@ const PartyLegend = ({ seats }) => {
   return (
     <>
     <Rectangle
-      x={115}
+      x={100}
       y={rectangleBase}
-      width={130}
+      width={160}
       height={seatsArray.length * 27}
       options={{ roughness: 3 }}
     />
@@ -33,13 +33,13 @@ const PartyLegend = ({ seats }) => {
           return (
             <>
             <Circle
-              x={130}
+              x={120}
               y={circleBase + (25 * i)}
               diameter={14}
               options={styles[party.party]}
             />
             <text
-              x={142}
+              x={132}
               y={textBase + (25 * i)}
               className='legend'
             >
