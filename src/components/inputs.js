@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { indexOf } from 'lodash'
 
 import { activeParties, pastVotes } from '../utils/data'
 import { getSeatAllocations } from '../utils/'
@@ -7,12 +6,15 @@ import { getSeatAllocations } from '../utils/'
 export const Inputs = ({  year, setSeats }) => {
   const [currentVotes, setVotes] = useState({})
   const [currentElectorates, setElectorates] = useState({})
+  const [totalVotes, setTotalVotes] = useState(0)
 
   const handleVotesChange = event => {
+    let { value } = event.target
     setVotes({
       ...currentVotes,
-      [event.target.name]: Number(event.target.value)
+      [event.target.name]: Number(value)
     })
+    setTotalVotes(prevState => prevState + Number(value))
   }
   const handleElectoratesChange = event => {
     setElectorates({
@@ -41,6 +43,7 @@ export const Inputs = ({  year, setSeats }) => {
           />
         </label>
       ))}
+      <p>Percentage: {totalVotes}</p>
       <button
         onClick={
           () => setSeats(
