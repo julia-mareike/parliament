@@ -35,11 +35,15 @@ export const Parliament = ({ coordinates, seats }) => {
     let overhangCoordinates = getOverhangCoordinates()
     for (let party in seats) {
       if (seats[party].overhang) {
-        seatCoordinates.push({
-          ...overhangCoordinates[0],
-          options: styles[seats[party].party]
-        })
-        overhangCoordinates.unshift()
+        let { overhang } = seats[party]
+        while (overhang > 0) {
+          seatCoordinates.push({
+            ...overhangCoordinates[0],
+            options: styles[seats[party].party]
+          })
+          overhangCoordinates.shift()
+          overhang--
+        }
       }
     }
   }

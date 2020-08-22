@@ -56,13 +56,6 @@ const PartyLegend = ({ seats }) => {
           )
         }
       })}
-      <text
-        x={142}
-        y={rectangleBase - 15}
-        className='total-seats'
-      >
-        {120 + overhang} seats
-      </text>
   </>
   )
 }
