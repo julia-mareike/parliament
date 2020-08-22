@@ -13,7 +13,7 @@
  - [x] display key of party colours & seats won
  - [ ] hover over seat = display party name?
  - [x] display party vote percentage per party - on left hand side?
- - [ ] display electorate seats won - somehow, in a not-annoying way
+ - [x] display electorate seats won - somehow, in a not-annoying way
  - [x] hook in saint lague formula - https://github.com/julia-mareike/parliament-builder/blob/master/client/utils.js
  - [ ] refactor calculation formula
  - [x] overhang is wrong... it needs to check overhangs _after_ calculating
