@@ -1,4 +1,74 @@
 export const pastVotes = {
+  1999: {
+    votes: {
+      National: 30.5,
+      Labour: 38.7,
+      Greens: 5.2,
+      NZFirst: 4.3,
+      ACT: 7.0,
+      UnitedNZ: 0.5,
+      Alliance: 7.7,
+      // Other: 6.1
+    },
+    electorates: {
+      National: 22,
+      Labour: 41,
+      Greens: 1,
+      NZFirst: 1,
+      ACT: 0,
+      UnitedNZ: 1,
+      Alliance: 1,
+      Other: 0
+    }
+  },
+  2002: {
+    votes: {
+      National: 20.93,
+      Labour: 41.26,
+      Greens: 7,
+      NZFirst: 10.38,
+      ACT: 7.14,
+      UnitedFuture: 6.69,
+      JAProgressive: 1.70,
+      Alliance: 1.27,
+      Other: 3.63
+    },
+    electorates: {
+      National: 21,
+      Labour: 45,
+      Greens: 0,
+      NZFirst: 1,
+      ACT: 0,
+      UnitedFuture: 1,
+      JAProgressive: 1,
+      Alliance: 0,
+      Other: 0
+    }
+  },
+  2005: {
+    votes: {
+      National: 39.10,
+      Labour: 41.10,
+      Greens: 5.30,
+      NZFirst: 5.72,
+      Maori: 2.12,
+      ACT: 1.51,
+      UnitedFuture: 2.67,
+      JAProgressive: 1.16,
+      Other: 1.32
+    },
+    electorates: {
+      National: 31,
+      Labour: 31,
+      Greens: 0,
+      NZFirst: 0,
+      Maori: 4,
+      ACT: 1,
+      UnitedFuture: 1,
+      JAProgressive: 1,
+      Other: 0
+    }
+  },
   2008: {
     votes: {
       National: 44.93,
