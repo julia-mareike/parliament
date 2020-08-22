@@ -103,3 +103,23 @@ export const pastVotes = {
   },
   2020: {}
 }
+
+export const activeParties = [
+  'Labour',
+  'National',
+  'Greens',
+  'ACT',
+  'Maori',
+  'Advance',
+  'Legalise',
+  'Heartland',
+  'NewConservative',
+  'NZFirst',
+  'OneParty',
+  'Outdoors',
+  'SocialCredit',
+  'SustainableNZ',
+  'TEAParty',
+  'TOP',
+  'VisionNZ'
+]
