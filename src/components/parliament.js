@@ -7,7 +7,7 @@ import PartyLegend from './party-legend'
 import { styles } from '../utils'
 import { getOverhangCoordinates } from '../utils/get-coordinates'
 
-export const Parliament = ({ coordinates, seats }) => {
+export const Parliament = ({ coordinates, seats, year }) => {
   let seatCoordinates = coordinates.map((circle, coordinatesIndex) => {
     if (!seats) return circle
     let totalAllocated = 0
@@ -47,7 +47,13 @@ export const Parliament = ({ coordinates, seats }) => {
           key={i}
         />
       ))}
-      <PartyLegend seats={seats}/>
+      <PartyLegend seats={seats} />
+      {(year !== '2020') && <text
+        x={150}
+        y={(seats.length * 22) + 220}
+      >
+        {year}
+      </text>}
     </RoughProvider>
   </svg>
   )

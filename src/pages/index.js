@@ -17,7 +17,7 @@ const IndexPage = () => {
       <SEO title="Parliament" />
       <div style={{ display: 'flex', flexDirection: 'row' }}>
         <div style={{ display: 'flex', flexDirection: 'column' }}>
-        <Parliament coordinates={coordinates} seats={seats} />
+        <Parliament coordinates={coordinates} seats={seats} year={activeYear} />
         <div style={{ display: 'flex', flexDirection: 'row' }}>
           {years.map(year => (
             <button
