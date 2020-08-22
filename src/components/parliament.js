@@ -36,7 +36,7 @@ export const Parliament = ({ coordinates, seats, year }) => {
     }
   }
   return (
-    <svg height={500} width={360}>
+    <svg viewBox="0 0 360 500">
     <RoughProvider>
       {seatCoordinates.map((seat, i) => (
         <Circle
