@@ -12,10 +12,11 @@ const PartyLegend = ({ seats }) => {
   let seatsArray = []
   let overhang = 0
   for (let party in seats) {
+    if (seats[party].overhang) {
+      overhang =+ seats[party].overhang
+    }
     if (seats[party].party) {
       seatsArray.push(seats[party])
-    } else {
-      overhang += seats[party]
     }
   }
   return (
