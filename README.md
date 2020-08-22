@@ -23,5 +23,6 @@
  - [ ] either display possible coalitions or allow ppl to compile themselves?
  - [ ] add in all the other fringe parties
  - [ ] link parties to policy.nz?
+ - [ ] tidy up this darn messy code
  
  ## 🐞 bye
