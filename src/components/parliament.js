@@ -30,8 +30,7 @@ export const Parliament = ({ coordinates, seats }) => {
     }
     return circle
   })
-  // only handles one overhang
-  if (seats && seats.overhang) {
+  if (seats) {
     let overhangCoordinates = getOverhangCoordinates()
     for (let party in seats) {
       if (seats[party].overhang) {

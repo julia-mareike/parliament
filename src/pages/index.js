@@ -3,7 +3,7 @@ import React, { useState } from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { Parliament } from '../components/parliament'
-import { getCoordinates, calculateVotes, getSeats } from '../utils'
+import { getCoordinates, calculateVotes, getSeats, sortSeats } from '../utils'
 import { pastVotes } from '../utils/data'
 
 const IndexPage = () => {
@@ -13,7 +13,8 @@ const IndexPage = () => {
   const getSeatAllocations = year => {
     const totals = calculateVotes(pastVotes[year].electorates, pastVotes[year].votes)
     if (!totals) return null
-    return getSeats(totals)
+    const seats = getSeats(totals)
+    return sortSeats(seats)
   }
 
   const [activeYear, setActiveYear] = useState(years[0])
