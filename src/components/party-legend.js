@@ -20,13 +20,20 @@ const PartyLegend = ({ seats }) => {
   }
   return (
     <>
-    <Rectangle
-      x={100}
-      y={rectangleBase}
-      width={160}
-      height={seatsArray.length * 27}
-      options={{ roughness: 3 }}
-    />
+      <text
+        x={142}
+        y={rectangleBase - 15}
+        className='total-seats'
+      >
+        {120 + overhang} seats
+      </text>
+      <Rectangle
+        x={100}
+        y={rectangleBase}
+        width={160}
+        height={seatsArray.length * 27}
+        options={{ roughness: 3 }}
+      />
       {seatsArray.map((party, i) => {
         if (party.overhang) party.allocated = party.allocated + party.overhang
         if (party.party) {
