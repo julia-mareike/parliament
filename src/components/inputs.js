@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { indexOf } from 'lodash'
 
 import { activeParties, pastVotes } from '../utils/data'
 import { getSeatAllocations } from '../utils/'
@@ -51,12 +52,13 @@ export const Inputs = ({  year, setSeats }) => {
       </>
     )
   }
-  const { votes } = pastVotes[year]
+  const { votes, electorates } = pastVotes[year]
   let array = []
   for (let party in votes) {
     array.push({
       name: party,
-      votes: votes[party]
+      votes: votes[party],
+      electorates: electorates[party]
     })
   }
   return array.map(party => (
@@ -66,6 +68,12 @@ export const Inputs = ({  year, setSeats }) => {
         type={'number'}
         disabled
         value={party.votes}
+      />
+      <input
+        type={'number'}
+        disabled
+        value={party.electorates}
+        style={{ width: '50px' }}
       />
     </label>
     )
