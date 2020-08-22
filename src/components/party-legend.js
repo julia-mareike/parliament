@@ -19,6 +19,7 @@ const PartyLegend = ({ seats }) => {
       seatsArray.push(seats[party])
     }
   }
+  seatsArray.sort((a, b) => b.allocated - a.allocated)
   return (
     <>
       <text
