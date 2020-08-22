@@ -5,6 +5,7 @@ import {
 
 import PartyLegend from './party-legend'
 import { styles } from '../utils'
+import { getOverhangCoordinates } from '../utils/get-coordinates'
 
 export const Parliament = ({ coordinates, seats }) => {
   let seatCoordinates = coordinates.map((circle, i) => {
@@ -31,14 +32,14 @@ export const Parliament = ({ coordinates, seats }) => {
   })
   // only handles one overhang
   if (seats && seats.overhang) {
+    let overhangCoordinates = getOverhangCoordinates()
     for (let party in seats) {
       if (seats[party].overhang) {
         seatCoordinates.push({
-          x: 170,
-          y: 450,
-          diameter: 20,
+          ...overhangCoordinates[0],
           options: styles[seats[party].party]
         })
+        overhangCoordinates.unshift()
       }
     }
   }
