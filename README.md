@@ -24,5 +24,6 @@
  - [ ] add in all the other fringe parties
  - [ ] link parties to policy.nz?
  - [ ] tidy up this darn messy code
+ - [ ] decrease size of parliament svg slightly to remove mobile scrolling
  
  ## 🐞 bye

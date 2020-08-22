@@ -5,11 +5,10 @@ import SEO from "../components/seo"
 import { Parliament } from '../components/parliament'
 import { Inputs } from '../components/inputs'
 import { getCoordinates, getSeatAllocations } from '../utils'
-import { pastVotes } from '../utils/data'
+import { years } from '../utils/data'
 
 const IndexPage = () => {
   const coordinates = getCoordinates()
-  const years = Object.keys(pastVotes).sort((a, b) => a + b)
 
   const [activeYear, setActiveYear] = useState(years[0])
   const [seats, setSeats] = useState(getSeatAllocations(activeYear))

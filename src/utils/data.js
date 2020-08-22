@@ -104,6 +104,8 @@ export const pastVotes = {
   2020: {}
 }
 
+export const years = Object.keys(pastVotes).sort().reverse()
+
 export const activeParties = [
   'Labour',
   'National',
