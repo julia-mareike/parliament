@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import { sum } from 'lodash'
 
 import { activeParties, pastVotes } from '../utils/data'
 import { getSeatAllocations } from '../utils/'
@@ -8,13 +9,17 @@ export const Inputs = ({  year, setSeats }) => {
   const [currentElectorates, setElectorates] = useState({})
   const [totalVotes, setTotalVotes] = useState(0)
 
+  useEffect(() => {
+    let total = sum(Object.values(currentVotes))
+    setTotalVotes(total)
+  }, [currentVotes])
+
   const handleVotesChange = event => {
     let { value } = event.target
     setVotes({
       ...currentVotes,
       [event.target.name]: Number(value)
     })
-    setTotalVotes(prevState => prevState + Number(value))
   }
   const handleElectoratesChange = event => {
     setElectorates({
@@ -45,6 +50,7 @@ export const Inputs = ({  year, setSeats }) => {
       ))}
       <p>Percentage: {totalVotes}</p>
       <button
+        disabled={totalVotes !== 100}
         onClick={
           () => setSeats(
             getSeatAllocations(year, {votes: currentVotes, electorates: currentElectorates})
