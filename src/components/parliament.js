@@ -1,6 +1,6 @@
 import React from 'react'
 import {
-  RoughProvider, Circle, Rectangle
+  RoughProvider, Circle
 } from 'react-roughjs'
 
 import PartyLegend from './party-legend'
@@ -8,27 +8,16 @@ import { styles } from '../utils'
 import { getOverhangCoordinates } from '../utils/get-coordinates'
 
 export const Parliament = ({ coordinates, seats }) => {
-  let seatCoordinates = coordinates.map((circle, i) => {
+  let seatCoordinates = coordinates.map((circle, coordinatesIndex) => {
     if (!seats) return circle
-    if (i < seats[0].allocated) {
-      circle.options = styles[seats[0].party]
-    } else if (i < seats[0].allocated + seats[1].allocated) {
-      circle.options = styles[seats[1].party]
-    } else if (i < seats[0].allocated + seats[1].allocated + seats[2].allocated) {
-      circle.options = styles[seats[2].party]
-    } else if (i < seats[0].allocated + seats[1].allocated + seats[2].allocated + seats[3].allocated) {
-      circle.options = styles[seats[3].party]
-    } else if (i < seats[0].allocated + seats[1].allocated + seats[2].allocated + seats[3].allocated + seats[4].allocated) {
-      circle.options = styles[seats[4].party]
-    } else if (seats[5] && i < seats[0].allocated + seats[1].allocated + seats[2].allocated + seats[3].allocated + seats[4].allocated + seats[5].allocated){
-      circle.options = styles[seats[5].party]
-      // omg stop
-    } else if (seats[6] && i < seats[0].allocated + seats[1].allocated + seats[2].allocated + seats[3].allocated + seats[4].allocated + seats[5].allocated + seats[6].allocated){
-      circle.options = styles[seats[6].party]
-    } else if (seats[7] && i < seats[0].allocated + seats[1].allocated + seats[2].allocated + seats[3].allocated + seats[4].allocated + seats[5].allocated + seats[6].allocated + seats[7].allocated){
-      circle.options = styles[seats[7].party]
+    let totalAllocated = 0
+    for (let i = 0; i < seats.length; i++) {
+      totalAllocated += seats[i].allocated
+      if (coordinatesIndex < totalAllocated) {
+        circle.options = styles[seats[i].party]
+        return circle
+      }
     }
-    return circle
   })
   if (seats) {
     let overhangCoordinates = getOverhangCoordinates()

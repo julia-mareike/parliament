@@ -3,23 +3,6 @@ import React, { useState } from 'react'
 import { activeParties, pastVotes } from '../utils/data'
 import { getSeatAllocations } from '../utils/'
 
-const fakeButtonVotes = {
-  votes: {
-    National: 50,
-    Labour: 20,
-    Greens: 20,
-    NZFirst: 6,
-    ACT: 4
-  },
-  electorates: {
-    National: 42,
-    Labour: 22,
-    Greens: 0,
-    NZFirst: 0,
-    ACT: 1,
-  }
-}
-
 export const Inputs = ({  year, setSeats }) => {
   const [currentVotes, setVotes] = useState({})
   const [currentElectorates, setElectorates] = useState({})
@@ -42,11 +25,29 @@ export const Inputs = ({  year, setSeats }) => {
       {activeParties.map(party => (
         <label>
           {party}
-          <input type={'number'} name={party} value={currentVotes[party]} onChange={event => handleVotesChange(event)}/>
-          <input type={'number'} name={party} value={currentElectorates[party]} onChange={event => handleElectoratesChange(event)}/>
+          <input
+            type={'number'}
+            name={party}
+            value={currentVotes[party] || ''}
+            onChange={event => handleVotesChange(event)}
+          />
+          <input
+            type={'number'}
+            name={party}
+            value={currentElectorates[party] || ''}
+            onChange={event => handleElectoratesChange(event)}
+            style={{ width: '50px' }}
+          />
         </label>
       ))}
-      <button onClick={() => setSeats(getSeatAllocations(year, {votes: currentVotes, electorates: currentElectorates}))}>Calculate!</button>
+      <button
+        onClick={
+          () => setSeats(
+            getSeatAllocations(year, {votes: currentVotes, electorates: currentElectorates})
+          )
+        }>
+        Calculate!
+      </button>
       </>
     )
   }
@@ -61,7 +62,11 @@ export const Inputs = ({  year, setSeats }) => {
   return array.map(party => (
     <label>
       {party.name}
-      <input type={'number'} disabled value={party.votes} />
+      <input
+        type={'number'}
+        disabled
+        value={party.votes}
+      />
     </label>
     )
   )
