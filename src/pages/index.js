@@ -36,12 +36,12 @@ const IndexPage = () => {
           <Inputs year={activeYear} setSeats={setSeats} />
         </div>
       </div>
-      <div>
-        <a href='https://thespinoff.co.nz/politics/14-09-2017/mmp-maths-how-party-vote-percentages-become-seats-in-parliament/'>what? -> words</a>
-      </div>
-      <div>
-        <a href='https://www.youtube.com/watch?v=pljoleVHFug'>huh? -> video</a>
-      </div>
+      {/*<div>*/}
+      {/*  <a href='https://thespinoff.co.nz/politics/14-09-2017/mmp-maths-how-party-vote-percentages-become-seats-in-parliament/'>what? -> words</a>*/}
+      {/*</div>*/}
+      {/*<div>*/}
+      {/*  <a href='https://www.youtube.com/watch?v=pljoleVHFug'>huh? -> video</a>*/}
+      {/*</div>*/}
     </Layout>
   )
 }
