@@ -17,7 +17,7 @@ export const adjustVotes = list => {
 export const createVoteObject = (obj, electorates) => {
   const array = []
   forEach(obj, (votes, party) => {
-    if (votes > 0) {
+    if (votes || electorates[party]) {
       const newObject = {
         party: party,
         votes: votes,
