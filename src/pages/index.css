@@ -22,6 +22,7 @@
 @media (min-width: 720px) {
     .mainWrapper {
         flex-direction: row;
+        min-height: calc(100vh - 160px);
     }
 }
 
