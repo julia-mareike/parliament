@@ -31,7 +31,9 @@ export const Inputs = ({  year, setSeats }) => {
     return (
       <>
       {activeParties.map(party => (
-        <label>
+        <label
+          key={party}
+        >
           {party}
           <input
             type={'number'}
@@ -71,7 +73,9 @@ export const Inputs = ({  year, setSeats }) => {
     })
   }
   return array.map(party => (
-    <label>
+    <label
+      key={party.name}
+    >
       {party.name}
       <input
         type={'number'}

@@ -18,6 +18,7 @@ export const Parliament = ({ coordinates, seats, year }) => {
         return circle
       }
     }
+    return null
   })
   if (seats) {
     let overhangCoordinates = getOverhangCoordinates()

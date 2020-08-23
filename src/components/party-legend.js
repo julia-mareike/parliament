@@ -3,7 +3,7 @@ import {
   Circle, Rectangle
 } from 'react-roughjs'
 
-import {styles} from '../utils'
+import { styles } from '../utils'
 
 const PartyLegend = ({ seats }) => {
   let rectangleBase = 180
@@ -38,9 +38,11 @@ const PartyLegend = ({ seats }) => {
       />
       {seatsArray.map((party, i) => {
         if (party.overhang) party.allocated = party.allocated + party.overhang
-        if (party.party) {
-          return (
-            <>
+        if (!party.party) return null
+        return (
+          <React.Fragment
+            key={party.party}
+          >
             <Circle
               x={120}
               y={circleBase + (25 * i)}
@@ -54,9 +56,8 @@ const PartyLegend = ({ seats }) => {
             >
               {party.allocated} - {party.party}
             </text>
-              </>
-          )
-        }
+          </React.Fragment>
+        )
       })}
   </>
   )

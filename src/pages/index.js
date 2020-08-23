@@ -22,6 +22,7 @@ const IndexPage = () => {
           {years.map(year => (
             <button
               name={year}
+              key={year}
               onClick={() => {
                 setSeats(getSeatAllocations(year))
                 setActiveYear(year)

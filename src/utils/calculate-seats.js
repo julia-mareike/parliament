@@ -1,4 +1,4 @@
-import { sum, values, findIndex, forEach, max as _max, indexOf } from 'lodash'
+import { sum, values, forEach, max as _max, indexOf } from 'lodash'
 
 export const formula = (votes, idx) => {
   return votes / (idx * 2 + 1)
