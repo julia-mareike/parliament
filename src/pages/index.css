@@ -9,7 +9,7 @@
 }
 
 .parliament {
-    width: 300px;
+    width: 100vw;
 }
 
 .buttons {
@@ -22,5 +22,8 @@
 @media (min-width: 720px) {
     .mainWrapper {
         flex-direction: row;
+    }
+    .parliament {
+        width: 300px;
     }
 }
