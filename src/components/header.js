@@ -3,21 +3,11 @@ import PropTypes from "prop-types"
 import React from "react"
 
 const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `black`,
-      marginBottom: `1.45rem`,
-    }}
-  >
+  <header>
     <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.5rem 1rem`,
-      }}
-      className={'rowWrapper'}
+      className='rowWrapper mainNav'
     >
-      <h1 className='nav item'>
+      <h1 className='item'>
         <Link
           to="/"
           className='nav'
@@ -25,18 +15,20 @@ const Header = ({ siteTitle }) => (
           {siteTitle}
         </Link>
       </h1>
-      <h3 className='nav item sub'>
+      <h3 className='item sub'>
         <Link
           to="/calculator"
           className='nav'
+          activeClassName='activeItem'
         >
           calculator
         </Link>
       </h3>
-      <h3 className='nav item sub'>
+      <h3 className='item sub'>
         <Link
           to="/past-results"
           className='nav'
+          activeClassName='activeItem'
         >
           past results
         </Link>
@@ -45,6 +37,7 @@ const Header = ({ siteTitle }) => (
         <Link
           to="/about"
           className='nav'
+          activeClassName='activeItem'
         >
           about
         </Link>

@@ -11,17 +11,6 @@ body {
 footer {
   padding-top: 25px;
 }
-.nav {
-  color: white;
-  text-decoration: none;
-}
-.item {
-  align-self: end;
-  margin: 0 1.75rem 0 0;
-}
-.sub{
-  margin-bottom: 0.2rem;
-}
 article,
 aside,
 details,
