@@ -170,8 +170,7 @@ export const pastVotes = {
       Legalise: 0,
       Other: 0
     }
-  },
-  2020: {}
+  }
 }
 
 export const years = Object.keys(pastVotes).sort().reverse()
