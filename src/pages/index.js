@@ -1,19 +1,19 @@
-import React, { useState } from "react"
+import React, { useState } from 'react'
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Layout from '../components/layout'
+import SEO from '../components/seo'
 import { Parliament } from '../components/parliament'
 import { Inputs } from '../components/inputs'
 import { getCoordinates, getSeatAllocations } from '../utils'
 import { years } from '../utils/data'
 
-import "./index.css"
+import './index.css'
 
 const IndexPage = () => {
   const coordinates = getCoordinates()
-
   const [activeYear, setActiveYear] = useState(years[0])
   const [seats, setSeats] = useState(getSeatAllocations(activeYear))
+  
   return (
     <Layout>
       <SEO title="Parliament" />
