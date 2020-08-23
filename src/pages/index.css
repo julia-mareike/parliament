@@ -1,0 +1,26 @@
+.mainWrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.parliament {
+    width: 300px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    font-size: 0.8rem;
+}
+
+@media (min-width: 720px) {
+    .mainWrapper {
+        flex-direction: row;
+    }
+}

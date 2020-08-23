@@ -7,6 +7,8 @@ import { Inputs } from '../components/inputs'
 import { getCoordinates, getSeatAllocations } from '../utils'
 import { years } from '../utils/data'
 
+import "./index.css"
+
 const IndexPage = () => {
   const coordinates = getCoordinates()
 
@@ -15,10 +17,10 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Parliament" />
-      <div style={{ display: 'flex', flexDirection: 'row' }}>
-        <div style={{ display: 'flex', flexDirection: 'column', width: 300 }}>
+      <div className='mainWrapper'>
+        <div className='wrapper parliament'>
         <Parliament coordinates={coordinates} seats={seats} year={activeYear} />
-        <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', fontSize: '0.7rem' }}>
+        <div className='buttons'>
           {years.map(year => (
             <button
               name={year}
@@ -33,7 +35,7 @@ const IndexPage = () => {
           ))}
         </div>
         </div>
-        <div style={{ display: 'flex', flexDirection: 'column' }}>
+        <div className='wrapper'>
           <Inputs year={activeYear} setSeats={setSeats} />
         </div>
       </div>
