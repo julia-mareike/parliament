@@ -79,3 +79,19 @@ export const getCoordinates = () => {
 
   return coordinates
 }
+
+export const getOverhangCoordinates = () => {
+  let overhangCoordinates = []
+
+  const fillCircle = (x, y, diameter = 20) => (
+    overhangCoordinates.push({x, y, diameter})
+  )
+
+  let y = 450
+  let x = [180, 207, 153, 126, 234, 261, 99]
+
+  x.forEach(point => (
+    fillCircle(point, y)
+  ))
+  return overhangCoordinates
+}

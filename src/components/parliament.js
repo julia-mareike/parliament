@@ -1,45 +1,43 @@
 import React from 'react'
 import {
-  RoughProvider, Circle,
+  RoughProvider, Circle
 } from 'react-roughjs'
 
+import PartyLegend from './party-legend'
 import { styles } from '../utils'
+import { getOverhangCoordinates } from '../utils/get-coordinates'
 
-export const Parliament = ({ coordinates, seats }) => {
-  let seatCoordinates = coordinates.map((circle, i) => {
-    if (i < seats[0].allocated) {
-      circle.options = styles[seats[0].party]
-    } else if (i < seats[0].allocated + seats[1].allocated) {
-      circle.options = styles[seats[1].party]
-    } else if (i < seats[0].allocated + seats[1].allocated + seats[2].allocated) {
-      circle.options = styles[seats[2].party]
-    } else if (i < seats[0].allocated + seats[1].allocated + seats[2].allocated + seats[3].allocated) {
-      circle.options = styles[seats[3].party]
-    } else if (i < seats[0].allocated + seats[1].allocated + seats[2].allocated + seats[3].allocated + seats[4].allocated) {
-      circle.options = styles[seats[4].party]
-    } else if (seats[5] && i < seats[0].allocated + seats[1].allocated + seats[2].allocated + seats[3].allocated + seats[4].allocated + seats[5].allocated){
-      circle.options = styles[seats[5].party]
-      // omg stop
-    } else if (seats[6] && i < seats[0].allocated + seats[1].allocated + seats[2].allocated + seats[3].allocated + seats[4].allocated + seats[5].allocated + seats[6].allocated){
-      circle.options = styles[seats[6].party]
+export const Parliament = ({ coordinates, seats, year }) => {
+  let seatCoordinates = coordinates.map((circle, coordinatesIndex) => {
+    if (!seats) return circle
+    let totalAllocated = 0
+    for (let i = 0; i < seats.length; i++) {
+      totalAllocated += seats[i].allocated
+      if (coordinatesIndex < totalAllocated) {
+        circle.options = styles[seats[i].party]
+        return circle
+      }
     }
-    return circle
+    return null
   })
-  // only handles one overhang
-  if (seats.overhang) {
+  if (seats) {
+    let overhangCoordinates = getOverhangCoordinates()
     for (let party in seats) {
       if (seats[party].overhang) {
-        seatCoordinates.push({
-          x: 170,
-          y: 450,
-          diameter: 20,
-          options: styles[seats[party].party]
-        })
+        let { overhang } = seats[party]
+        while (overhang > 0) {
+          seatCoordinates.push({
+            ...overhangCoordinates[0],
+            options: styles[seats[party].party]
+          })
+          overhangCoordinates.shift()
+          overhang--
+        }
       }
     }
   }
   return (
-    <svg height={500} width={360}>
+    <svg viewBox="0 0 360 500">
     <RoughProvider>
       {seatCoordinates.map((seat, i) => (
         <Circle
@@ -50,6 +48,13 @@ export const Parliament = ({ coordinates, seats }) => {
           key={i}
         />
       ))}
+      <PartyLegend seats={seats} />
+      {(year !== '2020') && <text
+        x={150}
+        y={(seats.length * 22) + 220}
+      >
+        {year}
+      </text>}
     </RoughProvider>
   </svg>
   )

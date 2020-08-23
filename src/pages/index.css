@@ -1,0 +1,97 @@
+.mainWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.wrapper {
+    display: flex;
+    flex-direction: column;
+}
+.parliament {
+    width: 90vw;
+    min-width: 300px;
+}
+.rowWrapper {
+    display: flex;
+    flex-direction: row;
+}
+.mainNav {
+    padding: 0.5rem 1.5rem 0.8rem;
+    max-width: 960px;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: flex-end;
+}
+.buttons {
+    flex-wrap: wrap;
+    font-size: 0.8rem;
+}
+.nav {
+    color: white;
+    text-decoration: none;
+}
+.item {
+    align-self: end;
+    margin: 0 1.75rem 0 0;
+}
+.nav:hover,
+.nav:active {
+    color: grey;
+}
+.activeItem {
+    color: darkgrey;
+}
+.sub {
+    margin-bottom: 0.2rem;
+    text-align: center;
+}
+.subMenu {
+    display: none;
+}
+header {
+    background: black;
+    margin-bottom: 1.45rem;
+}
+.beehiveNav {
+    width: 40px;
+    height: 40px;
+}
+.beehiveNav:hover,
+.beehiveNav:active {
+    cursor: pointer;
+}
+.beehiveNav:hover > svg > g {
+    fill: goldenrod;
+}
+.beehiveOpen {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    background: rgba(0,0,0,0.8);
+    top: 53px;
+    padding: 10px;
+}
+
+@media (min-width: 720px) {
+    .mainWrapper {
+        flex-direction: row;
+        min-height: calc(100vh - 202px);
+    }
+    .mainNav {
+        padding: 1.5rem 1rem;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+    .subMenu {
+        display: contents;
+    }
+    .beehiveNav {
+        display: none;
+    }
+}
+
+@media (min-width: 500px) {
+    .parliament {
+        width: 380px;
+    }
+}

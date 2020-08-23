@@ -1,4 +1,4 @@
-import { sum, values, findIndex, forEach, max as _max, indexOf } from 'lodash'
+import { sum, values, forEach, max as _max, indexOf } from 'lodash'
 
 export const formula = (votes, idx) => {
   return votes / (idx * 2 + 1)
@@ -17,7 +17,7 @@ export const adjustVotes = list => {
 export const createVoteObject = (obj, electorates) => {
   const array = []
   forEach(obj, (votes, party) => {
-    if (votes > 0) {
+    if (votes || electorates[party]) {
       const newObject = {
         party: party,
         votes: votes,
@@ -32,6 +32,7 @@ export const createVoteObject = (obj, electorates) => {
 }
 
 export const calculateVotes = (electorates, votes) => {
+  if (!electorates || !votes) return null
   const rawVotes = Object.assign({}, votes)
   for (let party in rawVotes) {
     if (rawVotes[party] < 5 && !electorates[party]) {
@@ -43,7 +44,7 @@ export const calculateVotes = (electorates, votes) => {
 }
 
 // this applies the Saint Lague calculation
-let overhang = 0
+let overhang
 let result
 
 export const getSeats = (totals, idx = 0, seats = 120) => {
@@ -54,9 +55,10 @@ export const getSeats = (totals, idx = 0, seats = 120) => {
     totals[current].adjusted = formula(totals[current].votes, totals[current].allocated)
     getSeats(totals, idx++, --seats)
   } else {
+    overhang = 0
     result = totals.map(party => {
-      if (!party.allocated && party.electorates) {
-        party.overhang = 1
+      if (party.electorates > party.allocated) {
+        party.overhang = party.electorates - party.allocated
         overhang++
       }
       return party

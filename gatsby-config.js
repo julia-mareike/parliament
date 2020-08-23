@@ -1,6 +1,7 @@
 module.exports = {
+  pathPrefix: '/parliament-party',
   siteMetadata: {
-    title: `Parliament`,
+    title: `parliament`,
     description: `it's parliament`,
     author: `me`,
   },
@@ -13,6 +14,14 @@ module.exports = {
         name: `images`,
         path: `${__dirname}/src/images`,
       },
+    },
+    {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        rule: {
+          include: /svg/
+        }
+      }
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,

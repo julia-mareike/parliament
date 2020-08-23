@@ -1,35 +1,73 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
-import React from "react"
+import React, { useState } from 'react'
+import { Link } from 'gatsby'
+import PropTypes from 'prop-types'
+import classnames from 'classnames'
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `black`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
-)
+import Beehive from '../svg/beehive.svg'
+
+const Header = ({ siteTitle }) => {
+  const [beehiveOpen, setBeehiveState] = useState(false)
+  const toggleBeehiveNav = state => {
+    setBeehiveState(!state)
+  }
+  console.log({ beehiveOpen })
+  return (
+    <header>
+      <div
+        className='rowWrapper mainNav'
+      >
+        <h1 className='item'>
+          <Link
+            to="/"
+            className='nav'
+          >
+            {siteTitle}
+          </Link>
+        </h1>
+        <div className={classnames('subMenu', {
+          beehiveOpen
+        })}>
+          <h3 className={classnames('sub', {
+            'item': !beehiveOpen
+          })}>
+            <Link
+              to="/calculator"
+              className='nav'
+              activeClassName='activeItem'
+            >
+              calculator
+            </Link>
+          </h3>
+          <h3 className={classnames('sub', {
+            'item': !beehiveOpen
+          })}>
+            <Link
+              to="/past-results"
+              className='nav'
+              activeClassName='activeItem'
+            >
+              past results
+            </Link>
+          </h3>
+          <h3 className={classnames('sub', {
+            'item': !beehiveOpen
+          })}>
+            <Link
+              to="/about"
+              className='nav'
+              activeClassName='activeItem'
+            >
+              about
+            </Link>
+          </h3>
+        </div>
+        <div className='beehiveNav'>
+          <Beehive role='button' onClick={() => toggleBeehiveNav(beehiveOpen)}/>
+        </div>
+      </div>
+    </header>
+  )
+}
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
