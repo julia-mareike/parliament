@@ -13,7 +13,7 @@ const PartyLegend = ({ seats }) => {
   let overhang = 0
   for (let party in seats) {
     if (seats[party].overhang) {
-      overhang =+ seats[party].overhang
+      overhang += seats[party].overhang
     }
     if (seats[party].party) {
       seatsArray.push(seats[party])
@@ -23,7 +23,7 @@ const PartyLegend = ({ seats }) => {
   return (
     <>
       <text
-        x={142}
+        x={132}
         y={rectangleBase - 15}
         className='total-seats'
       >
@@ -54,7 +54,7 @@ const PartyLegend = ({ seats }) => {
               y={textBase + (25 * i)}
               className='legend'
             >
-              {party.allocated} - {party.party}
+              {party.allocated} {party.party}
             </text>
           </React.Fragment>
         )

@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200;400&display=swap');
 .mainWrapper {
     display: flex;
     flex-direction: column;
@@ -25,6 +26,7 @@
 .buttons {
     flex-wrap: wrap;
     font-size: 0.8rem;
+    font-family: 'Roboto Mono', monospace;
 }
 .nav {
     color: white;

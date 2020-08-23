@@ -10,7 +10,6 @@ const Header = ({ siteTitle }) => {
   const toggleBeehiveNav = state => {
     setBeehiveState(!state)
   }
-  console.log({ beehiveOpen })
   return (
     <header>
       <div
