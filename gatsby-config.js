@@ -9,11 +9,39 @@ module.exports = {
     `gatsby-plugin-pnpm`,
     `gatsby-plugin-react-helmet`,
     {
+      resolve: `gatsby-plugin-material-ui`,
+      options: {
+        stylesProvider: {
+          injectFirst: true
+        }
+      }
+    },
+    {
+      resolve: `gatsby-plugin-webfonts`,
+      options: {
+        fonts: {
+          google: [
+            {
+              family: `Fredericka the Great`
+            },
+            {
+              family: `Roboto Mono`,
+              variants: [`200`, `400`]
+            }
+          ]
+        }
+        //formats: ['woff2', 'woff'],
+        //useMinify: true,
+        //usePreload: true,
+        //usePreconnect: false,
+      }
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images`,
-      },
+        path: `${__dirname}/src/images`
+      }
     },
     {
       resolve: 'gatsby-plugin-react-svg',
@@ -37,6 +65,7 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
+    'custom-mui-theme'
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

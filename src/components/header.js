@@ -3,78 +3,90 @@ import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
+import { Grid, Typography } from '@material-ui/core'
+import useStyles from '../../plugins/custom-mui-theme/theme/custom'
+
 import Beehive from '../svg/beehive.svg'
 
 const Header = ({ siteTitle }) => {
+  const { headerWrap } = useStyles()
   const [beehiveOpen, setBeehiveState] = useState(false)
   const toggleBeehiveNav = state => {
     setBeehiveState(!state)
   }
-  console.log({ beehiveOpen })
   return (
-    <header>
-      <div
-        className='rowWrapper mainNav'
-      >
-        <h1 className='item'>
-          <Link
-            to="/"
-            className='nav'
-          >
-            {siteTitle}
-          </Link>
-        </h1>
-        <div className={classnames('subMenu', {
+    <header className={headerWrap}>
+      <Grid container direction="row" alignItems="baseline">
+        <Grid container item spacing={2} direction="row" alignItems="baseline" justify="flex-start" xs={10} sm={4} >
+
+          <Grid item>
+            <Typography variant="h2">
+              <Link
+                to="/"
+                className='nav'
+              >
+                {siteTitle}
+              </Link>
+            </Typography>
+          </Grid>
+
+        </Grid>
+        <Grid container item direction="row" justify="flex-start" alignItems="baseline" className={classnames('subMenu', {
           beehiveOpen
-        })}>
-          <h3 className={classnames('sub', {
-            'item': !beehiveOpen
-          })}>
-            <Link
-              to="/calculator"
-              className='nav'
-              activeClassName='activeItem'
-            >
-              calculator
-            </Link>
-          </h3>
-          <h3 className={classnames('sub', {
-            'item': !beehiveOpen
-          })}>
-            <Link
-              to="/past-results"
-              className='nav'
-              activeClassName='activeItem'
-            >
-              past results
-            </Link>
-          </h3>
-          <h3 className={classnames('sub', {
-            'item': !beehiveOpen
-          })}>
-            <Link
-              to="/about"
-              className='nav'
-              activeClassName='activeItem'
-            >
+        })} xs={2} sm={8}>
+
+          <Grid item sm={3}>
+            <Typography variant="h3" className={classnames('sub', { 'item': !beehiveOpen })}>
+              <Link
+                to="/calculator"
+                className='nav'
+                activeClassName='activeItem'
+              >
+                calculator
+              </Link>
+            </Typography>
+
+          </Grid>
+          <Grid item sm={3}>
+            <Typography variant="h3" className={classnames('sub', { 'item': !beehiveOpen })}>
+              <Link
+                to="/past-results"
+                className='nav'
+                activeClassName='activeItem'
+              >
+
+                past results
+              </Link>
+            </Typography>
+
+          </Grid>
+          <Grid item sm={2}>
+            <Typography variant="h3" className={classnames('sub', { 'item': !beehiveOpen })}>
+              <Link
+                to="/about"
+                className='nav'
+                activeClassName='activeItem'
+              >
               about
-            </Link>
-          </h3>
-        </div>
-        <div className='beehiveNav'>
+              </Link>
+            </Typography>
+          </Grid>
+
+        </Grid>
+        <Grid item sm={2} className='beehiveNav'>
           <Beehive role='button' onClick={() => toggleBeehiveNav(beehiveOpen)}/>
-        </div>
-      </div>
+        </Grid>
+      </Grid>
     </header>
   )
 }
 
 Header.propTypes = {
-  siteTitle: PropTypes.string,
+  siteTitle: PropTypes.string
 }
 
 Header.defaultProps = {
-  siteTitle: ``,
+  siteTitle: ``
 }
 
 export default Header

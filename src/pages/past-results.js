@@ -7,6 +7,8 @@ import { Results } from '../components/results'
 import { getCoordinates, getSeatAllocations } from '../utils'
 import { years } from '../utils/data'
 
+import { Grid, Button } from '@material-ui/core'
+
 import './index.css'
 
 const PastResults = () => {
@@ -17,28 +19,30 @@ const PastResults = () => {
   return (
     <Layout>
       <SEO title="Parliament" />
-      <div className='mainWrapper'>
-        <div className='wrapper parliament'>
+      <Grid container spacing={4} direction='row' justify="center" style={{ margin: '0 auto' }}>
+
+        <Grid item xs={12} sm={6}>
           <Parliament coordinates={coordinates} seats={seats} year={activeYear} />
-          <div className='rowWrapper buttons'>
-            {years.map(year => (
-              <button
-                name={year}
-                key={year}
-                onClick={() => {
-                  setSeats(getSeatAllocations(year))
-                  setActiveYear(year)
-                }}
-              >
-                {year}
-              </button>
-            ))}
-          </div>
-        </div>
-        <div className='wrapper'>
-          <Results year={activeYear} />
-        </div>
-      </div>
+        </Grid>
+        <Grid item xs={12} sm={6}>
+          <Results year={activeYear} setSeats={setSeats} />
+        </Grid>
+        <Grid container item justify="space-between" xs={10}>
+          {years.map(year => (
+            <Button
+              name={year}
+              key={year}
+              onClick={() => {
+                setSeats(getSeatAllocations(year))
+                setActiveYear(year)
+              }}
+            >
+              {year}
+            </Button>
+          ))}
+        </Grid>
+
+      </Grid>
     </Layout>
   )
 }

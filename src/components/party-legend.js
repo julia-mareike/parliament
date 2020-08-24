@@ -4,8 +4,10 @@ import {
 } from 'react-roughjs'
 
 import { styles } from '../utils'
+import useStyles from '../../plugins/custom-mui-theme/theme/custom'
 
 const PartyLegend = ({ seats }) => {
+  const { fontOverride } = useStyles()
   let rectangleBase = 180
   let circleBase = 200
   let textBase = 205
@@ -13,7 +15,7 @@ const PartyLegend = ({ seats }) => {
   let overhang = 0
   for (let party in seats) {
     if (seats[party].overhang) {
-      overhang =+ seats[party].overhang
+      overhang += seats[party].overhang
     }
     if (seats[party].party) {
       seatsArray.push(seats[party])
@@ -23,7 +25,7 @@ const PartyLegend = ({ seats }) => {
   return (
     <>
       <text
-        x={142}
+        x={132}
         y={rectangleBase - 15}
         className='total-seats'
       >
@@ -52,9 +54,9 @@ const PartyLegend = ({ seats }) => {
             <text
               x={132}
               y={textBase + (25 * i)}
-              className='legend'
+              className={fontOverride}
             >
-              {party.allocated} - {party.party}
+              {party.allocated} {party.party}
             </text>
           </React.Fragment>
         )
