@@ -9,13 +9,13 @@ import useStyles from '../../plugins/custom-mui-theme/theme/custom'
 import Beehive from '../svg/beehive.svg'
 
 const Header = ({ siteTitle }) => {
-  const { header } = useStyles()
+  const { headerWrap } = useStyles()
   const [beehiveOpen, setBeehiveState] = useState(false)
   const toggleBeehiveNav = state => {
     setBeehiveState(!state)
   }
   return (
-    <header className={header}>
+    <header className={headerWrap}>
       <Grid container direction="row" alignItems="baseline">
         <Grid container item spacing={2} direction="row" alignItems="baseline" justify="flex-start" xs={10} sm={4} >
 
