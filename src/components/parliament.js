@@ -8,6 +8,8 @@ import { styles } from '../utils'
 import { getOverhangCoordinates } from '../utils/get-coordinates'
 
 export const Parliament = ({ coordinates, seats, year }) => {
+  let viewHeight = 480
+
   let seatCoordinates = coordinates.map((circle, coordinatesIndex) => {
     if (!seats) return circle
     let totalAllocated = 0
@@ -35,9 +37,13 @@ export const Parliament = ({ coordinates, seats, year }) => {
         }
       }
     }
+
+    if (seats.length > 10) {
+      viewHeight = viewHeight + ((seats.length - 10) * 20)
+    }
   }
   return (
-    <svg viewBox="0 0 360 500">
+    <svg viewBox={`0 0 360 ${viewHeight}`}>
     <RoughProvider>
       {seatCoordinates.map((seat, i) => (
         <Circle
