@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import { Parliament } from '../components/parliament'
-import { Inputs } from '../components/inputs'
+import { Results } from '../components/results'
 import { getCoordinates, getSeatAllocations } from '../utils'
 import { years } from '../utils/data'
 
@@ -36,7 +36,7 @@ const PastResults = () => {
           </div>
         </div>
         <div className='wrapper'>
-          <Inputs year={activeYear} setSeats={setSeats} />
+          <Results year={activeYear} />
         </div>
       </div>
     </Layout>
