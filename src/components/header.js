@@ -4,21 +4,23 @@ import PropTypes from 'prop-types'
 import classnames from 'classnames'
 
 import { Grid, Typography } from '@material-ui/core'
+import useStyles from '../../plugins/custom-mui-theme/theme/custom'
 
 import Beehive from '../svg/beehive.svg'
 
 const Header = ({ siteTitle }) => {
+  const { header } = useStyles()
   const [beehiveOpen, setBeehiveState] = useState(false)
   const toggleBeehiveNav = state => {
     setBeehiveState(!state)
   }
   return (
-    <header className='rowWrapper mainNav'>
+    <header className={header}>
       <Grid container direction="row" alignItems="baseline">
-        <Grid container item spacing={2} direction="row" justify="flex-start" xs={10} sm={4} >
+        <Grid container item spacing={2} direction="row" alignItems="baseline" justify="flex-start" xs={10} sm={4} >
 
           <Grid item>
-            <Typography variant="h1">
+            <Typography variant="h2">
               <Link
                 to="/"
                 className='nav'
@@ -29,7 +31,7 @@ const Header = ({ siteTitle }) => {
           </Grid>
 
         </Grid>
-        <Grid container item direction="row" justify="center" alignItems="baseline" className={classnames('subMenu', {
+        <Grid container item direction="row" justify="flex-start" alignItems="baseline" className={classnames('subMenu', {
           beehiveOpen
         })} xs={2} sm={8}>
 
@@ -40,8 +42,7 @@ const Header = ({ siteTitle }) => {
                 className='nav'
                 activeClassName='activeItem'
               >
-
-                  calculator
+                calculator
               </Link>
             </Typography>
 
@@ -66,9 +67,7 @@ const Header = ({ siteTitle }) => {
                 className='nav'
                 activeClassName='activeItem'
               >
-
               about
-
               </Link>
             </Typography>
           </Grid>

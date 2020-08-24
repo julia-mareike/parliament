@@ -7,6 +7,8 @@ import { Inputs } from '../components/inputs'
 import { getCoordinates, getSeatAllocations } from '../utils'
 import { years } from '../utils/data'
 
+import { Button } from '@material-ui/core'
+
 import './index.css'
 
 const PastResults = () => {
@@ -22,7 +24,7 @@ const PastResults = () => {
           <Parliament coordinates={coordinates} seats={seats} year={activeYear} />
           <div className='rowWrapper buttons'>
             {years.map(year => (
-              <button
+              <Button
                 name={year}
                 key={year}
                 onClick={() => {
@@ -31,7 +33,7 @@ const PastResults = () => {
                 }}
               >
                 {year}
-              </button>
+              </Button>
             ))}
           </div>
         </div>

@@ -7,20 +7,13 @@ const palette = {
 }
 
 const overrides = {
-  // MuiButton: {
-  //   // Name of the rule
-  //   text: {
-  //     // Some CSS
-  //     backgroundColor: 'goldenrod',
-  //     borderRadius: 3,
-  //     fontSize: 30,
-  //     border: 0,
-  //     color: 'red',
-  //     height: 100,
-  //     padding: '0 30px',
-  //     boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)'
-  //   }
-  // }
+  MuiButton: {
+    // Name of the rule
+    text: {
+      // Some CSS
+      fontFamily: "'Roboto Mono', monospace, sans-serif"
+    }
+  }
 }
 
 const themeName = 'Legend Julia Parliament Origami'

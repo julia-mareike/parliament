@@ -17,11 +17,11 @@ const useStyles = makeStyles((theme) => ({
     padding: `9rem 1.0875rem 0 1.0875rem`
   },
   header: {
-    background: `#ffffff`,
-    position: 'fixed',
-    top: '0',
-    zIndex: '10',
-    width: '100vw'
+    padding: '0.5rem 1.5rem 0.8rem',
+    maxWidth: '960px',
+    margin: '0 auto',
+    alignItems: 'center',
+    justifyContent: 'flex-end'
   },
   headerWrap: {
     margin: `0 auto`,
@@ -55,6 +55,9 @@ const useStyles = makeStyles((theme) => ({
   headerContainer: {
     height: '1rem',
     borderBottom: 'solid #f50057 1px'
+  },
+  fontOverride: {
+    fontFamily: 'Roboto Mono'
   }
 }))
 

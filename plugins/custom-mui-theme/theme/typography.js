@@ -1,6 +1,6 @@
 const typography = {
   fontFamily: "\"Roboto Mono\", sans-serif",
-  h1: {
+  h2: {
     fontFamily: 'Fredericka the Great'
   },
   h3: {
