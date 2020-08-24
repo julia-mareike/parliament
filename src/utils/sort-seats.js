@@ -1,6 +1,28 @@
 import { indexOf } from 'lodash'
 export const sortSeats = seats => {
-  const partyOrder = ['National', 'ACT', 'UnitedFuture', 'JAProgressive', 'Alliance', 'UnitedNZ', 'Maori', 'Mana', 'TOP', 'Legalise', 'Greens', 'NZFirst', 'Labour']
+  const partyOrder = [
+    'National',
+    'ACT',
+    'NewConservative',
+    'UnitedFuture',
+    'UnitedNZ',
+    'VisionNZ',
+    'Alliance',
+    'Advance',
+    'Heartland',
+    'OneParty',
+    'Outdoors',
+    'SocialCredit',
+    'SustainableNZ',
+    'TEAParty',
+    'Māori',
+    'Mana',
+    'TOP',
+    'JAProgressive',
+    'Legalise',
+    'Greens',
+    'NZFirst',
+    'Labour']
   let seatsArray = []
   for (let party in seats) {
     seatsArray.push(seats[party])
