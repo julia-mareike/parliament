@@ -17,10 +17,10 @@ export const Results = ({ year }) => {
 
     array.map(party => (
       <Grid container direction="row" spacing={2} key={party.name}>
-        <Grid item xs={4}>
-          {party.name}
+        <Grid item xs={5}>
+          <Typography variant="body1">{party.name}</Typography>
         </Grid>
-        <Grid container item xs={8}>
+        <Grid container item xs={7}>
           <Grid item xs={8}>
             <Typography variant="body1">{party.votes}</Typography>
           </Grid>
@@ -29,7 +29,6 @@ export const Results = ({ year }) => {
           </Grid>
         </Grid>
       </Grid>
-    )
-    )
+    ))
   )
 }
