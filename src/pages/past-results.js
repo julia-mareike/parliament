@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import { Parliament } from '../components/parliament'
-import { Inputs } from '../components/inputs'
+import { Results } from '../components/results'
 import { getCoordinates, getSeatAllocations } from '../utils'
 import { years } from '../utils/data'
 
@@ -25,7 +25,7 @@ const PastResults = () => {
           <Parliament coordinates={coordinates} seats={seats} year={activeYear} />
         </Grid>
         <Grid item xs={12} sm={6}>
-          <Inputs year={activeYear} setSeats={setSeats} />
+          <Results year={activeYear} setSeats={setSeats} />
         </Grid>
         <Grid container item justify="space-between" xs={10}>
           {years.map(year => (
