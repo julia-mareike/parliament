@@ -29,11 +29,11 @@ const Layout = ({ children }) => {
 
   return (
     <>
+      <Header siteTitle={data.site.siteMetadata.title} />
 
       <Grid container direction="row" justify="space-between" className={layout}>
 
         <Grid item xs={12}>
-          <Header siteTitle={data.site.siteMetadata.title} />
         </Grid>
         <Grid item xs={12}>
           <main>{children}</main>

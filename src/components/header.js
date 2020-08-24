@@ -9,14 +9,14 @@ import useStyles from '../../plugins/custom-mui-theme/theme/custom'
 import Beehive from '../svg/beehive.svg'
 
 const Header = ({ siteTitle }) => {
-  const { headerWrap } = useStyles()
+  const { header, headerWrap } = useStyles()
   const [beehiveOpen, setBeehiveState] = useState(false)
   const toggleBeehiveNav = state => {
     setBeehiveState(!state)
   }
   return (
-    <header className={headerWrap}>
-      <Grid container direction="row" alignItems="baseline">
+    <header className={header}>
+      <Grid container direction="row" alignItems="baseline" className={headerWrap}>
         <Grid container item spacing={2} direction="row" alignItems="baseline" justify="flex-start" xs={10} sm={4} >
 
           <Grid item>
@@ -54,7 +54,6 @@ const Header = ({ siteTitle }) => {
                 className='nav'
                 activeClassName='activeItem'
               >
-
                 past results
               </Link>
             </Typography>
