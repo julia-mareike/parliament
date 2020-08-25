@@ -2,7 +2,7 @@ import { createMuiTheme } from '@material-ui/core/styles'
 import typography from './typography'
 
 const palette = {
-  primary: { main: '#f50057' },
+  primary: { main: '#DAA520' },
   secondary: { main: '#D81B60' }
 }
 
