@@ -4,7 +4,9 @@ import { sum } from 'lodash'
 import { activeParties } from '../utils/data'
 import { getSeatAllocations } from '../utils/'
 
-export const Inputs = ({  year, setSeats }) => {
+import { Input, TableContainer, Table, TableHead, TableBody, TableRow, TableCell, Typography, Button } from '@material-ui/core'
+
+export const Inputs = ({ year, setSeats }) => {
   const [currentVotes, setVotes] = useState({})
   const [currentElectorates, setElectorates] = useState({})
   const [totalVotes, setTotalVotes] = useState(0)
@@ -29,36 +31,52 @@ export const Inputs = ({  year, setSeats }) => {
   }
   return (
     <>
-    {activeParties.map(party => (
-      <label
-        key={party}
-      >
-        {party}
-        <input
-          type={'number'}
-          name={party}
-          value={currentVotes[party] || ''}
-          onChange={event => handleVotesChange(event)}
-        />
-        <input
-          type={'number'}
-          name={party}
-          value={currentElectorates[party] || ''}
-          onChange={event => handleElectoratesChange(event)}
-          style={{ width: '50px' }}
-        />
-      </label>
-    ))}
-    <p>Percentage: {totalVotes}</p>
-    <button
+    <TableContainer style={{ maxHeight: '80vh' }}>
+      <Table stickyHeader size="small">
+        <TableHead>
+          <TableRow>
+            <TableCell>Party</TableCell>
+            <TableCell>Vote %</TableCell>
+            <TableCell>Electorates</TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {activeParties.map(party => (
+            <TableRow key={party}>
+              <TableCell>{party}</TableCell>
+              <TableCell>
+                <Input
+                  type={'number'}
+                  name={party}
+                  label={party}
+                  value={currentVotes[party] || ''}
+                  onChange={event => handleVotesChange(event)}
+                />
+              </TableCell>
+              <TableCell>
+                <Input
+                  type={'number'}
+                  name={party}
+                  label={party}
+                  value={currentElectorates[party] || ''}
+                  onChange={event => handleElectoratesChange(event)}
+                />
+              </TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </TableContainer>
+    <Typography>Percentage: {totalVotes}</Typography>
+    <Button
       disabled={totalVotes !== 100}
       onClick={
         () => setSeats(
-          getSeatAllocations(year, {votes: currentVotes, electorates: currentElectorates})
+          getSeatAllocations(year, { votes: currentVotes, electorates: currentElectorates })
         )
-      }>
+      } fullWidth>
       Calculate!
-    </button>
+    </Button>
     </>
   )
 }

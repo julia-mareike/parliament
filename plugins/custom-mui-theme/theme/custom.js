@@ -1,4 +1,5 @@
 import { makeStyles } from '@material-ui/core/styles'
+// import classnames from 'classnames'
 
 const useStyles = makeStyles((theme) => ({
   primary: {
@@ -7,31 +8,70 @@ const useStyles = makeStyles((theme) => ({
   layout: {
     margin: `0 auto`,
     maxWidth: '70vw',
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       maxWidth: '90vw'
     },
     [theme.breakpoints.down('xs')]: {
       maxWidth: '100vw'
     },
     minHeight: '100vh',
-    padding: `0 1.0875rem 0 1.0875rem`
+    padding: `6rem 1.0875rem 0 1.0875rem`
   },
   header: {
-    padding: '0.5rem 1.5rem 0.8rem',
-    maxWidth: '960px',
-    margin: '0 auto',
-    alignItems: 'center',
-    justifyContent: 'flex-end'
+    background: `#000000`,
+    position: 'fixed',
+    top: '0',
+    zIndex: '10',
+    width: '100vw',
+    height: '6rem'
   },
   headerWrap: {
     margin: `0 auto`,
-    padding: `1rem 1rem 0 1rem`,
+    padding: `1rem 1rem`,
     maxWidth: '70vw',
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       maxWidth: '90vw'
     },
     [theme.breakpoints.down('xs')]: {
       maxWidth: '100vw'
+    }
+  },
+  nav: {
+    color: 'white',
+    textDecoration: 'none',
+    '&:hover': {
+      color: 'grey'
+    }
+  },
+  beehiveNav: {
+    '&:hover': {
+      cursor: 'pointer'
+    },
+    '&active': {
+      cursor: 'pointer'
+    },
+    [theme.breakpoints.up('md')]: {
+      display: 'none'
+    }
+  },
+  parliament: {
+    maxHeight: '60vh',
+    maxWidth: '45vw',
+    [theme.breakpoints.down('lg')]: {
+      maxHeight: '80vh',
+      maxWidth: '60vw'
+    }
+  },
+  hideMob: {
+    [theme.breakpoints.down('sm')]: {
+      display: 'none',
+      lineHeight: '0'
+    }
+  },
+  hideDesktop: {
+    [theme.breakpoints.up('md')]: {
+      display: 'none',
+      lineHeight: '0'
     }
   },
   footer: {
@@ -51,10 +91,6 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('xs')]: {
       maxWidth: '100vw'
     }
-  },
-  headerContainer: {
-    height: '1rem',
-    borderBottom: 'solid #f50057 1px'
   },
   fontOverride: {
     fontFamily: 'Roboto Mono'
