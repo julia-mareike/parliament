@@ -9,6 +9,8 @@ import { years } from '../utils/data'
 
 import { Grid, Button } from '@material-ui/core'
 
+import useStyles from '../../plugins/custom-mui-theme/theme/custom'
+
 import './index.css'
 
 const PastResults = () => {
@@ -16,32 +18,44 @@ const PastResults = () => {
   const [activeYear, setActiveYear] = useState(years[0])
   const [seats, setSeats] = useState(getSeatAllocations(activeYear))
 
+  const { hideMob, hideDesktop, parliament } = useStyles()
+
+  const Buttons = ({ years }) => {
+    return (
+      years.map(year => (
+        <Button
+          name={year}
+          key={year}
+          onClick={() => {
+            setSeats(getSeatAllocations(year))
+            setActiveYear(year)
+          }}
+        >
+          {year}
+        </Button>
+      )))
+  }
+
   return (
     <Layout>
       <SEO title="Parliament" />
-      <Grid container spacing={4} direction='row' justify="center" style={{ margin: '0 auto' }}>
+      <Grid container spacing={4} direction='row' justify="center" alignItems="center" >
 
-        <Grid item xs={12} sm={6}>
-          <Parliament coordinates={coordinates} seats={seats} year={activeYear} />
+        <Grid item xs={11} md={6} className={parliament}>
+          <Parliament coordinates={coordinates} seats={seats} year={activeYear}/>
         </Grid>
-        <Grid item xs={12} sm={6}>
-          <Results year={activeYear} setSeats={setSeats} />
-        </Grid>
-        <Grid container item justify="space-between" xs={10}>
-          {years.map(year => (
-            <Button
-              name={year}
-              key={year}
-              onClick={() => {
-                setSeats(getSeatAllocations(year))
-                setActiveYear(year)
-              }}
-            >
-              {year}
-            </Button>
-          ))}
+        <Grid container item spacing={4} xs={11} md={6} justify="center">
+          <Grid item xs={11} className={hideDesktop}>
+            <Buttons years={years}/>
+          </Grid>
+          <Grid item xs={11}>
+            <Results year={activeYear} setSeats={setSeats} />
+          </Grid>
         </Grid>
 
+      </Grid>
+      <Grid container spacing={4} direction='row' justify="space-evenly" alignItems="center" className={hideMob}>
+        <Buttons years={years}/>
       </Grid>
     </Layout>
   )

@@ -9,7 +9,7 @@ import useStyles from '../../plugins/custom-mui-theme/theme/custom'
 import Beehive from '../svg/beehive.svg'
 
 const Header = ({ siteTitle }) => {
-  const { header, headerWrap } = useStyles()
+  const { header, headerWrap, nav, beehiveNav } = useStyles()
   const [beehiveOpen, setBeehiveState] = useState(false)
   const toggleBeehiveNav = state => {
     setBeehiveState(!state)
@@ -17,29 +17,27 @@ const Header = ({ siteTitle }) => {
   return (
     <header className={header}>
       <Grid container direction="row" alignItems="baseline" className={headerWrap}>
-        <Grid container item spacing={2} direction="row" alignItems="baseline" justify="flex-start" xs={10} sm={4} >
+        <Grid container item spacing={2} direction="row" alignItems="baseline" justify="flex-start" xs={10} md={4} >
 
-          <Grid item>
-            <Typography variant="h2">
-              <Link
-                to="/"
-                className='nav'
-              >
-                {siteTitle}
-              </Link>
-            </Typography>
-          </Grid>
+          <Typography variant="h2">
+            <Link
+              to="/"
+              className={nav}
+            >
+              {siteTitle}
+            </Link>
+          </Typography>
 
         </Grid>
-        <Grid container item direction="row" justify="flex-start" alignItems="baseline" className={classnames('subMenu', {
+        <Grid container item direction="row" justify="flex-end" alignContent="flex-end" alignItems="baseline" className={classnames('subMenu', {
           beehiveOpen
-        })} xs={2} sm={8}>
+        })} xs={2} md={8}>
 
-          <Grid item sm={3}>
-            <Typography variant="h3" className={classnames('sub', { 'item': !beehiveOpen })}>
+          <Grid item md={3}>
+            <Typography variant="h3" align='right' className={!beehiveOpen}>
               <Link
                 to="/calculator"
-                className='nav'
+                className={nav}
                 activeClassName='activeItem'
               >
                 calculator
@@ -47,11 +45,11 @@ const Header = ({ siteTitle }) => {
             </Typography>
 
           </Grid>
-          <Grid item sm={3}>
-            <Typography variant="h3" className={classnames('sub', { 'item': !beehiveOpen })}>
+          <Grid item md={3}>
+            <Typography variant="h3" align='right' className={!beehiveOpen}>
               <Link
                 to="/past-results"
-                className='nav'
+                className={nav}
                 activeClassName='activeItem'
               >
                 past results
@@ -59,11 +57,11 @@ const Header = ({ siteTitle }) => {
             </Typography>
 
           </Grid>
-          <Grid item sm={2}>
-            <Typography variant="h3" className={classnames('sub', { 'item': !beehiveOpen })}>
+          <Grid item md={2}>
+            <Typography variant="h3" align='right' className={!beehiveOpen}>
               <Link
                 to="/about"
-                className='nav'
+                className={nav}
                 activeClassName='activeItem'
               >
               about
@@ -72,7 +70,7 @@ const Header = ({ siteTitle }) => {
           </Grid>
 
         </Grid>
-        <Grid item sm={2} className='beehiveNav'>
+        <Grid item md={2} className={beehiveNav}>
           <Beehive role='button' onClick={() => toggleBeehiveNav(beehiveOpen)}/>
         </Grid>
       </Grid>

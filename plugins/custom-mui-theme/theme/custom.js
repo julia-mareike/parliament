@@ -1,4 +1,5 @@
 import { makeStyles } from '@material-ui/core/styles'
+// import classnames from 'classnames'
 
 const useStyles = makeStyles((theme) => ({
   primary: {
@@ -7,7 +8,7 @@ const useStyles = makeStyles((theme) => ({
   layout: {
     margin: `0 auto`,
     maxWidth: '70vw',
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       maxWidth: '90vw'
     },
     [theme.breakpoints.down('xs')]: {
@@ -26,13 +27,46 @@ const useStyles = makeStyles((theme) => ({
   },
   headerWrap: {
     margin: `0 auto`,
-    padding: `0 1rem`,
+    padding: `1rem 1rem`,
     maxWidth: '70vw',
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('md')]: {
       maxWidth: '90vw'
     },
     [theme.breakpoints.down('xs')]: {
       maxWidth: '100vw'
+    }
+  },
+  nav: {
+    color: 'white',
+    textDecoration: 'none',
+    '&:hover': {
+      color: 'grey'
+    }
+  },
+  beehiveNav: {
+    '&:hover': {
+      cursor: 'pointer'
+    },
+    '&active': {
+      cursor: 'pointer'
+    },
+    [theme.breakpoints.up('md')]: {
+      display: 'none'
+    }
+  },
+  parliament: {
+    maxHeight: '80vh'
+  },
+  hideMob: {
+    [theme.breakpoints.down('sm')]: {
+      display: 'none',
+      lineHeight: '0'
+    }
+  },
+  hideDesktop: {
+    [theme.breakpoints.up('md')]: {
+      display: 'none',
+      lineHeight: '0'
     }
   },
   footer: {

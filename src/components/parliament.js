@@ -44,24 +44,24 @@ export const Parliament = ({ coordinates, seats, year }) => {
   }
   return (
     <svg viewBox={`0 0 360 ${viewHeight}`}>
-    <RoughProvider>
-      {seatCoordinates.map((seat, i) => (
-        <Circle
-          x={seat.x}
-          y={seat.y}
-          diameter={seat.diameter}
-          options={seat.options}
-          key={i}
-        />
-      ))}
-      <PartyLegend seats={seats} />
-      {(year !== '2020') && <text
-        x={150}
-        y={(seats.length * 22) + 220}
-      >
-        {year}
-      </text>}
-    </RoughProvider>
-  </svg>
+      <RoughProvider>
+        {seatCoordinates.map((seat, i) => (
+          <Circle
+            x={seat.x}
+            y={seat.y}
+            diameter={seat.diameter}
+            options={seat.options}
+            key={i}
+          />
+        ))}
+        <PartyLegend seats={seats} />
+        {(year !== '2020') && <text
+          x={150}
+          y={(seats.length * 22) + 220}
+        >
+          {year}
+        </text>}
+      </RoughProvider>
+    </svg>
   )
 }
