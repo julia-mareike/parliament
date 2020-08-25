@@ -55,7 +55,12 @@ const useStyles = makeStyles((theme) => ({
     }
   },
   parliament: {
-    maxHeight: '80vh'
+    maxHeight: '60vh',
+    maxWidth: '45vw',
+    [theme.breakpoints.down('lg')]: {
+      maxHeight: '80vh',
+      maxWidth: '60vw'
+    }
   },
   hideMob: {
     [theme.breakpoints.down('sm')]: {
