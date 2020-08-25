@@ -4,7 +4,7 @@ import { sum } from 'lodash'
 import { activeParties } from '../utils/data'
 import { getSeatAllocations } from '../utils/'
 
-import { Input, TableContainer, Table, TableHead, TableBody, TableRow, TableCell } from '@material-ui/core'
+import { Input, TableContainer, Table, TableHead, TableBody, TableRow, TableCell, Typography, Button } from '@material-ui/core'
 
 export const Inputs = ({ year, setSeats }) => {
   const [currentVotes, setVotes] = useState({})
@@ -31,8 +31,8 @@ export const Inputs = ({ year, setSeats }) => {
   }
   return (
     <>
-    <TableContainer>
-      <Table size="small">
+    <TableContainer style={{ maxHeight: '80vh' }}>
+      <Table stickyHeader size="small">
         <TableHead>
           <TableRow>
             <TableCell>Party</TableCell>
@@ -67,16 +67,16 @@ export const Inputs = ({ year, setSeats }) => {
         </TableBody>
       </Table>
     </TableContainer>
-    <p>Percentage: {totalVotes}</p>
-    <button
+    <Typography>Percentage: {totalVotes}</Typography>
+    <Button
       disabled={totalVotes !== 100}
       onClick={
         () => setSeats(
           getSeatAllocations(year, { votes: currentVotes, electorates: currentElectorates })
         )
-      }>
+      } fullWidth>
       Calculate!
-    </button>
+    </Button>
     </>
   )
 }
