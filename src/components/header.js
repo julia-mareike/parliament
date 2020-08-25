@@ -8,7 +8,7 @@ import useStyles from '../../plugins/custom-mui-theme/theme/custom'
 import Beehive from '../svg/beehive.svg'
 
 const Header = ({ siteTitle }) => {
-  const { header, headerWrap, nav, beehiveNav } = useStyles()
+  const { header, headerWrap, navItem, mainNav, beehiveNav, hideMob } = useStyles()
   const [beehiveOpen, setBeehiveState] = useState(false)
   const [anchorEl, setAnchorEl] = useState(null)
   const toggleBeehiveNav = (state, event) => {
@@ -21,33 +21,33 @@ const Header = ({ siteTitle }) => {
   return (
     <header className={header}>
       <Grid container direction="row" alignItems="baseline" className={headerWrap}>
-        <Grid container item spacing={2} direction="row" alignItems="baseline" justify="flex-start" xs={10} md={4} >
-          <Typography variant="h2">
+        <Grid item direction="row" alignItems="baseline" justify="flex-start" xs={10} md={4} className={mainNav}>
+          <Typography variant="h3">
             <Link
               to="/"
-              className={nav}
+              className={navItem}
             >
               {siteTitle}
             </Link>
           </Typography>
         </Grid>
-        <Grid container item direction="row" justify="flex-end" alignContent="flex-end" alignItems="baseline" className={'subMenu'} xs={2} md={8}>
-          <Grid item md={3}>
-            <Typography variant='h3' align='right'>
+        <Grid container item direction="row" justify="space-evenly" alignContent="flex-end" alignItems="baseline" className={hideMob} xs={2} md={8}>
+          <Grid item md={4}>
+            <Typography variant='h6' align='right'>
               <Link
                 to='/calculator'
-                className={nav}
+                className={navItem}
                 activeClassName='activeItem'
               >
                 calculator
               </Link>
             </Typography>
           </Grid>
-          <Grid item md={3}>
-            <Typography variant='h3' align='right'>
+          <Grid item md={4}>
+            <Typography variant='h6' align='right'>
               <Link
-                to='/past-results'
-                className={nav}
+                href={'/past-results'}
+                className={navItem}
                 activeClassName='activeItem'
               >
                 past results
@@ -55,10 +55,10 @@ const Header = ({ siteTitle }) => {
             </Typography>
           </Grid>
           <Grid item md={2}>
-            <Typography variant='h3' align='right'>
+            <Typography variant='h6' align='right'>
               <Link
                 to='/about'
-                className={nav}
+                className={navItem}
                 activeClassName='activeItem'
               >
               about
@@ -66,7 +66,7 @@ const Header = ({ siteTitle }) => {
             </Typography>
           </Grid>
         </Grid>
-        <Grid item md={2} className={beehiveNav}>
+        <Grid item xs={2} className={beehiveNav}>
           <Beehive role='button' onClick={event => toggleBeehiveNav(beehiveOpen, event)}/>
         </Grid>
       </Grid>
@@ -89,7 +89,7 @@ const Header = ({ siteTitle }) => {
           <Typography variant='h6'>
             <Link
               to='/calculator'
-              className={nav}
+              className={navItem}
               activeClassName='activeItem'
             >
               calculator
@@ -100,7 +100,7 @@ const Header = ({ siteTitle }) => {
           <Typography variant='h6'>
             <Link
               to='/past-results'
-              className={nav}
+              className={navItem}
               activeClassName='activeItem'
             >
               past results
@@ -111,7 +111,7 @@ const Header = ({ siteTitle }) => {
           <Typography variant='h6'>
             <Link
               to='/about'
-              className={nav}
+              className={navItem}
               activeClassName='activeItem'
             >
               about

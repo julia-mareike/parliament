@@ -22,25 +22,32 @@ const useStyles = makeStyles((theme) => ({
     top: '0',
     zIndex: '10',
     width: '100vw',
-    height: '6rem'
+    height: '5.2rem',
+    [theme.breakpoints.down('sm')]: {
+      height: '4rem'
+    },
   },
   headerWrap: {
     margin: `0 auto`,
     padding: `1rem 1rem`,
     maxWidth: '70vw',
     [theme.breakpoints.down('md')]: {
-      maxWidth: '90vw'
+      maxWidth: '90vw',
+      justifyContent: 'flex-end'
+    },
+    [theme.breakpoints.down('sm')]: {
+      padding: 0
     },
     [theme.breakpoints.down('xs')]: {
-      maxWidth: '100vw'
+      maxWidth: '100vw',
     }
   },
-  nav: {
+  navItem: {
     color: 'white',
     textDecoration: 'none',
     '&:hover': {
       color: 'grey'
-    }
+    },
   },
   beehiveNav: {
     '&:hover': {
