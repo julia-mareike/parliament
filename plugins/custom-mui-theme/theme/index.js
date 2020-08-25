@@ -8,10 +8,21 @@ const palette = {
 
 const overrides = {
   MuiButton: {
-    // Name of the rule
     text: {
-      // Some CSS
       fontFamily: "'Roboto Mono', monospace, sans-serif"
+    }
+  },
+  MuiMenu: {
+    paper: {
+      boxShadow: 'none',
+      borderRadius: 0,
+      color: 'white',
+      backgroundColor: 'black',
+    }
+  },
+  MuiMenuItem: {
+    root: {
+      justifyContent: 'flex-end'
     }
   }
 }
