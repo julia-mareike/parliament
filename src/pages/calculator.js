@@ -24,8 +24,8 @@ const IndexPage = () => {
         <Grid item xs={11} md={6} className={parliament} >
           <Parliament coordinates={coordinates} seats={seats} year={'2020'}/>
         </Grid>
-        <Grid container item spacing={4} xs={11} md={6} justify="center">
-          <Grid item xs={11}>
+        <Grid container item spacing={4} xs={12} md={6} justify="center">
+          <Grid item xs={12}>
             <Inputs year={'2020'} setSeats={setSeats} />
           </Grid>
         </Grid>
