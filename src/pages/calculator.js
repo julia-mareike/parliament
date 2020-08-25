@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Grid } from '@material-ui/core'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
@@ -6,23 +7,30 @@ import { Parliament } from '../components/parliament'
 import { Inputs } from '../components/inputs'
 import { getCoordinates, getSeatAllocations } from '../utils'
 
+import useStyles from '../../plugins/custom-mui-theme/theme/custom'
+
 import './index.css'
 
 const IndexPage = () => {
   const coordinates = getCoordinates()
   const [seats, setSeats] = useState(getSeatAllocations('2020'))
+  const { parliament } = useStyles()
 
   return (
     <Layout>
       <SEO title="Parliament" />
-      <div className='mainWrapper'>
-        <div className='wrapper parliament'>
-          <Parliament coordinates={coordinates} seats={seats} year={'2020'} />
-        </div>
-        <div className='wrapper'>
-          <Inputs year={'2020'} setSeats={setSeats} />
-        </div>
-      </div>
+      <Grid container spacing={4} direction='row' justify="center" alignItems="center" >
+
+        <Grid item xs={11} md={6} className={parliament} >
+          <Parliament coordinates={coordinates} seats={seats} year={'2020'}/>
+        </Grid>
+        <Grid container item spacing={4} xs={11} md={6} justify="center">
+          <Grid item xs={11}>
+            <Inputs year={'2020'} setSeats={setSeats} />
+          </Grid>
+        </Grid>
+
+      </Grid>
     </Layout>
   )
 }
