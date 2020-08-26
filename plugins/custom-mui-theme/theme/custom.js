@@ -45,12 +45,15 @@ const useStyles = makeStyles((theme) => ({
   navItem: {
     color: 'white',
     textDecoration: 'none',
+    wordWrap: 'initial',
     '&:hover': {
       color: 'grey'
     },
   },
   beehiveNav: {
-    cursor: 'pointer',
+    '&:hover': {
+      cursor: 'pointer'
+    },
     '&:hover $svg $g': {
       fill: 'goldenrod'
     },
