@@ -64,8 +64,8 @@ const Header = ({ siteTitle }) => {
             </Typography>
           </Grid>
         </Grid>
-        <Grid item xs={2} className={beehiveNav} role='menu'>
-          <Beehive onClick={event => openBeehiveNav(event)}/>
+        <Grid item xs={2} className={beehiveNav}>
+          <Beehive role='menu' onClick={event => openBeehiveNav(event)}/>
         </Grid>
       </Grid>
       <Menu
