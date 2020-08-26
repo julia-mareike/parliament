@@ -23,38 +23,38 @@ const PastResults = () => {
   const Buttons = ({ years }) => {
     return (
       years.map(year => (
-        <Button
-          name={year}
-          key={year}
-          onClick={() => {
-            setSeats(getSeatAllocations(year))
-            setActiveYear(year)
-          }}
-        >
-          {year}
-        </Button>
+        <Grid item>
+          <Button
+            name={year}
+            key={year}
+            onClick={() => {
+              setSeats(getSeatAllocations(year))
+              setActiveYear(year)
+            }}
+          >
+            {year}
+          </Button>
+        </Grid>
       )))
   }
 
   return (
     <Layout>
-      <SEO title="Parliament" />
-      <Grid container spacing={1} direction='row' justify="center" alignItems="center" >
-
+      <SEO title='Parliament' />
+      <Grid container spacing={2} direction='row' justify='center' alignItems='center' >
         <Grid item xs={12} md={6} className={parliament}>
           <Parliament coordinates={coordinates} seats={seats} year={activeYear}/>
         </Grid>
-        <Grid container item spacing={4} xs={11} md={6} justify="center">
-          <Grid item xs={12} className={hideDesktop}>
+        <Grid container item spacing={4} xs={12} md={6} justify='center'>
+          <Grid container item xs={12} className={hideDesktop} justify='center'>
             <Buttons years={years}/>
           </Grid>
-          <Grid item xs={12}>
+          <Grid item xs={12} sm={10}>
             <Results year={activeYear} setSeats={setSeats} />
           </Grid>
         </Grid>
-
       </Grid>
-      <Grid container spacing={4} direction='row' justify="space-evenly" alignItems="center" className={hideMob}>
+      <Grid container spacing={4} direction='row' justify='space-evenly' alignItems='center' className={hideMob}>
         <Buttons years={years}/>
       </Grid>
     </Layout>
