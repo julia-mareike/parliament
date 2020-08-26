@@ -51,6 +51,8 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   beehiveNav: {
+    textAlign: 'center',
+    marginTop: '5px',
     '&:hover': {
       cursor: 'pointer'
     },

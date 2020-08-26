@@ -22,7 +22,7 @@ const overrides = {
   },
   MuiMenuItem: {
     root: {
-      justifyContent: 'flex-end'
+      justifyContent: 'flex-start'
     }
   }
 }

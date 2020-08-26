@@ -19,6 +19,9 @@ const Header = ({ siteTitle }) => {
   return (
     <header className={header}>
       <Grid container direction="row" alignItems="baseline" className={headerWrap}>
+        <Grid item xs={2} className={beehiveNav}>
+          <Beehive role='menu' onClick={event => openBeehiveNav(event)}/>
+        </Grid>
         <Grid item xs={10} md={4} className={mainNav}>
           <Typography variant="h3">
             <Link
@@ -64,9 +67,6 @@ const Header = ({ siteTitle }) => {
             </Typography>
           </Grid>
         </Grid>
-        <Grid item xs={2} className={beehiveNav}>
-          <Beehive role='menu' onClick={event => openBeehiveNav(event)}/>
-        </Grid>
       </Grid>
       <Menu
         anchorEl={anchorEl}
@@ -80,10 +80,10 @@ const Header = ({ siteTitle }) => {
         }}
         transformOrigin={{
           vertical: 'top',
-          horizontal: 'center'
+          horizontal: 'left'
         }}
       >
-        <MenuItem>
+        <MenuItem onClick={closeMenu}>
           <Typography variant='h6'>
             <Link
               to='/'
@@ -94,7 +94,7 @@ const Header = ({ siteTitle }) => {
             </Link>
           </Typography>
         </MenuItem>
-        <MenuItem>
+        <MenuItem onClick={closeMenu}>
           <Typography variant='h6'>
             <Link
               to='/calculator'
@@ -105,7 +105,7 @@ const Header = ({ siteTitle }) => {
             </Link>
           </Typography>
         </MenuItem>
-        <MenuItem>
+        <MenuItem onClick={closeMenu}>
           <Typography variant='h6'>
             <Link
               to='/past-results'
@@ -116,7 +116,7 @@ const Header = ({ siteTitle }) => {
             </Link>
           </Typography>
         </MenuItem>
-        <MenuItem>
+        <MenuItem onClick={closeMenu}>
           <Typography variant='h6'>
             <Link
               to='/about'
