@@ -15,7 +15,6 @@ export const Results = ({ year }) => {
     })
   }
   return (
-
     array.map(party => (
       <Grid container direction="row" spacing={2} key={party.name}>
         <Grid item xs={5}>

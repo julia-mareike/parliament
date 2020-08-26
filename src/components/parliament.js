@@ -58,12 +58,6 @@ export const Parliament = ({ coordinates, seats, year }) => {
           />
         ))}
         <PartyLegend seats={seats} />
-        {(year !== '2020') && <text
-          x={150}
-          y={(seats.length * 22) + 220}
-        >
-          {year}
-        </text>}
       </RoughProvider>
     </svg>
   )
