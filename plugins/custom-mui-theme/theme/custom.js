@@ -65,8 +65,8 @@ const useStyles = makeStyles((theme) => ({
     maxHeight: '60vh',
     maxWidth: '45vh',
     [theme.breakpoints.down('lg')]: {
-      maxHeight: '80vh',
-      maxWidth: '60vh'
+      maxHeight: '70vh',
+      maxWidth: '52.5vh'
     }
   },
   hideMob: {
