@@ -6,6 +6,7 @@ import SEO from '../components/seo'
 import './index.css'
 
 const IndexPage = () => {
+  console.log('ᕕ( ᐛ )ᕗ')
   return (
     <Layout>
       <SEO title="Parliament" />

@@ -19,7 +19,7 @@ const Header = ({ siteTitle }) => {
   return (
     <header className={header}>
       <Grid container direction="row" alignItems="baseline" className={headerWrap}>
-        <Grid item direction="row" alignItems="baseline" justify="flex-start" xs={10} md={4} className={mainNav}>
+        <Grid item xs={10} md={4} className={mainNav}>
           <Typography variant="h3">
             <Link
               to="/"
