@@ -39,7 +39,7 @@ const PastResults = () => {
   return (
     <Layout>
       <SEO title="Parliament" />
-      <Grid container spacing={4} direction='row' justify="center" alignItems="center" >
+      <Grid container spacing={1} direction='row' justify="center" alignItems="center" >
 
         <Grid item xs={12} md={6} className={parliament}>
           <Parliament coordinates={coordinates} seats={seats} year={activeYear}/>
