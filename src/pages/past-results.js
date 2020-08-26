@@ -41,14 +41,14 @@ const PastResults = () => {
       <SEO title="Parliament" />
       <Grid container spacing={4} direction='row' justify="center" alignItems="center" >
 
-        <Grid item xs={11} md={6} className={parliament}>
+        <Grid item xs={12} md={6} className={parliament}>
           <Parliament coordinates={coordinates} seats={seats} year={activeYear}/>
         </Grid>
         <Grid container item spacing={4} xs={11} md={6} justify="center">
-          <Grid item xs={11} className={hideDesktop}>
+          <Grid item xs={12} className={hideDesktop}>
             <Buttons years={years}/>
           </Grid>
-          <Grid item xs={11}>
+          <Grid item xs={12}>
             <Results year={activeYear} setSeats={setSeats} />
           </Grid>
         </Grid>

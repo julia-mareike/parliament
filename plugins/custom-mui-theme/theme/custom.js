@@ -50,11 +50,9 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   beehiveNav: {
-    '&:hover': {
-      cursor: 'pointer'
-    },
-    '&active': {
-      cursor: 'pointer'
+    cursor: 'pointer',
+    '&:hover $svg $g': {
+      fill: 'goldenrod'
     },
     [theme.breakpoints.up('md')]: {
       display: 'none'
@@ -62,10 +60,10 @@ const useStyles = makeStyles((theme) => ({
   },
   parliament: {
     maxHeight: '60vh',
-    maxWidth: '45vw',
+    maxWidth: '45vh',
     [theme.breakpoints.down('lg')]: {
       maxHeight: '80vh',
-      maxWidth: '60vw'
+      maxWidth: '60vh'
     }
   },
   hideMob: {

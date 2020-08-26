@@ -9,10 +9,8 @@ import Beehive from '../svg/beehive.svg'
 
 const Header = ({ siteTitle }) => {
   const { header, headerWrap, navItem, mainNav, beehiveNav, hideMob } = useStyles()
-  const [beehiveOpen, setBeehiveState] = useState(false)
   const [anchorEl, setAnchorEl] = useState(null)
-  const toggleBeehiveNav = (state, event) => {
-    setBeehiveState(!state)
+  const openBeehiveNav = event => {
     setAnchorEl(event.currentTarget)
   }
   const closeMenu = () => {
@@ -46,7 +44,7 @@ const Header = ({ siteTitle }) => {
           <Grid item md={4}>
             <Typography variant='h6' align='right'>
               <Link
-                href={'/past-results'}
+                to='/past-results'
                 className={navItem}
                 activeClassName='activeItem'
               >
@@ -66,8 +64,8 @@ const Header = ({ siteTitle }) => {
             </Typography>
           </Grid>
         </Grid>
-        <Grid item xs={2} className={beehiveNav}>
-          <Beehive role='button' onClick={event => toggleBeehiveNav(beehiveOpen, event)}/>
+        <Grid item xs={2} className={beehiveNav} role='menu'>
+          <Beehive onClick={event => openBeehiveNav(event)}/>
         </Grid>
       </Grid>
       <Menu
@@ -85,7 +83,18 @@ const Header = ({ siteTitle }) => {
           horizontal: 'center'
         }}
       >
-        <MenuItem onClick={closeMenu}>
+        <MenuItem>
+          <Typography variant='h6'>
+            <Link
+              to='/'
+              className={navItem}
+              activeClassName='activeItem'
+            >
+              home
+            </Link>
+          </Typography>
+        </MenuItem>
+        <MenuItem>
           <Typography variant='h6'>
             <Link
               to='/calculator'
@@ -96,7 +105,7 @@ const Header = ({ siteTitle }) => {
             </Link>
           </Typography>
         </MenuItem>
-        <MenuItem onClick={closeMenu}>
+        <MenuItem>
           <Typography variant='h6'>
             <Link
               to='/past-results'
@@ -107,7 +116,7 @@ const Header = ({ siteTitle }) => {
             </Link>
           </Typography>
         </MenuItem>
-        <MenuItem onClick={closeMenu}>
+        <MenuItem>
           <Typography variant='h6'>
             <Link
               to='/about'
