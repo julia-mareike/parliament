@@ -3,7 +3,7 @@ import {
   Circle, Rectangle
 } from 'react-roughjs'
 
-import { styles } from '../utils'
+import { styles, formatPartyName } from '../utils'
 import useStyles from '../../plugins/custom-mui-theme/theme/custom'
 
 const PartyLegend = ({ seats }) => {
@@ -56,7 +56,7 @@ const PartyLegend = ({ seats }) => {
               y={textBase + (25 * i)}
               className={fontOverride}
             >
-              {party.allocated} {party.party}
+              {party.allocated} {formatPartyName(party.party)}
             </text>
           </React.Fragment>
         )

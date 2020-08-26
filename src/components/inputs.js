@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { sum } from 'lodash'
 
 import { activeParties } from '../utils/data'
-import { getSeatAllocations } from '../utils/'
+import { getSeatAllocations, formatPartyName } from '../utils/'
 
 import { Input, TableContainer, Table, TableHead, TableBody, TableRow, TableCell, Typography, Button } from '@material-ui/core'
 
@@ -43,7 +43,7 @@ export const Inputs = ({ year, setSeats }) => {
         <TableBody>
           {activeParties.map(party => (
             <TableRow key={party}>
-              <TableCell>{party}</TableCell>
+              <TableCell>{formatPartyName(party)}</TableCell>
               <TableCell>
                 <Input
                   type={'number'}
