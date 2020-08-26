@@ -72,6 +72,10 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('lg')]: {
       maxHeight: '70vh',
       maxWidth: '52.5vh'
+    },
+    [theme.breakpoints.down('sm')]: {
+      maxHeight: '60vh',
+      maxWidth: '45vh'
     }
   },
   hideMob: {
@@ -81,6 +85,7 @@ const useStyles = makeStyles((theme) => ({
     }
   },
   hideDesktop: {
+    padding: 0,
     [theme.breakpoints.up('md')]: {
       display: 'none',
       lineHeight: '0'
