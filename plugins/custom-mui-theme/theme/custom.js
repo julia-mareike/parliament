@@ -59,6 +59,9 @@ const useStyles = makeStyles((theme) => ({
     '&:hover $svg $g': {
       fill: 'goldenrod'
     },
+    [theme.breakpoints.up('sm')]: {
+      marginTop: '10px'
+    },
     [theme.breakpoints.up('md')]: {
       display: 'none'
     }

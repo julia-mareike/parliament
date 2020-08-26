@@ -18,7 +18,7 @@ const Header = ({ siteTitle }) => {
   }
   return (
     <header className={header}>
-      <Grid container direction="row" alignItems="baseline" className={headerWrap}>
+      <Grid container direction="row" className={headerWrap}>
         <Grid item xs={2} className={beehiveNav}>
           <Beehive role='menu' onClick={event => openBeehiveNav(event)}/>
         </Grid>
