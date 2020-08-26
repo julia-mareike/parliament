@@ -32,10 +32,10 @@ const PartyLegend = ({ seats }) => {
         {120 + overhang} seats
       </text>
       <Rectangle
-        x={100}
+        x={90}
         y={rectangleBase}
-        width={160}
-        height={seatsArray.length * 27}
+        width={180}
+        height={seatsArray.length * 28}
         options={{ roughness: 3 }}
       />
       {seatsArray.map((party, i) => {
@@ -46,13 +46,13 @@ const PartyLegend = ({ seats }) => {
             key={party.party}
           >
             <Circle
-              x={120}
+              x={110}
               y={circleBase + (25 * i)}
               diameter={14}
               options={styles[party.party]}
             />
             <text
-              x={132}
+              x={122}
               y={textBase + (25 * i)}
               className={fontOverride}
             >

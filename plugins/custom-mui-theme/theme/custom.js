@@ -111,7 +111,7 @@ const useStyles = makeStyles((theme) => ({
   },
   fontOverride: {
     fontFamily: 'Roboto Mono',
-    fontSize: '0.8rem'
+    fontSize: '0.7rem'
   }
 }))
 
