@@ -3,6 +3,7 @@ const fillStyle = 'solid'
 const fillWeight = 1.5
 
 export const styles = {
+  empty: { fill: 'rgba(218,165,32, 1)', fillStyle: 'cross-hatch', fillWeight, roughness },
   ACT: { fill: 'rgba(253, 228, 1, 1)', fillStyle, roughness },
   Advance: { fill: 'rgba(25, 135, 209, 1)', fillStyle: 'cross-hatch', fillWeight, roughness },
   Alliance: { fill: 'rgba(51, 204, 102, 1)', fillStyle: 'cross-hatch', fillWeight, roughness },

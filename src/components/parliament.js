@@ -11,7 +11,10 @@ export const Parliament = ({ coordinates, seats, year }) => {
   let viewHeight = 480
 
   let seatCoordinates = coordinates.map((circle, coordinatesIndex) => {
-    if (!seats) return circle
+    if (!seats) {
+      circle.options = styles['empty']
+      return circle
+    }
     let totalAllocated = 0
     for (let i = 0; i < seats.length; i++) {
       totalAllocated += seats[i].allocated
