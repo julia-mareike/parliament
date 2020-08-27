@@ -14,7 +14,7 @@ import { useStyles } from '../utils'
 const PollResults = () => {
   const coordinates = getCoordinates()
   const [tabValue, setTabValue] = useState(0)
-  const [seats, setSeats] = useState(getSeatAllocations('2020'))
+  const [seats, setSeats] = useState(getSeatAllocations(null, { electorates: pollElectorates, votes: polls['newshub'] }))
 
   const { hideMob, hideDesktop, parliament } = useStyles()
 

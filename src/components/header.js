@@ -33,7 +33,7 @@ const Header = ({ siteTitle }) => {
           </Typography>
         </Grid>
         <Grid container item direction="row" justify="space-evenly" alignContent="flex-end" alignItems="baseline" className={hideMob} xs={2} md={8}>
-          <Grid item md={4}>
+          <Grid item md={3}>
             <Typography variant='h6' align='right'>
               <Link
                 to='/calculator'
@@ -44,7 +44,18 @@ const Header = ({ siteTitle }) => {
               </Link>
             </Typography>
           </Grid>
-          <Grid item md={4}>
+          <Grid item md={3}>
+            <Typography variant='h6' align='right'>
+              <Link
+                to='/polls'
+                className={navItem}
+                activeStyle={{ color: 'goldenrod' }}
+              >
+                polls
+              </Link>
+            </Typography>
+          </Grid>
+          <Grid item md={3}>
             <Typography variant='h6' align='right'>
               <Link
                 to='/past-results'
@@ -102,6 +113,17 @@ const Header = ({ siteTitle }) => {
               activeStyle={{ color: 'goldenrod' }}
             >
               calculator
+            </Link>
+          </Typography>
+        </MenuItem>
+        <MenuItem onClick={closeMenu}>
+          <Typography variant='h6'>
+            <Link
+              to='/polls'
+              className={navItem}
+              activeStyle={{ color: 'goldenrod' }}
+            >
+              polls
             </Link>
           </Typography>
         </MenuItem>
