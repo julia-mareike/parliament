@@ -22,18 +22,16 @@ module.exports = {
         fonts: {
           google: [
             {
-              family: `Fredericka the Great`
+              family: `Fredericka the Great`,
+              fontDisplay: 'block'
             },
             {
               family: `Roboto Mono`,
-              variants: [`200`, `400`]
+              variants: [`200`, `400`],
+              fontDisplay: 'block'
             }
           ]
         }
-        //formats: ['woff2', 'woff'],
-        //useMinify: true,
-        //usePreload: true,
-        //usePreconnect: false,
       }
     },
     {
