@@ -3,7 +3,6 @@ import React, { useState } from 'react'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import { Parliament } from '../components/parliament'
-// import { PollResults } from '../components/poll-results'
 import { getCoordinates, getSeatAllocations, formatName, removeWhitespace } from '../utils'
 import { pollElectorates, polls } from '../utils/polls'
 
@@ -33,8 +32,7 @@ const PollResults = () => {
         onChange={handleChange}
         indicatorColor='primary'
         textColor='primary'
-        variant='scrollable'
-        scrollButtons='on'
+        variant='fullWidth'
       >
         {pollsArray.map(poll => {
           return (
@@ -57,17 +55,9 @@ const PollResults = () => {
         <Grid item xs={12} md={6} className={parliament}>
           <Parliament coordinates={coordinates} seats={seats} />
         </Grid>
-        <Grid container item spacing={1} xs={12} md={6} justify='center'>
-          <Grid item xs={12} className={hideDesktop}>
-            <Polls />
-          </Grid>
-          <Grid item xs={12} sm={10}>
-            {/*<PollResults year={activeYear} setSeats={setSeats} />*/}
-          </Grid>
+        <Grid item xs={12}>
+          <Polls />
         </Grid>
-      </Grid>
-      <Grid container spacing={4} direction='row' justify='space-evenly' alignItems='center' className={hideMob}>
-        <Polls />
       </Grid>
     </Layout>
   )
