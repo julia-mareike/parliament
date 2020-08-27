@@ -4,7 +4,7 @@ import {
 } from 'react-roughjs'
 
 import { CalculatorInstructions } from './calculator-instructions'
-import { styles, formatPartyName, useStyles } from '../utils'
+import { styles, formatName, useStyles } from '../utils'
 
 const PartyLegend = ({ seats }) => {
   const { fontOverride } = useStyles()
@@ -64,7 +64,7 @@ const PartyLegend = ({ seats }) => {
                   y={textBase + (25 * i)}
                   className={fontOverride}
                 >
-                  {party.allocated} {formatPartyName(party.party)}
+                  {party.allocated} {formatName(party.party)}
                 </text>
               </React.Fragment>
             )

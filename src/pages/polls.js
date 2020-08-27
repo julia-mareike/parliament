@@ -4,10 +4,10 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 import { Parliament } from '../components/parliament'
 // import { PollResults } from '../components/poll-results'
-import { getCoordinates, getSeatAllocations } from '../utils'
+import { getCoordinates, getSeatAllocations, formatName, removeWhitespace } from '../utils'
 import { pollElectorates, polls } from '../utils/polls'
 
-import { Grid, Tabs, Tab, Typography } from '@material-ui/core'
+import { Grid, Tabs, Tab } from '@material-ui/core'
 
 import { useStyles } from '../utils'
 
@@ -20,7 +20,8 @@ const PollResults = () => {
 
   const handleChange = (event, newValue) => {
     const { textContent } = event.target
-    setSeats(getSeatAllocations(null, { electorates: pollElectorates, votes: polls[textContent] }))
+    const name = removeWhitespace(textContent)
+    setSeats(getSeatAllocations(null, { electorates: pollElectorates, votes: polls[name] }))
     setTabValue(newValue)
   }
 
@@ -35,15 +36,16 @@ const PollResults = () => {
         variant='scrollable'
         scrollButtons='on'
       >
-        {pollsArray.map(poll => (
-          <Tab
-            label={poll}
-            key={poll}
-            disabled={poll === 'rnz'}
-          >
-            {poll}
-          </Tab>
-        ))}
+        {pollsArray.map(poll => {
+          return (
+            <Tab
+              label={formatName(poll)}
+              name={poll}
+              key={poll}
+              disabled={poll === 'rnz'}
+            />
+          )
+        })}
       </Tabs>
     )
   }
@@ -60,9 +62,6 @@ const PollResults = () => {
             <Polls />
           </Grid>
           <Grid item xs={12} sm={10}>
-            <Typography variant={'body2'}>
-              ( Poll forecasts are based on ACT winning one electorate seat )
-            </Typography>
             {/*<PollResults year={activeYear} setSeats={setSeats} />*/}
           </Grid>
         </Grid>

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { sum } from 'lodash'
 
 import { activeParties } from '../utils/data'
-import { getSeatAllocations, formatPartyName, useStyles } from '../utils/'
+import { getSeatAllocations, formatName, useStyles } from '../utils/'
 
 import { Typography, Button, TextField, Grid } from '@material-ui/core'
 
@@ -62,7 +62,7 @@ export const Inputs = ({ year, setSeats }) => {
                   variant='outlined'
                   type='number'
                   size='small'
-                  label={`${formatPartyName(party)}`}
+                  label={`${formatName(party)}`}
                   name={party}
                   value={currentVotes[party] || ''}
                   onChange={handleVotesChange}

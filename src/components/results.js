@@ -1,7 +1,7 @@
 import React from 'react'
 import { Grid, Typography } from '@material-ui/core'
 
-import { formatPartyName } from '../utils'
+import { formatName } from '../utils'
 import { pastVotes } from '../utils/data'
 
 export const Results = ({ year }) => {
@@ -24,7 +24,7 @@ export const Results = ({ year }) => {
       return (
         <Grid container direction="row" spacing={2} key={party.name}>
           <Grid item xs={5}>
-            <Typography variant="body1">{formatPartyName(party.name)}</Typography>
+            <Typography variant="body1">{formatName(party.name)}</Typography>
           </Grid>
           <Grid container item xs={7}>
             <Grid item xs={5}>

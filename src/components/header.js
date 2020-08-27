@@ -34,7 +34,7 @@ const Header = ({ siteTitle }) => {
         </Grid>
         <Grid container item direction="row" justify="space-evenly" alignContent="flex-end" alignItems="baseline" className={hideMob} xs={2} md={8}>
           <Grid item md={3}>
-            <Typography variant='h6' align='right'>
+            <Typography variant='h6' align='center'>
               <Link
                 to='/calculator'
                 className={navItem}
@@ -45,7 +45,7 @@ const Header = ({ siteTitle }) => {
             </Typography>
           </Grid>
           <Grid item md={3}>
-            <Typography variant='h6' align='right'>
+            <Typography variant='h6' align='center'>
               <Link
                 to='/polls'
                 className={navItem}
@@ -56,7 +56,7 @@ const Header = ({ siteTitle }) => {
             </Typography>
           </Grid>
           <Grid item md={3}>
-            <Typography variant='h6' align='right'>
+            <Typography variant='h6' align='center'>
               <Link
                 to='/past-results'
                 className={navItem}
@@ -67,7 +67,7 @@ const Header = ({ siteTitle }) => {
             </Typography>
           </Grid>
           <Grid item md={2}>
-            <Typography variant='h6' align='right'>
+            <Typography variant='h6' align='center'>
               <Link
                 to='/about'
                 className={navItem}

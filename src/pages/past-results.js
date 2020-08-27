@@ -40,9 +40,7 @@ const PastResults = () => {
           <Tab
             label={year}
             key={year}
-          >
-            {year}
-          </Tab>
+           />
         ))}
       </Tabs>
       )
