@@ -38,7 +38,7 @@ export const Inputs = ({ year, setSeats }) => {
       <Grid container direction={'column'} alignItems='center'>
         <Grid container direction={'row'} align='center' alignItems='center'>
           <Grid item xs={6}>
-            <Typography variant={'button'} color={color} className={votesAllocated}>allocated: {totalVotes} %</Typography>
+            <Typography variant={'button'} color={color} className={votesAllocated}>votes: {totalVotes} %</Typography>
           </Grid>
           <Grid item xs={6}>
             <Button
