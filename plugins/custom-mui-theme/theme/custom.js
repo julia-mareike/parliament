@@ -79,7 +79,11 @@ const useStyles = makeStyles((theme) => ({
     }
   },
   calculatorInstructions: {
-    fontSize: '0.8em'
+    fontSize: '0.9rem',
+    '@media (min-width: 480px)': {
+      fontSize: '0.8rem'
+    },
+
   },
   hideMob: {
     [theme.breakpoints.down('sm')]: {
