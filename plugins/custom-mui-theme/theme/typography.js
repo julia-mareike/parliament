@@ -7,7 +7,7 @@ const typography = {
   },
   h1: {
     fontSize: '2rem',
-    padding: '40px 0'
+    padding: '2rem 0'
   }
 }
 

@@ -11,11 +11,12 @@ import { Grid, Tabs, Tab } from '@material-ui/core'
 import { useStyles } from '../utils'
 
 const PollResults = () => {
+  const pollsArray = Object.keys(polls)
+  const { parliament } = useStyles()
+
   const coordinates = getCoordinates()
   const [tabValue, setTabValue] = useState(0)
-  const [seats, setSeats] = useState(getSeatAllocations(null, { electorates: pollElectorates, votes: polls['newshub'] }))
-
-  const { hideMob, hideDesktop, parliament } = useStyles()
+  const [seats, setSeats] = useState(getSeatAllocations(null, { electorates: pollElectorates, votes: polls[pollsArray[0]] }))
 
   const handleChange = (event, newValue) => {
     const { textContent } = event.target
@@ -25,7 +26,6 @@ const PollResults = () => {
   }
 
   const Polls = () => {
-    const pollsArray = Object.keys(polls)
     return (
       <Tabs
         value={tabValue}
