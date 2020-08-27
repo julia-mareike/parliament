@@ -5,11 +5,7 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 import { Parliament } from '../components/parliament'
 import { Inputs } from '../components/inputs'
-import { getCoordinates, getSeatAllocations } from '../utils'
-
-import useStyles from '../../plugins/custom-mui-theme/theme/custom'
-
-import './index.css'
+import { getCoordinates, getSeatAllocations, useStyles } from '../utils'
 
 const IndexPage = () => {
   const coordinates = getCoordinates()

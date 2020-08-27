@@ -4,8 +4,7 @@ import {
 } from 'react-roughjs'
 
 import { CalculatorInstructions } from './calculator-instructions'
-import { styles, formatPartyName } from '../utils'
-import useStyles from '../../plugins/custom-mui-theme/theme/custom'
+import { styles, formatPartyName, useStyles } from '../utils'
 
 const PartyLegend = ({ seats }) => {
   const { fontOverride } = useStyles()

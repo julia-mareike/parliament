@@ -9,9 +9,7 @@ import { years } from '../utils/data'
 
 import { Grid, Tabs, Tab } from '@material-ui/core'
 
-import useStyles from '../../plugins/custom-mui-theme/theme/custom'
-
-import './index.css'
+import { useStyles } from '../utils'
 
 const PastResults = () => {
   const coordinates = getCoordinates()

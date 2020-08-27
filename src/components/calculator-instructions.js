@@ -1,5 +1,5 @@
 import React from 'react'
-import useStyles from '../../plugins/custom-mui-theme/theme/custom'
+import { useStyles } from '../utils'
 export const CalculatorInstructions = () => {
   const { calculatorInstructions } = useStyles()
   let xBase = 85

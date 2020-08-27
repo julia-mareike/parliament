@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 
 import { Grid, Typography, Menu, MenuItem } from '@material-ui/core'
-import useStyles from '../../plugins/custom-mui-theme/theme/custom'
+import { useStyles } from '../utils'
 
 import Beehive from '../svg/beehive.svg'
 

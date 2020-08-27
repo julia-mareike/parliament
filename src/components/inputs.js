@@ -2,9 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { sum } from 'lodash'
 
 import { activeParties } from '../utils/data'
-import { getSeatAllocations, formatPartyName } from '../utils/'
-
-import useStyles from '../../plugins/custom-mui-theme/theme/custom'
+import { getSeatAllocations, formatPartyName, useStyles } from '../utils/'
 
 import { Typography, Button, TextField, Grid } from '@material-ui/core'
 
