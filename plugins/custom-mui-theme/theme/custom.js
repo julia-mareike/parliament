@@ -83,7 +83,11 @@ const useStyles = makeStyles((theme) => ({
     '@media (min-width: 480px)': {
       fontSize: '0.8rem'
     },
-
+  },
+  votesAllocated: {
+    border: '1px solid',
+    borderRadius: '4px',
+    padding: '5px 15px'
   },
   hideMob: {
     [theme.breakpoints.down('sm')]: {

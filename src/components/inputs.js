@@ -4,6 +4,8 @@ import { sum } from 'lodash'
 import { activeParties } from '../utils/data'
 import { getSeatAllocations, formatPartyName } from '../utils/'
 
+import useStyles from '../../plugins/custom-mui-theme/theme/custom'
+
 import { Typography, Button, TextField, Grid } from '@material-ui/core'
 
 export const Inputs = ({ year, setSeats }) => {
@@ -11,6 +13,8 @@ export const Inputs = ({ year, setSeats }) => {
   const [currentElectorates, setElectorates] = useState({})
   const [totalVotes, setTotalVotes] = useState(0)
 
+  const { votesAllocated } = useStyles()
+  let color = totalVotes !== 100 ? totalVotes > 100 ? 'error' : '' : 'secondary'
   useEffect(() => {
     let total = sum(Object.values(currentVotes))
     setTotalVotes(total)
@@ -34,7 +38,7 @@ export const Inputs = ({ year, setSeats }) => {
       <Grid container direction={'column'} alignItems='center'>
         <Grid container direction={'row'} align='center' alignItems='center'>
           <Grid item xs={6}>
-            <Typography variant={'button'}>allocated: {totalVotes} %</Typography>
+            <Typography variant={'button'} color={color} className={votesAllocated}>allocated: {totalVotes} %</Typography>
           </Grid>
           <Grid item xs={6}>
             <Button
@@ -54,7 +58,7 @@ export const Inputs = ({ year, setSeats }) => {
         {activeParties.map(party => {
           return (
             <Grid container item direction={'row'} spacing={1} alignContent={'center'}>
-              <Grid item xs={6} align={'right'}>
+              <Grid item xs={6} style={{ textAlign: 'right' }}>
                 <TextField
                   margin={'dense'}
                   variant='outlined'

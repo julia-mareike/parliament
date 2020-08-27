@@ -3,7 +3,8 @@ import typography from './typography'
 
 const palette = {
   primary: { main: '#DAA520' },
-  secondary: { main: '#D81B60' }
+  error: { main: '#D81B60' },
+  secondary: { main: '#4CAF50' }
 }
 
 const overrides = {
