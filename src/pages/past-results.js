@@ -57,7 +57,7 @@ const PastResults = () => {
         <Grid item xs={12} md={6} className={parliament}>
           <Parliament coordinates={coordinates} seats={seats} year={activeYear}/>
         </Grid>
-        <Grid container item spacing={4} xs={12} md={6} justify='center'>
+        <Grid container item spacing={1} xs={12} md={6} justify='center'>
           <Grid item xs={12} className={hideDesktop}>
             <PastYears years={years}/>
           </Grid>
