@@ -14,7 +14,6 @@ const PartyLegend = ({ seats }) => {
   let textBase = 205
   let seatsArray = []
   let overhang = 0
-  console.log({ seats })
   if (seats) {
     for (let party in seats) {
       if (seats[party].overhang) {
