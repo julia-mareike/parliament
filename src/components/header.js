@@ -38,7 +38,7 @@ const Header = ({ siteTitle }) => {
               <Link
                 to='/calculator'
                 className={navItem}
-                activeClassName='activeItem'
+                activeStyle={{ color: 'goldenrod' }}
               >
                 calculator
               </Link>
@@ -49,7 +49,7 @@ const Header = ({ siteTitle }) => {
               <Link
                 to='/past-results'
                 className={navItem}
-                activeClassName='activeItem'
+                activeStyle={{ color: 'goldenrod' }}
               >
                 past results
               </Link>
@@ -60,7 +60,7 @@ const Header = ({ siteTitle }) => {
               <Link
                 to='/about'
                 className={navItem}
-                activeClassName='activeItem'
+                activeStyle={{ color: 'goldenrod' }}
               >
               about
               </Link>
@@ -88,7 +88,7 @@ const Header = ({ siteTitle }) => {
             <Link
               to='/'
               className={navItem}
-              activeClassName='activeItem'
+              activeStyle={{ color: 'goldenrod' }}
             >
               home
             </Link>
@@ -99,7 +99,7 @@ const Header = ({ siteTitle }) => {
             <Link
               to='/calculator'
               className={navItem}
-              activeClassName='activeItem'
+              activeStyle={{ color: 'goldenrod' }}
             >
               calculator
             </Link>
@@ -110,7 +110,7 @@ const Header = ({ siteTitle }) => {
             <Link
               to='/past-results'
               className={navItem}
-              activeClassName='activeItem'
+              activeStyle={{ color: 'goldenrod' }}
             >
               past results
             </Link>
@@ -121,7 +121,7 @@ const Header = ({ siteTitle }) => {
             <Link
               to='/about'
               className={navItem}
-              activeClassName='activeItem'
+              activeStyle={{ color: 'goldenrod' }}
             >
               about
             </Link>
