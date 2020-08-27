@@ -10,6 +10,7 @@ import useStyles from '../../plugins/custom-mui-theme/theme/custom'
 const PartyLegend = ({ seats }) => {
   const { fontOverride } = useStyles()
   let rectangleBase = 180
+  let minRectangleHeight = 40
   let circleBase = 200
   let textBase = 205
   let seatsArray = []
@@ -25,6 +26,8 @@ const PartyLegend = ({ seats }) => {
     }
     seatsArray.sort((a, b) => b.allocated - a.allocated)
   }
+  let calculatedRectangleHeight = seatsArray.length * 28.5
+  let rectangleHeight = minRectangleHeight > calculatedRectangleHeight ? minRectangleHeight : calculatedRectangleHeight
   return (
     <>
       {!seats && <CalculatorInstructions />}
@@ -41,7 +44,7 @@ const PartyLegend = ({ seats }) => {
             x={90}
             y={rectangleBase}
             width={180}
-            height={seatsArray.length * 28}
+            height={rectangleHeight}
             options={{ roughness: 3 }}
           />
           {seatsArray.map((party, i) => {
