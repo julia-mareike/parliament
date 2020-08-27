@@ -15,20 +15,27 @@ export const Results = ({ year }) => {
     })
   }
   return (
-    array.map(party => (
-      <Grid container direction="row" spacing={2} key={party.name}>
-        <Grid item xs={5}>
-          <Typography variant="body1">{formatPartyName(party.name)}</Typography>
-        </Grid>
-        <Grid container item xs={7}>
-          <Grid item xs={8}>
-            <Typography variant="body1">{party.votes}</Typography>
+    array.map(party => {
+      let electorates = party.electorates ?
+        party.electorates > 1 ?
+          ` ${party.electorates} electorates` :
+          ` ${party.electorates} electorate` :
+          ''
+      return (
+        <Grid container direction="row" spacing={2} key={party.name}>
+          <Grid item xs={5}>
+            <Typography variant="body1">{formatPartyName(party.name)}</Typography>
           </Grid>
-          <Grid item xs={4}>
-            <Typography variant="body1">{party.electorates}</Typography>
+          <Grid container item xs={7}>
+            <Grid item xs={5}>
+              <Typography variant="body1">{party.votes.toFixed(1)} %</Typography>
+            </Grid>
+            <Grid item xs={7}>
+              <Typography variant="caption">{electorates}</Typography>
+            </Grid>
           </Grid>
         </Grid>
-      </Grid>
-    ))
+      )
+    })
   )
 }
