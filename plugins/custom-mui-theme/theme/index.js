@@ -10,6 +10,19 @@ const overrides = {
   MuiButton: {
     text: {
       fontFamily: "'Roboto Mono', monospace, sans-serif"
+    },
+    contained: {
+      boxShadow: 'none'
+    }
+  },
+  MuiFormLabel: {
+    root: {
+      fontSize: '0.7rem'
+    }
+  },
+  PrivateNotchedOutline: {
+    legendLabelled: {
+      fontSize: '0.55rem'
     }
   },
   MuiTypography: {
