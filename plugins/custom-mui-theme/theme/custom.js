@@ -78,6 +78,9 @@ const useStyles = makeStyles((theme) => ({
       maxWidth: '45vh'
     }
   },
+  calculatorInstructions: {
+    fontSize: '0.8em'
+  },
   hideMob: {
     [theme.breakpoints.down('sm')]: {
       display: 'none',
