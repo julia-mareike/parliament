@@ -15,6 +15,11 @@ const overrides = {
   MuiTypography: {
     caption: {
       fontSize: '0.6rem'
+    },
+    body1: {
+      '@media (max-width: 480px)': {
+        fontSize: '0.9rem'
+      },
     }
   },
   MuiTab: {
