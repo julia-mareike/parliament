@@ -25,8 +25,6 @@ const Layout = ({ children }) => {
       <Header siteTitle={data.site.siteMetadata.title} />
       <Grid container direction="row" justify="space-between" className={layout}>
         <Grid item xs={12}>
-        </Grid>
-        <Grid item xs={12}>
           <main>{children}</main>
         </Grid>
         {/*<Grid item xs={12}>*/}

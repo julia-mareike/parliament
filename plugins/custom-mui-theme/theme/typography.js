@@ -4,6 +4,10 @@ const typography = {
     fontFamily: 'Fredericka the Great',
     textAlign: 'right',
     marginRight: '1rem'
+  },
+  h1: {
+    fontSize: '2rem',
+    padding: '40px 0'
   }
 }
 
