@@ -3,7 +3,7 @@ module.exports = {
   siteMetadata: {
     title: `parliament`,
     description: `it's parliament`,
-    author: `me`,
+    author: `me + you`,
   },
   plugins: [
     `gatsby-plugin-pnpm`,
