@@ -12,6 +12,11 @@ const overrides = {
       fontFamily: "'Roboto Mono', monospace, sans-serif"
     }
   },
+  MuiTypography: {
+    caption: {
+      fontSize: '0.6rem'
+    }
+  },
   MuiTab: {
     root: {
       '@media (min-width: 600px)': {

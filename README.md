@@ -25,5 +25,6 @@
  - [ ] link parties to policy.nz?
  - [ ] tidy up this darn messy code
  - [x] decrease size of parliament svg slightly to remove mobile scrolling
+ - [ ] fix janky scroll tabs
  
  ## 🐞 bye
