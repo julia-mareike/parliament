@@ -5,11 +5,7 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 import { Parliament } from '../components/parliament'
 import { Inputs } from '../components/inputs'
-import { getCoordinates, getSeatAllocations } from '../utils'
-
-import useStyles from '../../plugins/custom-mui-theme/theme/custom'
-
-import './index.css'
+import { getCoordinates, getSeatAllocations, useStyles } from '../utils'
 
 const IndexPage = () => {
   const coordinates = getCoordinates()
@@ -19,9 +15,8 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Parliament" />
-      <Grid container spacing={4} direction='row' justify="center" alignItems="center" >
-
-        <Grid item xs={11} md={6} className={parliament} >
+      <Grid container spacing={4} direction='row' justify="center" alignItems="flex-start">
+        <Grid item xs={12} md={6} className={parliament} >
           <Parliament coordinates={coordinates} seats={seats} year={'2020'}/>
         </Grid>
         <Grid container item spacing={4} xs={12} md={6} justify="center">

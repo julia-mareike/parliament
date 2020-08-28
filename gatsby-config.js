@@ -1,9 +1,9 @@
 module.exports = {
-  pathPrefix: '/parliament-party',
+  pathPrefix: '/parliament',
   siteMetadata: {
     title: `parliament`,
     description: `it's parliament`,
-    author: `me`,
+    author: `me + you`,
   },
   plugins: [
     `gatsby-plugin-pnpm`,
@@ -22,18 +22,16 @@ module.exports = {
         fonts: {
           google: [
             {
-              family: `Fredericka the Great`
+              family: `Fredericka the Great`,
+              fontDisplay: 'block'
             },
             {
               family: `Roboto Mono`,
-              variants: [`200`, `400`]
+              variants: [`200`, `400`],
+              fontDisplay: 'block'
             }
           ]
         }
-        //formats: ['woff2', 'woff'],
-        //useMinify: true,
-        //usePreload: true,
-        //usePreconnect: false,
       }
     },
     {
@@ -56,13 +54,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `parliament`,
+        short_name: `parliament`,
         start_url: `/`,
         background_color: `#000`,
         theme_color: `#000`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/svg/beehive-favicon.svg`, // This path is relative to the root of the site.
       },
     },
     'custom-mui-theme'

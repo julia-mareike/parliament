@@ -26,9 +26,6 @@
     align-self: end;
     margin: 0 1.75rem 0 0;
 }
-.activeItem {
-    color: darkgrey;
-}
 .sub {
     margin-bottom: 0.2rem;
     text-align: center;

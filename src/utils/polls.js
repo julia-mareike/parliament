@@ -36,3 +36,17 @@ export const polls = {
 
   }
 }
+
+export const pollElectorates = {
+  National: 0,
+  Labour: 0,
+  Greens: 0,
+  NZFirst: 0,
+  Māori: 0,
+  ACT: 1,
+  TOP: 0,
+  Mana: 0,
+  UnitedFuture: 0,
+  Legalise: 0,
+  Other: 0
+}

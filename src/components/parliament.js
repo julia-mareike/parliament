@@ -11,7 +11,10 @@ export const Parliament = ({ coordinates, seats, year }) => {
   let viewHeight = 480
 
   let seatCoordinates = coordinates.map((circle, coordinatesIndex) => {
-    if (!seats) return circle
+    if (!seats) {
+      circle.options = styles['empty']
+      return circle
+    }
     let totalAllocated = 0
     for (let i = 0; i < seats.length; i++) {
       totalAllocated += seats[i].allocated
@@ -55,12 +58,6 @@ export const Parliament = ({ coordinates, seats, year }) => {
           />
         ))}
         <PartyLegend seats={seats} />
-        {(year !== '2020') && <text
-          x={150}
-          y={(seats.length * 22) + 220}
-        >
-          {year}
-        </text>}
       </RoughProvider>
     </svg>
   )
