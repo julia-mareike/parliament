@@ -176,21 +176,21 @@ export const pastVotes = {
 export const years = Object.keys(pastVotes).sort().reverse()
 
 export const activeParties = [
-  'ACT',
-  'Advance',
-  'Greens',
-  'Heartland',
   'Labour',
-  'Legalise',
-  'Māori',
-  'National',
-  'NewConservative',
   'NZFirst',
-  'OneParty',
+  'Greens',
+  'National',
+  'ACT',
+  'Māori',
+  'TOP',
+  'Legalise',
+  'NewConservative',
   'Outdoors',
   'SocialCredit',
   'SustainableNZ',
-  'TEAParty',
-  'TOP',
-  'VisionNZ'
+  'VisionNZ',
+  'Advance',
+  'Heartland',
+  'OneParty',
+  'TEAParty'
 ]

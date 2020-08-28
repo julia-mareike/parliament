@@ -59,7 +59,7 @@ const IndexPage = () => {
         </Grid>
         <Grid item xs={12}>
           <Typography variant={'body2'}>
-            parties in the calculator are listed in alphabetical order
+            parties in the calculator are listed in order of: currently in government, contested last election, then roughly in order of date founded
           </Typography>
         </Grid>
         <Grid item xs={12}>
