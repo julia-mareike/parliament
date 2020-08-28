@@ -39,12 +39,12 @@ const overrides = {
   MuiTab: {
     root: {
       '@media (min-width: 600px)': {
-        minWidth: '100px'
+        minWidth: '60px'
       },
       '@media (min-width: 960px)': {
         minWidth: '120px'
       },
-      minWidth: '48px'
+      minWidth: '40px'
     },
   },
   MuiMenu: {

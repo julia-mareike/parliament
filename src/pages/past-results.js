@@ -33,8 +33,8 @@ const PastResults = () => {
         onChange={handleChange}
         indicatorColor='primary'
         textColor='primary'
-        variant='scrollable'
-        scrollButtons='on'
+        variant='fullWidth'
+        centered
       >
         {years.map(year => (
           <Tab
