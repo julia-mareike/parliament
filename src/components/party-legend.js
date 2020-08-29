@@ -8,10 +8,10 @@ import { styles, formatName, useStyles } from '../utils'
 
 const PartyLegend = ({ seats }) => {
   const { fontOverride, monospace } = useStyles()
-  let rectangleBase = 180
+  let rectangleBase = 200
   let minRectangleHeight = 40
-  let circleBase = 200
-  let textBase = 205
+  let circleBase = 220
+  let textBase = 225
   let seatsArray = []
   let overhang = 0
   if (seats) {
@@ -35,7 +35,7 @@ const PartyLegend = ({ seats }) => {
         <>
           <text
             x={132}
-            y={rectangleBase - 15}
+            y={rectangleBase - 35}
             className={monospace}
           >
             {120 + overhang} seats
