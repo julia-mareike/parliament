@@ -25,7 +25,8 @@ const PartyLegend = ({ seats }) => {
     }
     seatsArray.sort((a, b) => b.allocated - a.allocated)
   }
-  let calculatedRectangleHeight = seatsArray.length * 28.5
+  let multiplier = seatsArray.length < 7 ? 29 : 26
+  let calculatedRectangleHeight = seatsArray.length * multiplier
   let rectangleHeight = minRectangleHeight > calculatedRectangleHeight ? minRectangleHeight : calculatedRectangleHeight
   return (
     <>
@@ -44,7 +45,7 @@ const PartyLegend = ({ seats }) => {
             y={rectangleBase}
             width={180}
             height={rectangleHeight}
-            options={{ roughness: 3 }}
+            options={{ roughness: 2, fill: 'rgba(0,0,0,0.1)', fillStyle: 'solid' }}
           />
           {seatsArray.map((party, i) => {
             if (party.overhang) party.allocated = party.allocated + party.overhang
