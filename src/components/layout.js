@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { useStaticQuery, graphql } from 'gatsby'
 import { Grid } from '@material-ui/core'
 
 import Header from './header'
@@ -18,14 +17,6 @@ const Layout = ({ children }) => {
         <Grid item xs={12}>
           <main>{children}</main>
         </Grid>
-        {/*<Grid item xs={12}>*/}
-        {/*  <footer>*/}
-        {/*  © {new Date().getFullYear()}, Built with*/}
-        {/*    {` `}*/}
-        {/*    <a href="https://www.parliament.nz/en/">Parliament</a>*/}
-        {/*  </footer>*/}
-        {/*</Grid>*/}
-
       </Grid>
 
     </>
