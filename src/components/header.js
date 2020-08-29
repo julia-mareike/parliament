@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
 import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
-
 import { Grid, Typography, Menu, MenuItem } from '@material-ui/core'
-import { useStyles } from '../utils'
 
+import { useStyles, createSlug } from '../utils'
 import Beehive from '../svg/beehive.svg'
 
 const Header = ({ siteTitle }) => {
+  const navItems = ['home', 'calculator', 'polls', 'past results', 'about']
   const { header, headerWrap, navItem, mainNav, beehiveNav, hideMob } = useStyles()
   const [anchorEl, setAnchorEl] = useState(null)
   const openBeehiveNav = event => {
@@ -33,50 +33,19 @@ const Header = ({ siteTitle }) => {
           </Typography>
         </Grid>
         <Grid container item direction="row" justify="space-evenly" alignContent="flex-end" alignItems="center" className={hideMob} xs={2} md={8}>
-          <Grid item md={3}>
-            <Typography variant='h6' align='center'>
-              <Link
-                to='/calculator'
-                className={navItem}
-                activeStyle={{ color: 'goldenrod' }}
-              >
-                calculator
-              </Link>
-            </Typography>
-          </Grid>
-          <Grid item md={3}>
-            <Typography variant='h6' align='center'>
-              <Link
-                to='/polls'
-                className={navItem}
-                activeStyle={{ color: 'goldenrod' }}
-              >
-                polls
-              </Link>
-            </Typography>
-          </Grid>
-          <Grid item md={3}>
-            <Typography variant='h6' align='center'>
-              <Link
-                to='/past-results'
-                className={navItem}
-                activeStyle={{ color: 'goldenrod' }}
-              >
-                past results
-              </Link>
-            </Typography>
-          </Grid>
-          <Grid item md={2}>
-            <Typography variant='h6' align='center'>
-              <Link
-                to='/about'
-                className={navItem}
-                activeStyle={{ color: 'goldenrod' }}
-              >
-              about
-              </Link>
-            </Typography>
-          </Grid>
+            {navItems.filter(item => item !== 'home').map(item => (
+              <Grid item md={3}>
+                <Typography variant='h6' align='center'>
+                  <Link
+                    to={`/${createSlug(item)}`}
+                    className={navItem}
+                    activeStyle={{ color: 'goldenrod' }}
+                  >
+                    {item}
+                  </Link>
+                </Typography>
+              </Grid>
+              ))}
         </Grid>
       </Grid>
       <Menu
@@ -94,61 +63,19 @@ const Header = ({ siteTitle }) => {
           horizontal: 'left'
         }}
       >
-        <MenuItem onClick={closeMenu}>
-          <Typography variant='h6'>
-            <Link
-              to='/'
-              className={navItem}
-              activeStyle={{ color: 'goldenrod' }}
-            >
-              home
-            </Link>
-          </Typography>
-        </MenuItem>
-        <MenuItem onClick={closeMenu}>
-          <Typography variant='h6'>
-            <Link
-              to='/calculator'
-              className={navItem}
-              activeStyle={{ color: 'goldenrod' }}
-            >
-              calculator
-            </Link>
-          </Typography>
-        </MenuItem>
-        <MenuItem onClick={closeMenu}>
-          <Typography variant='h6'>
-            <Link
-              to='/polls'
-              className={navItem}
-              activeStyle={{ color: 'goldenrod' }}
-            >
-              polls
-            </Link>
-          </Typography>
-        </MenuItem>
-        <MenuItem onClick={closeMenu}>
-          <Typography variant='h6'>
-            <Link
-              to='/past-results'
-              className={navItem}
-              activeStyle={{ color: 'goldenrod' }}
-            >
-              past results
-            </Link>
-          </Typography>
-        </MenuItem>
-        <MenuItem onClick={closeMenu}>
-          <Typography variant='h6'>
-            <Link
-              to='/about'
-              className={navItem}
-              activeStyle={{ color: 'goldenrod' }}
-            >
-              about
-            </Link>
-          </Typography>
-        </MenuItem>
+        {navItems.map(item => (
+          <MenuItem onClick={closeMenu}>
+            <Typography variant='h6'>
+              <Link
+                to={`/${createSlug(item)}`}
+                className={navItem}
+                activeStyle={{ color: 'goldenrod' }}
+              >
+                {item}
+              </Link>
+            </Typography>
+          </MenuItem>
+        ))}
       </Menu>
     </header>
   )

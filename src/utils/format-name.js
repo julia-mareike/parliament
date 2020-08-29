@@ -3,6 +3,9 @@ export const formatName = name => {
   return name.split(regex).join(' ')
 }
 
-export const removeWhitespace = name => {
-  return name.replace(/ /g,'')
+export const removeWhitespace = name => name.replace(/ /g,'')
+
+export const createSlug = name => {
+  if (name === 'home') return ''
+  return name.toLowerCase().replace(/ /g, '-')
 }
