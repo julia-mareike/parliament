@@ -8,6 +8,7 @@ import { Results } from '../components/results'
 
 import { getCoordinates, getSeatAllocations, formatName, removeWhitespace, useStyles } from '../utils'
 import { polls } from '../utils/polls'
+
 const PollResults = () => {
   const pollsArray = Object.keys(polls)
   const { parliament, pollTab, hideDesktop, hideMob } = useStyles()

@@ -88,6 +88,7 @@ export const useStyles = makeStyles((theme) => ({
     '@media (min-width: 480px)': {
       fontSize: '0.8rem'
     },
+    fontFamily: 'Roboto Mono',
   },
   votesAllocated: {
     border: '1px solid',

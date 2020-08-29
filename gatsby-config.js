@@ -59,6 +59,6 @@ module.exports = {
       },
     },
     'custom-mui-theme',
-    `gatsby-plugin-offline`,
+    // `gatsby-plugin-offline`,
   ],
 }
