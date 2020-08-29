@@ -58,7 +58,7 @@ module.exports = {
         icon: `src/svg/beehive-favicon.svg`,
       },
     },
-    'custom-mui-theme'
+    'custom-mui-theme',
     `gatsby-plugin-offline`,
   ],
 }
