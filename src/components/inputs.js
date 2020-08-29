@@ -23,7 +23,7 @@ export const Inputs = ({ year, setSeats }) => {
     let { value } = event.target
     setVotes({
       ...currentVotes,
-      [event.target.name]: Number(value) || ''
+      [event.target.name]: Number(value)
     })
   }
   const handleElectoratesChange = event => {
@@ -31,6 +31,15 @@ export const Inputs = ({ year, setSeats }) => {
       ...currentElectorates,
       [event.target.name]: Number(event.target.value)
     })
+  }
+  const handleFocus = event => {
+    let { value } = event.target
+    if (value === '0') {
+      setVotes({
+        ...currentVotes,
+        [event.target.name]: ''
+      })
+    }
   }
   return (
     <>
@@ -74,6 +83,7 @@ export const Inputs = ({ year, setSeats }) => {
                   name={party}
                   value={currentVotes[party]}
                   onChange={handleVotesChange}
+                  onFocus={handleFocus}
                 />
               </Grid>
               <Grid item xs={6}>
