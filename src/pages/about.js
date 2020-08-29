@@ -4,7 +4,6 @@ import { Grid, Typography } from '@material-ui/core'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import { Link } from 'gatsby'
 
 const IndexPage = () => {
   return (
@@ -78,5 +77,3 @@ const IndexPage = () => {
 }
 
 export default IndexPage
-
-// <p>party colours sourced from wikipedia: <a href='https://en.wikipedia.org/wiki/List_of_political_parties_in_New_Zealand'>list of political parties in new zealand</a></p>
