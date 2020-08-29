@@ -32,7 +32,7 @@ const Header = ({ siteTitle }) => {
             </Link>
           </Typography>
         </Grid>
-        <Grid container item direction="row" justify="space-evenly" alignContent="flex-end" alignItems="baseline" className={hideMob} xs={2} md={8}>
+        <Grid container item direction="row" justify="space-evenly" alignContent="flex-end" alignItems="center" className={hideMob} xs={2} md={8}>
           <Grid item md={3}>
             <Typography variant='h6' align='center'>
               <Link
