@@ -13,7 +13,7 @@ export const Inputs = ({ year, setSeats }) => {
   const [totalVotes, setTotalVotes] = useState(0)
 
   const { votesAllocated } = useStyles()
-  let color = totalVotes !== 100 ? totalVotes > 100 ? 'error' : '' : 'secondary'
+  let color = totalVotes !== 100 ? totalVotes > 100 ? 'error' : 'textPrimary' : 'secondary'
   useEffect(() => {
     let total = sum(Object.values(currentVotes).filter(votes => typeof votes === 'number'))
     setTotalVotes(total)
@@ -56,7 +56,14 @@ export const Inputs = ({ year, setSeats }) => {
         </Grid>
         {activePartiesArray.map(party => {
           return (
-            <Grid container item direction={'row'} spacing={1} alignContent={'center'}>
+            <Grid
+              key={party}
+              container
+              item
+              direction={'row'}
+              spacing={1}
+              alignContent={'center'}
+            >
               <Grid item xs={6} style={{ textAlign: 'right' }}>
                 <TextField
                   margin={'dense'}

@@ -26,7 +26,10 @@ export const DropdownNav = ({ anchorEl, setAnchorEl, navItems }) => {
       }}
     >
       {navItems.map(item => (
-        <MenuItem onClick={closeMenu}>
+        <MenuItem
+          key={item}
+          onClick={closeMenu}
+        >
           <Typography variant='h6'>
             <Link
               to={`/${createSlug(item)}`}

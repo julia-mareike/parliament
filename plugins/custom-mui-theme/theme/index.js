@@ -4,7 +4,8 @@ import typography from './typography'
 const palette = {
   primary: { main: '#DAA520' },
   error: { main: '#D81B60' },
-  secondary: { main: '#4CAF50' }
+  secondary: { main: '#4CAF50' },
+  textPrimary: { main: '#000' }
 }
 
 const overrides = {

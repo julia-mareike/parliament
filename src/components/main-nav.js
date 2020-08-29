@@ -38,7 +38,11 @@ export const MainNav = ({ setAnchorEl, navItems }) => {
       </Grid>
       <Grid container item direction="row" justify="space-evenly" alignContent="flex-end" alignItems="center" className={hideMob} xs={2} md={8}>
         {navItems.filter(item => item !== 'home').map(item => (
-          <Grid item md={3}>
+          <Grid
+            key={item}
+            item
+            md={3}
+          >
             <Typography variant='h6' align='center'>
               <Link
                 to={`/${createSlug(item)}`}
