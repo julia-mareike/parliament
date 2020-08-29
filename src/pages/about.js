@@ -62,6 +62,11 @@ const IndexPage = () => {
           </Typography>
         </Grid>
         <Grid item xs={12}>
+          <Typography variant={'body2'}>
+            different poll forecasts seem to be based on different electorate presumptions, which we have reflected
+          </Typography>
+        </Grid>
+        <Grid item xs={12}>
           <Typography variant={'h6'}>
             built by
           </Typography>

@@ -58,7 +58,7 @@ const PastResults = () => {
             <PastYears years={years}/>
           </Grid>
           <Grid item xs={12} sm={10}>
-            <Results year={activeYear} setSeats={setSeats} />
+            <Results year={activeYear} />
           </Grid>
         </Grid>
       </Grid>

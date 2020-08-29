@@ -14,7 +14,7 @@ export const useStyles = makeStyles((theme) => ({
       maxWidth: '100vw'
     },
     minHeight: '100vh',
-    padding: `5rem 1rem 3rem 1rem`
+    padding: `6rem 1rem 3rem 1rem`
   },
   header: {
     background: `#000000`,
@@ -77,6 +77,11 @@ export const useStyles = makeStyles((theme) => ({
       maxHeight: '60vh',
       maxWidth: '45vh'
     }
+  },
+  pollTab: {
+    '@media (min-width: 960px)': {
+      minWidth: '200px'
+    },
   },
   calculatorInstructions: {
     fontSize: '0.9rem',

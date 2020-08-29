@@ -1,28 +1,28 @@
 import React, { useState } from 'react'
+import { Grid, Tabs, Tab } from '@material-ui/core'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import { Parliament } from '../components/parliament'
-import { getCoordinates, getSeatAllocations, formatName, removeWhitespace } from '../utils'
-import { pollElectorates, polls } from '../utils/polls'
+import { Results } from '../components/results'
 
-import { Grid, Tabs, Tab } from '@material-ui/core'
-
-import { useStyles } from '../utils'
-
+import { getCoordinates, getSeatAllocations, formatName, removeWhitespace, useStyles } from '../utils'
+import { polls } from '../utils/polls'
 const PollResults = () => {
   const pollsArray = Object.keys(polls)
-  const { parliament } = useStyles()
-
+  const { parliament, pollTab, hideDesktop, hideMob } = useStyles()
   const coordinates = getCoordinates()
+
   const [tabValue, setTabValue] = useState(0)
-  const [seats, setSeats] = useState(getSeatAllocations(null, { electorates: pollElectorates, votes: polls[pollsArray[0]] }))
+  const [seats, setSeats] = useState(getSeatAllocations(null, { electorates: polls[pollsArray[0]].electorates, votes: polls[pollsArray[0]].votes }))
+  const [activePoll, setActivePoll] = useState(pollsArray[0])
 
   const handleChange = (event, newValue) => {
     const { textContent } = event.target
     const name = removeWhitespace(textContent)
-    setSeats(getSeatAllocations(null, { electorates: pollElectorates, votes: polls[name] }))
+    setSeats(getSeatAllocations(null, { votes: polls[name].votes, electorates: polls[name].electorates }))
     setTabValue(newValue)
+    setActivePoll(name)
   }
 
   const Polls = () => {
@@ -41,6 +41,7 @@ const PollResults = () => {
               name={poll}
               key={poll}
               disabled={poll === 'rnz'}
+              className={pollTab}
             />
           )
         })}
@@ -55,7 +56,15 @@ const PollResults = () => {
         <Grid item xs={12} md={6} className={parliament}>
           <Parliament coordinates={coordinates} seats={seats} />
         </Grid>
-        <Grid item xs={12}>
+        <Grid container item spacing={1} xs={12} md={6} justify='center'>
+          <Grid item xs={12} className={hideDesktop}>
+            <Polls />
+          </Grid>
+          <Grid item xs={12} sm={10}>
+            <Results activePoll={activePoll} />
+          </Grid>
+        </Grid>
+        <Grid container spacing={4} direction='row' justify='space-evenly' alignItems='center' className={hideMob}>
           <Polls />
         </Grid>
       </Grid>
