@@ -7,7 +7,7 @@ import { CalculatorInstructions } from './calculator-instructions'
 import { styles, formatName, useStyles } from '../utils'
 
 const PartyLegend = ({ seats }) => {
-  const { fontOverride } = useStyles()
+  const { fontOverride, monospace } = useStyles()
   let rectangleBase = 180
   let minRectangleHeight = 40
   let circleBase = 200
@@ -35,7 +35,7 @@ const PartyLegend = ({ seats }) => {
           <text
             x={132}
             y={rectangleBase - 15}
-            className='total-seats'
+            className={monospace}
           >
             {120 + overhang} seats
           </text>

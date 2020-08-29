@@ -129,5 +129,8 @@ export const useStyles = makeStyles((theme) => ({
   fontOverride: {
     fontFamily: 'Roboto Mono',
     fontSize: '0.7rem'
+  },
+  monospace: {
+    fontFamily: 'Roboto Mono',
   }
 }))
