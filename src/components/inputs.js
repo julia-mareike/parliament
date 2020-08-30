@@ -17,7 +17,8 @@ export const Inputs = ({ year, setSeats }) => {
 
   useEffect(() => {
     let total = sum(Object.values(currentVotes).filter(votes => typeof votes === 'number'))
-    setTotalVotes(total)
+    // round total to 1 decimal point (or none)
+    setTotalVotes(+total.toFixed(1))
   }, [currentVotes])
 
   const handleVotesChange = event => {
