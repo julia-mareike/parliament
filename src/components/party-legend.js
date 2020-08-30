@@ -25,7 +25,7 @@ const PartyLegend = ({ seats }) => {
     }
     seatsArray.sort((a, b) => b.allocated - a.allocated)
   }
-  let multiplier = seatsArray.length < 7 ? 29 : 26
+  let multiplier = seatsArray.length > 6 ? seatsArray.length > 10 ? 26 : 27 : 29
   let calculatedRectangleHeight = seatsArray.length * multiplier
   let rectangleHeight = minRectangleHeight > calculatedRectangleHeight ? minRectangleHeight : calculatedRectangleHeight
   return (

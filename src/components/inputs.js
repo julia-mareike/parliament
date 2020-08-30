@@ -14,6 +14,7 @@ export const Inputs = ({ year, setSeats }) => {
 
   const { votesAllocated } = useStyles()
   let color = totalVotes !== 100 ? totalVotes > 100 ? 'error' : 'textPrimary' : 'secondary'
+
   useEffect(() => {
     let total = sum(Object.values(currentVotes).filter(votes => typeof votes === 'number'))
     setTotalVotes(total)

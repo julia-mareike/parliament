@@ -67,14 +67,14 @@ export const useStyles = makeStyles((theme) => ({
     }
   },
   parliament: {
-    maxHeight: '60vh',
+    maxHeight: '80vh',
     maxWidth: '45vh',
     [theme.breakpoints.down('lg')]: {
       maxHeight: '70vh',
       maxWidth: '52.5vh'
     },
     [theme.breakpoints.down('sm')]: {
-      maxHeight: '60vh',
+      maxHeight: '80vh',
       maxWidth: '45vh'
     }
   },
@@ -93,7 +93,7 @@ export const useStyles = makeStyles((theme) => ({
   votesAllocated: {
     border: '1px solid',
     borderRadius: '4px',
-    padding: '5px 15px'
+    padding: '5px 10px'
   },
   hideMob: {
     [theme.breakpoints.down('sm')]: {
