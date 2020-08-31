@@ -14,7 +14,7 @@ export const useStyles = makeStyles((theme) => ({
       maxWidth: '100vw'
     },
     minHeight: '100vh',
-    padding: `6rem 1.0875rem 0 1.0875rem`
+    padding: `6rem 1rem 3rem 1rem`
   },
   header: {
     background: `#000000`,
@@ -67,27 +67,33 @@ export const useStyles = makeStyles((theme) => ({
     }
   },
   parliament: {
-    maxHeight: '60vh',
+    maxHeight: '80vh',
     maxWidth: '45vh',
     [theme.breakpoints.down('lg')]: {
       maxHeight: '70vh',
       maxWidth: '52.5vh'
     },
     [theme.breakpoints.down('sm')]: {
-      maxHeight: '60vh',
+      maxHeight: '80vh',
       maxWidth: '45vh'
     }
+  },
+  pollTab: {
+    '@media (min-width: 960px)': {
+      minWidth: '200px'
+    },
   },
   calculatorInstructions: {
     fontSize: '0.9rem',
     '@media (min-width: 480px)': {
       fontSize: '0.8rem'
     },
+    fontFamily: 'Roboto Mono',
   },
   votesAllocated: {
     border: '1px solid',
     borderRadius: '4px',
-    padding: '5px 15px'
+    padding: '5px 10px'
   },
   hideMob: {
     [theme.breakpoints.down('sm')]: {
@@ -123,5 +129,8 @@ export const useStyles = makeStyles((theme) => ({
   fontOverride: {
     fontFamily: 'Roboto Mono',
     fontSize: '0.7rem'
+  },
+  monospace: {
+    fontFamily: 'Roboto Mono',
   }
 }))

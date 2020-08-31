@@ -7,7 +7,7 @@ import PartyLegend from './party-legend'
 import { styles } from '../utils'
 import { getOverhangCoordinates } from '../utils/get-coordinates'
 
-export const Parliament = ({ coordinates, seats, year }) => {
+export const Parliament = ({ coordinates, seats }) => {
   let viewHeight = 480
 
   let seatCoordinates = coordinates.map((circle, coordinatesIndex) => {
@@ -42,7 +42,7 @@ export const Parliament = ({ coordinates, seats, year }) => {
     }
 
     if (seats.length > 10) {
-      viewHeight = viewHeight + ((seats.length - 10) * 20)
+      viewHeight = viewHeight + ((seats.length - 10) * 20 + 3)
     }
   }
   return (

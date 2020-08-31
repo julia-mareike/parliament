@@ -1,21 +1,24 @@
 import React, { useState, useEffect } from 'react'
+import { Typography, Button, TextField, Grid } from '@material-ui/core'
 import { sum } from 'lodash'
 
 import { activeParties } from '../utils/data'
 import { getSeatAllocations, formatName, useStyles } from '../utils/'
 
-import { Typography, Button, TextField, Grid } from '@material-ui/core'
 
 export const Inputs = ({ year, setSeats }) => {
-  const [currentVotes, setVotes] = useState({})
+  let activePartiesArray = Object.keys(activeParties)
+  const [currentVotes, setVotes] = useState(activeParties)
   const [currentElectorates, setElectorates] = useState({})
   const [totalVotes, setTotalVotes] = useState(0)
 
   const { votesAllocated } = useStyles()
-  let color = totalVotes !== 100 ? totalVotes > 100 ? 'error' : '' : 'secondary'
+  let color = totalVotes !== 100 ? totalVotes > 100 ? 'error' : 'textPrimary' : 'secondary'
+
   useEffect(() => {
-    let total = sum(Object.values(currentVotes))
-    setTotalVotes(total)
+    let total = sum(Object.values(currentVotes).filter(votes => typeof votes === 'number'))
+    // round total to 1 decimal point (or none)
+    setTotalVotes(+total.toFixed(1))
   }, [currentVotes])
 
   const handleVotesChange = event => {
@@ -30,6 +33,15 @@ export const Inputs = ({ year, setSeats }) => {
       ...currentElectorates,
       [event.target.name]: Number(event.target.value)
     })
+  }
+  const handleFocus = event => {
+    let { value } = event.target
+    if (value === '0') {
+      setVotes({
+        ...currentVotes,
+        [event.target.name]: ''
+      })
+    }
   }
   return (
     <>
@@ -53,9 +65,16 @@ export const Inputs = ({ year, setSeats }) => {
             </Button>
           </Grid>
         </Grid>
-        {activeParties.map(party => {
+        {activePartiesArray.map(party => {
           return (
-            <Grid container item direction={'row'} spacing={1} alignContent={'center'}>
+            <Grid
+              key={party}
+              container
+              item
+              direction={'row'}
+              spacing={1}
+              alignContent={'center'}
+            >
               <Grid item xs={6} style={{ textAlign: 'right' }}>
                 <TextField
                   margin={'dense'}
@@ -64,8 +83,9 @@ export const Inputs = ({ year, setSeats }) => {
                   size='small'
                   label={`${formatName(party)}`}
                   name={party}
-                  value={currentVotes[party] || ''}
+                  value={currentVotes[party]}
                   onChange={handleVotesChange}
+                  onFocus={handleFocus}
                 />
               </Grid>
               <Grid item xs={6}>

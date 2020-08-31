@@ -3,9 +3,10 @@ import { Grid, Typography } from '@material-ui/core'
 
 import { formatName } from '../utils'
 import { pastVotes } from '../utils/data'
+import { polls } from '../utils/polls'
 
-export const Results = ({ year }) => {
-  const { votes, electorates } = pastVotes[year]
+export const Results = ({ year, activePoll }) => {
+  const { votes, electorates } = pastVotes[year] || polls[activePoll]
   let array = []
   for (let party in votes) {
     array.push({

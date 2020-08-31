@@ -87,7 +87,7 @@ export const getOverhangCoordinates = () => {
     overhangCoordinates.push({x, y, diameter})
   )
 
-  let y = 450
+  let y = 183
   let x = [180, 207, 153, 126, 234, 261, 99]
 
   x.forEach(point => (

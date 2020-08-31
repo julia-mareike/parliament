@@ -23,22 +23,17 @@ module.exports = {
           google: [
             {
               family: `Fredericka the Great`,
-              fontDisplay: 'block'
+              fontDisplay: 'block',
+              strategy: 'selfHosted'
             },
             {
               family: `Roboto Mono`,
               variants: [`200`, `400`],
-              fontDisplay: 'block'
+              fontDisplay: 'block',
+              strategy: 'selfHosted'
             }
           ]
         }
-      }
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `${__dirname}/src/images`
       }
     },
     {
@@ -60,12 +55,10 @@ module.exports = {
         background_color: `#000`,
         theme_color: `#000`,
         display: `minimal-ui`,
-        icon: `src/svg/beehive-favicon.svg`, // This path is relative to the root of the site.
+        icon: `src/svg/beehive-favicon.svg`,
       },
     },
-    'custom-mui-theme'
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
+    'custom-mui-theme',
     // `gatsby-plugin-offline`,
   ],
 }

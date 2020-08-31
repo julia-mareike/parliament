@@ -1,10 +1,8 @@
 import React from 'react'
-
 import { Grid, Typography } from '@material-ui/core'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import { Link } from 'gatsby'
 
 const IndexPage = () => {
   return (
@@ -59,7 +57,12 @@ const IndexPage = () => {
         </Grid>
         <Grid item xs={12}>
           <Typography variant={'body2'}>
-            parties in the calculator are listed in alphabetical order
+            parties in the calculator are listed in order of: currently in government, contested last election, then roughly in order of date founded
+          </Typography>
+        </Grid>
+        <Grid item xs={12}>
+          <Typography variant={'body2'}>
+            different poll forecasts seem to be based on different electorate presumptions, which we have reflected
           </Typography>
         </Grid>
         <Grid item xs={12}>
@@ -78,5 +81,3 @@ const IndexPage = () => {
 }
 
 export default IndexPage
-
-// <p>party colours sourced from wikipedia: <a href='https://en.wikipedia.org/wiki/List_of_political_parties_in_New_Zealand'>list of political parties in new zealand</a></p>

@@ -1,15 +1,12 @@
 import React, { useState } from 'react'
+import { Grid, Tabs, Tab } from '@material-ui/core'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import { Parliament } from '../components/parliament'
 import { Results } from '../components/results'
-import { getCoordinates, getSeatAllocations } from '../utils'
+import { getCoordinates, getSeatAllocations, useStyles } from '../utils'
 import { years } from '../utils/data'
-
-import { Grid, Tabs, Tab } from '@material-ui/core'
-
-import { useStyles } from '../utils'
 
 const PastResults = () => {
   const coordinates = getCoordinates()
@@ -58,7 +55,7 @@ const PastResults = () => {
             <PastYears years={years}/>
           </Grid>
           <Grid item xs={12} sm={10}>
-            <Results year={activeYear} setSeats={setSeats} />
+            <Results year={activeYear} />
           </Grid>
         </Grid>
       </Grid>

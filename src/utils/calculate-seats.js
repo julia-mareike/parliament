@@ -5,7 +5,7 @@ export const formula = (votes, idx) => {
 }
 
 export const adjustVotes = list => {
-  const subtotal = sum(values(list)).toFixed(1)
+  const subtotal = sum(values(list).map(item => Number(item))).toFixed(1)
   const adjustedVotes = {}
   for (let party in list) {
     const newVote = (100 / subtotal) * list[party]
