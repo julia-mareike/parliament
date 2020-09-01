@@ -90,7 +90,7 @@ export const useStyles = makeStyles((theme) => ({
     },
     fontFamily: 'Roboto Mono',
   },
-  votesAllocated: {
+  calculatorText: {
     border: '1px solid',
     borderRadius: '4px',
     padding: '5px 10px'
