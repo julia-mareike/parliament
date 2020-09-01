@@ -37,12 +37,13 @@ export const Inputs = ({ year, setSeats }) => {
     })
   }
   const handleElectoratesChange = event => {
+    let value = Math.floor(event.target.value)
     setElectorates({
       ...currentElectorates,
-      [event.target.name]: Math.floor(event.target.value)
+      [event.target.name]: value
     })
   }
-  const handleFocus = event => {
+  const handleVoteFocus = event => {
     let { value } = event.target
     if (value === '0') {
       setVotes({
@@ -54,7 +55,7 @@ export const Inputs = ({ year, setSeats }) => {
   return (
     <>
       <Grid container direction={'column'} alignItems='center'>
-        <Grid container direction={'row'} align='center' alignItems='center' spacing={1}>
+        <Grid container direction={'row'} align='center' alignItems='center' spacing={2}>
           <Grid item xs={6}>
             <Typography
               variant={'button'}
@@ -85,7 +86,7 @@ export const Inputs = ({ year, setSeats }) => {
                 color={'error'}
                 className={calculatorText}
               >
-                max of 71 electorates allowed
+                max of 71 electorates
               </Typography>
             </Grid>
           }
@@ -107,13 +108,10 @@ export const Inputs = ({ year, setSeats }) => {
                   type='number'
                   size='small'
                   label={`${formatName(party)}`}
-                  InputProps={{
-                    pattern: '\d*'
-                  }}
                   name={party}
                   value={currentVotes[party]}
                   onChange={handleVotesChange}
-                  onFocus={handleFocus}
+                  onFocus={handleVoteFocus}
                 />
               </Grid>
               <Grid item xs={6}>
@@ -123,11 +121,6 @@ export const Inputs = ({ year, setSeats }) => {
                   type='number'
                   size='small'
                   label={`electorates`}
-                  InputProps={{
-                    max: 71,
-                    pattern: '\d*',
-                    step: 1
-                  }}
                   name={party}
                   value={currentElectorates[party] || ''}
                   onChange={handleElectoratesChange}
