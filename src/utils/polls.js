@@ -27,13 +27,13 @@ export const polls = {
   },
   royMorgan: {
     votes: {
-      National: 26.5,
-      Labour: 53.5,
-      Greens: 8,
-      NZFirst: 1.5,
+      National: 28.5,
+      Labour: 48.0,
+      Greens: 11.5,
+      NZFirst: 2.5,
       Māori: 0.5,
-      ACT: 6.5,
-      TOP: 1.5,
+      ACT: 6,
+      TOP: 1,
       NewConservative: 0,
       Other: 2
     },

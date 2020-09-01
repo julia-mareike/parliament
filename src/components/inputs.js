@@ -11,15 +11,23 @@ export const Inputs = ({ year, setSeats }) => {
   const [currentVotes, setVotes] = useState(activeParties)
   const [currentElectorates, setElectorates] = useState({})
   const [totalVotes, setTotalVotes] = useState(0)
+  const [totalElectorates, setTotalElectorates] = useState(0)
 
-  const { votesAllocated } = useStyles()
-  let color = totalVotes !== 100 ? totalVotes > 100 ? 'error' : 'textPrimary' : 'secondary'
+  const { calculatorText } = useStyles()
+  let maxVotes = totalVotes > 100
+  let maxElectorates = totalElectorates > 71
+  let color = totalVotes !== 100 ? maxVotes ? 'error' : 'textPrimary' : 'secondary'
 
   useEffect(() => {
     let total = sum(Object.values(currentVotes).filter(votes => typeof votes === 'number'))
     // round total to 1 decimal point (or none)
     setTotalVotes(+total.toFixed(1))
   }, [currentVotes])
+
+  useEffect(() => {
+    let total = sum(Object.values(currentElectorates).filter(votes => typeof votes === 'number'))
+    setTotalElectorates(total)
+  }, [currentElectorates])
 
   const handleVotesChange = event => {
     let { value } = event.target
@@ -29,12 +37,13 @@ export const Inputs = ({ year, setSeats }) => {
     })
   }
   const handleElectoratesChange = event => {
+    let value = Math.floor(event.target.value)
     setElectorates({
       ...currentElectorates,
-      [event.target.name]: Number(event.target.value)
+      [event.target.name]: value
     })
   }
-  const handleFocus = event => {
+  const handleVoteFocus = event => {
     let { value } = event.target
     if (value === '0') {
       setVotes({
@@ -46,15 +55,21 @@ export const Inputs = ({ year, setSeats }) => {
   return (
     <>
       <Grid container direction={'column'} alignItems='center'>
-        <Grid container direction={'row'} align='center' alignItems='center'>
+        <Grid container direction={'row'} align='center' alignItems='center' spacing={2}>
           <Grid item xs={6}>
-            <Typography variant={'button'} color={color} className={votesAllocated}>votes: {totalVotes} %</Typography>
+            <Typography
+              variant={'button'}
+              color={color}
+              className={calculatorText}
+            >
+              votes: {totalVotes} %
+            </Typography>
           </Grid>
           <Grid item xs={6}>
             <Button
               variant={'contained'}
               color={'primary'}
-              disabled={totalVotes !== 100}
+              disabled={maxVotes || maxElectorates}
               onClick={
                 () => setSeats(
                   getSeatAllocations(year, { votes: currentVotes, electorates: currentElectorates })
@@ -64,6 +79,17 @@ export const Inputs = ({ year, setSeats }) => {
               Calculate!
             </Button>
           </Grid>
+          {maxElectorates &&
+            <Grid item xs={12}>
+              <Typography
+                variant={'button'}
+                color={'error'}
+                className={calculatorText}
+              >
+                max of 71 electorates
+              </Typography>
+            </Grid>
+          }
         </Grid>
         {activePartiesArray.map(party => {
           return (
@@ -85,7 +111,7 @@ export const Inputs = ({ year, setSeats }) => {
                   name={party}
                   value={currentVotes[party]}
                   onChange={handleVotesChange}
-                  onFocus={handleFocus}
+                  onFocus={handleVoteFocus}
                 />
               </Grid>
               <Grid item xs={6}>
