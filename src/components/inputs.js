@@ -69,7 +69,7 @@ export const Inputs = ({ year, setSeats }) => {
             <Button
               variant={'contained'}
               color={'primary'}
-              disabled={maxVotes || maxElectorates}
+              disabled={totalVotes !== 100 || maxElectorates}
               onClick={
                 () => setSeats(
                   getSeatAllocations(year, { votes: currentVotes, electorates: currentElectorates })
