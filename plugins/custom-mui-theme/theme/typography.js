@@ -1,13 +1,89 @@
 const typography = {
-  fontFamily: "\"Roboto Mono\", sans-serif",
-  h3: {
-    fontFamily: 'Fredericka the Great',
-    textAlign: 'right',
-    marginRight: '1rem'
-  },
+  fontFamily: "'Roboto Mono', sans-serif",
   h1: {
     fontSize: '2rem',
     padding: '2rem 0'
+  },
+  h2: {
+    marginLeft: 0,
+    marginRight: 0,
+    marginTop: 0,
+    paddingBottom: 0,
+    paddingLeft: 0,
+    paddingRight: 0,
+    paddingTop: 0,
+    marginBottom: '1.45rem',
+    color: 'inherit',
+    fontFamily: "'Roboto Mono', monospace, Roboto, sans-serif",
+    fontWeight: 'bold',
+    textRendering: 'optimizeLegibility',
+    fontSize: '1.62671rem',
+    lineHeight: 1.1
+  },
+  h3: {
+    fontFamily: 'Fredericka the Great',
+    textAlign: 'right',
+    marginLeft: 0,
+    marginRight: '1rem',
+    marginTop: 0,
+    paddingBottom: 0,
+    paddingLeft: 0,
+    paddingRight: 0,
+    paddingTop: 0,
+    marginBottom: '1.45rem',
+    color: 'inherit',
+    fontWeight: 400,
+    textRendering: 'optimizeLegibility',
+    fontSize: '3rem',
+    lineHeight: 1.1
+  },
+  h4: {
+    marginLeft: 0,
+    marginRight: 0,
+    marginTop: 0,
+    paddingBottom: 0,
+    paddingLeft: 0,
+    paddingRight: 0,
+    paddingTop: 0,
+    marginBottom: '1.45rem',
+    color: 'inherit',
+    fontFamily: "'Roboto Mono', monospace, Roboto, sans-serif",
+    fontWeight: 'bold',
+    textRendering: 'optimizeLegibility',
+    fontSize: '1rem',
+    lineHeight: 1.1
+  },
+  h5: {
+    marginLeft: 0,
+    marginRight: 0,
+    marginTop: 0,
+    paddingBottom: 0,
+    paddingLeft: 0,
+    paddingRight: 0,
+    paddingTop: 0,
+    marginBottom: '1.45rem',
+    color: 'inherit',
+    fontFamily: "'Roboto Mono', monospace, Roboto, sans-serif",
+    fontWeight: 'bold',
+    textRendering: 'optimizeLegibility',
+    fontSize: '0.85028rem',
+    lineHeight: 1.1
+  },
+  h6: {
+    marginLeft: 0,
+    marginRight: 0,
+    marginTop: 0,
+    marginBottom: '1.45rem',
+    paddingBottom: 0,
+    paddingLeft: 0,
+    paddingRight: 0,
+    paddingTop: 0,
+    color: 'inherit',
+    fontFamily: "'Roboto Mono', monospace, Roboto, sans-serif",
+    fontWeight: 500,
+    textRendering: 'optimizeLegibility',
+    fontSize: '1.25rem',
+    lineHeight: 1.6
   }
 }
 

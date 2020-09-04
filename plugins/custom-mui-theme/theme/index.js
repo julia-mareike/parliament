@@ -34,7 +34,12 @@ const overrides = {
     body1: {
       '@media (max-width: 480px)': {
         fontSize: '0.9rem'
-      },
+      }
+    },
+    h6: {
+      '@media (max-width: 960px)': {
+        marginBottom: 0
+      }
     }
   },
   MuiTab: {
