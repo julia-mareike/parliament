@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Grid, Tabs, Tab } from '@material-ui/core'
+import { Grid, Tabs, Tab, Hidden } from '@material-ui/core'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
@@ -14,7 +14,7 @@ const PastResults = () => {
   const [tabValue, setTabValue] = useState(0)
   const [seats, setSeats] = useState(getSeatAllocations(activeYear))
 
-  const { hideMob, hideDesktop, parliament } = useStyles()
+  const { parliament } = useStyles()
 
   const handleChange = (event, newValue) => {
     const { innerText } = event.target
@@ -37,10 +37,10 @@ const PastResults = () => {
           <Tab
             label={year}
             key={year}
-           />
+          />
         ))}
       </Tabs>
-      )
+    )
   }
 
   return (
@@ -51,17 +51,21 @@ const PastResults = () => {
           <Parliament coordinates={coordinates} seats={seats} year={activeYear}/>
         </Grid>
         <Grid container item spacing={1} xs={12} md={6} justify='center'>
-          <Grid item xs={12} className={hideDesktop}>
-            <PastYears years={years}/>
-          </Grid>
+          <Hidden mdUp>
+            <Grid item xs={12}>
+              <PastYears years={years}/>
+            </Grid>
+          </Hidden>
           <Grid item xs={12} sm={10}>
             <Results year={activeYear} />
           </Grid>
         </Grid>
       </Grid>
-      <Grid container spacing={4} direction='row' justify='space-evenly' alignItems='center' className={hideMob}>
-        <PastYears years={years}/>
-      </Grid>
+      <Hidden smDown>
+        <Grid container spacing={4} direction='row' justify='space-evenly' alignItems='center'>
+          <PastYears years={years}/>
+        </Grid>
+      </Hidden>
     </Layout>
   )
 }

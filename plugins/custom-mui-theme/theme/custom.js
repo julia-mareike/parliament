@@ -95,12 +95,6 @@ export const useStyles = makeStyles((theme) => ({
     borderRadius: '4px',
     padding: '5px 10px'
   },
-  hideMob: {
-    [theme.breakpoints.down('sm')]: {
-      display: 'none',
-      lineHeight: '0'
-    }
-  },
   hideDesktop: {
     padding: 0,
     [theme.breakpoints.up('md')]: {
