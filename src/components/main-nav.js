@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql, Link, useStaticQuery } from 'gatsby'
-import { Grid, Typography } from '@material-ui/core'
+import { Grid, Typography, Hidden } from '@material-ui/core'
 
 import Beehive from '../svg/beehive.svg'
 import { createSlug, useStyles } from '../utils'
@@ -16,7 +16,7 @@ export const MainNav = ({ setAnchorEl, navItems }) => {
     }
   `)
 
-  const { headerWrap, navItem, mainNav, beehiveNav, hideMob } = useStyles()
+  const { headerWrap, navItem, mainNav, beehiveNav } = useStyles()
   const openBeehiveNav = event => {
     setAnchorEl(event.currentTarget)
   }
@@ -36,25 +36,27 @@ export const MainNav = ({ setAnchorEl, navItems }) => {
           </Link>
         </Typography>
       </Grid>
-      <Grid container item direction="row" justify="space-evenly" alignContent="flex-end" alignItems="center" className={hideMob} xs={2} md={8}>
-        {navItems.filter(item => item !== 'home').map(item => (
-          <Grid
-            key={item}
-            item
-            md={3}
-          >
-            <Typography variant='h6' align='center'>
-              <Link
-                to={`/${createSlug(item)}`}
-                className={navItem}
-                activeStyle={{ color: 'goldenrod' }}
-              >
-                {item}
-              </Link>
-            </Typography>
-          </Grid>
-        ))}
-      </Grid>
+      <Hidden smDown>
+        <Grid container item direction="row" justify="space-evenly" alignContent="flex-end" alignItems="center" xs={2} md={8}>
+          {navItems.filter(item => item !== 'home').map(item => (
+            <Grid
+              key={item}
+              item
+              md={3}
+            >
+              <Typography variant='h6' align='center'>
+                <Link
+                  to={`/${createSlug(item)}`}
+                  className={navItem}
+                  activeStyle={{ color: 'goldenrod' }}
+                >
+                  {item}
+                </Link>
+              </Typography>
+            </Grid>
+          ))}
+        </Grid>
+      </Hidden>
     </Grid>
   )
 }
