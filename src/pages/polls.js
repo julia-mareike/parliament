@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Grid, Tabs, Tab } from '@material-ui/core'
+import { Grid, Tabs, Tab, Hidden } from '@material-ui/core'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
@@ -11,7 +11,7 @@ import { polls } from '../utils/polls'
 
 const PollResults = () => {
   const pollsArray = Object.keys(polls)
-  const { parliament, pollTab, hideDesktop, hideMob } = useStyles()
+  const { parliament, pollTab } = useStyles()
   const coordinates = getCoordinates()
 
   const [tabValue, setTabValue] = useState(0)
@@ -58,16 +58,20 @@ const PollResults = () => {
           <Parliament coordinates={coordinates} seats={seats} />
         </Grid>
         <Grid container item spacing={1} xs={12} md={6} justify='center'>
-          <Grid item xs={12} className={hideDesktop}>
-            <Polls />
-          </Grid>
+          <Hidden mdUp>
+            <Grid item xs={12}>
+              <Polls />
+            </Grid>
+          </Hidden>
           <Grid item xs={12} sm={10}>
             <Results activePoll={activePoll} />
           </Grid>
         </Grid>
-        <Grid container spacing={4} direction='row' justify='space-evenly' alignItems='center' className={hideMob}>
-          <Polls />
-        </Grid>
+        <Hidden smDown>
+          <Grid container spacing={4} direction='row' justify='space-evenly' alignItems='center'>
+            <Polls />
+          </Grid>
+        </Hidden>
       </Grid>
     </Layout>
   )
