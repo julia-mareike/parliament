@@ -82,7 +82,7 @@ const typography = {
     fontFamily: "'Roboto Mono', monospace, Roboto, sans-serif",
     fontWeight: 500,
     textRendering: 'optimizeLegibility',
-    fontSize: '1.25rem',
+    fontSize: '1.1rem',
     lineHeight: 1.6
   }
 }

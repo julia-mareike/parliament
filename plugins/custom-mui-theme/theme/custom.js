@@ -29,6 +29,7 @@ export const useStyles = makeStyles((theme) => ({
   },
   headerWrap: {
     margin: `0 auto`,
+    height: '100%',
     padding: `1rem 1rem`,
     maxWidth: '70vw',
     [theme.breakpoints.down('md')]: {
