@@ -9,6 +9,12 @@ module.exports = {
     `gatsby-plugin-pnpm`,
     `gatsby-plugin-react-helmet`,
     {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-177613845-1",
+      },
+    },
+    {
       resolve: `gatsby-plugin-material-ui`,
       options: {
         stylesProvider: {
