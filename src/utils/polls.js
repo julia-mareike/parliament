@@ -1,15 +1,15 @@
 export const polls = {
   newshub: {
     votes: {
-      National: 25.1,
-      Labour: 60.9,
-      Greens: 5.7,
-      NZFirst: 2,
-      Māori: 0.4,
-      ACT: 3.3,
-      TOP: 0.4,
-      NewConservative: 0.9,
-      Other: 1.3
+      National: 29.6,
+      Labour: 50.1,
+      Greens: 6.5,
+      NZFirst: 1.9,
+      Māori: 1.5,
+      ACT: 6.3,
+      TOP: 0.9,
+      NewConservative: 2.1,
+      Other: 1.1
     },
     electorates: {
       National: 0,
@@ -17,7 +17,7 @@ export const polls = {
       Greens: 0,
       NZFirst: 0,
       Māori: 0,
-      ACT: 1,
+      ACT: 0,
       TOP: 0,
       Mana: 0,
       UnitedFuture: 0,
@@ -53,16 +53,15 @@ export const polls = {
   },
   oneNews: {
     votes: {
-      National: 31,
-      Labour: 48,
-      Greens: 6,
-      NZFirst: 2.4,
-      Māori: 0.9,
-      ACT: 7,
-      TOP: 1.1,
-      NewConservative: 1.6,
-      Advance: 0.8,
-      Other: 1.2
+      National: 33.5,
+      Labour: 46.5,
+      Greens: 6.5,
+      NZFirst: 1,
+      Māori: 1,
+      ACT: 8,
+      TOP: 1,
+      NewConservative: 1,
+      Advance: 1,
     },
     electorates: {
       National: 0,
