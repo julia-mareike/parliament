@@ -15,32 +15,23 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-material-ui`,
+      resolve: 'gatsby-theme-material-ui',
       options: {
-        stylesProvider: {
-          injectFirst: true
-        }
-      }
-    },
-    {
-      resolve: `gatsby-plugin-webfonts`,
-      options: {
-        fonts: {
-          google: [
-            {
-              family: `Fredericka the Great`,
-              fontDisplay: 'block',
-              strategy: 'selfHosted'
-            },
-            {
-              family: `Roboto Mono`,
-              variants: [`200`, `400`],
-              fontDisplay: 'block',
-              strategy: 'selfHosted'
-            }
-          ]
-        }
-      }
+        webFontsConfig: {
+          fonts: {
+            google: [
+              {
+                family: 'Fredericka the Great',
+                variants: ['400'],
+              },
+              {
+                family: 'Roboto Mono',
+                variants: ['200', '400'],
+              }
+            ],
+          },
+        },
+      },
     },
     {
       resolve: 'gatsby-plugin-react-svg',
@@ -50,8 +41,6 @@ module.exports = {
         }
       }
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -63,8 +52,7 @@ module.exports = {
         display: `minimal-ui`,
         icon: `src/svg/beehive-favicon.svg`,
       },
-    },
-    'custom-mui-theme',
+    }
     // `gatsby-plugin-offline`,
   ],
 }
