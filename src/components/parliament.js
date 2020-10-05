@@ -1,6 +1,6 @@
 import React from 'react'
 import {
-  RoughProvider, Circle
+  RoughProvider, Circle, Rectangle
 } from 'react-roughjs'
 
 import PartyLegend from './party-legend'
@@ -19,6 +19,7 @@ export const Parliament = ({ coordinates, seats }) => {
     for (let i = 0; i < seats.length; i++) {
       totalAllocated += seats[i].allocated
       if (coordinatesIndex < totalAllocated) {
+        circle.name = seats[i].party
         circle.options = styles[seats[i].party]
         return circle
       }

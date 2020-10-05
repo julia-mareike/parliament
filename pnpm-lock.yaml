@@ -4,14 +4,13 @@ dependencies:
   gatsby-image: 2.4.16
   gatsby-plugin-google-analytics: 2.3.13_d034f24cb816a237a9251d0efffb95fd
   gatsby-plugin-manifest: 2.4.23_gatsby@2.24.47
-  gatsby-plugin-material-ui: 2.1.10_gatsby@2.24.47
   gatsby-plugin-offline: 3.2.23_gatsby@2.24.47
   gatsby-plugin-pnpm: 1.2.5_gatsby@2.24.47
   gatsby-plugin-react-helmet: 3.3.10_bcbdd0a069f9a1f735477a0bc04efd71
   gatsby-plugin-react-svg: 3.0.0
   gatsby-plugin-sharp: 2.6.27_gatsby@2.24.47
-  gatsby-plugin-webfonts: 1.1.3
   gatsby-source-filesystem: 2.3.24_gatsby@2.24.47
+  gatsby-theme-material-ui: 1.0.13_9deb066170afb57b6cf7e12e5f0f3c45
   gatsby-transformer-sharp: 2.5.13_afacab807aa4269a775ee27e55012225
   lodash: 4.17.20
   prop-types: 15.7.2
@@ -6972,6 +6971,18 @@ packages:
       react-dom: ^16.4.2
     resolution:
       integrity: sha512-0qTM9JJvYZCsqAF/FLkChHwECbjl2DxUl8M0cYNgCDcaw5BI6PhF4FhuGUcr17dZ6KlpEMrpApaF5MMQqV0WSQ==
+  /gatsby-material-ui-components/1.0.3_9deb066170afb57b6cf7e12e5f0f3c45:
+    dependencies:
+      '@material-ui/core': 4.11.0_react-dom@16.13.1+react@16.13.1
+      gatsby: 2.24.47_d034f24cb816a237a9251d0efffb95fd
+      react: 16.13.1
+    dev: false
+    peerDependencies:
+      '@material-ui/core': '>=4.0.0'
+      gatsby: '>=2.0.75'
+      react: '>=16.8.6'
+    resolution:
+      integrity: sha512-5GcSIzo9lLaVLupq1H/hWLTrUqbvJsuSH7hutSkOZ4CJ088KfADBGwxU7ze7pqAI0jsQm/pFi0HWa4baVQwllQ==
   /gatsby-page-utils/0.2.20:
     dependencies:
       '@babel/runtime': 7.11.2
@@ -6987,6 +6998,16 @@ packages:
       node: '>=10.13.0'
     resolution:
       integrity: sha512-waq2TpDjNxH5+Q+xFnuf9of3Xt0wxBkJwb6VbCGz4LS0XQ6c9KYMgC2OCBwPJOnv2Vo/6BglpRyn4lYcJEQJdw==
+  /gatsby-plugin-compile-es6-packages/2.1.0_gatsby@2.24.47:
+    dependencies:
+      '@babel/runtime': 7.11.2
+      gatsby: 2.24.47_d034f24cb816a237a9251d0efffb95fd
+      regex-escape: 3.4.10
+    dev: false
+    peerDependencies:
+      gatsby: '>2.0.0-alpha'
+    resolution:
+      integrity: sha512-yrYAAjabHWJr3ARi8xzDm01dbBfyOxEWTwGkL3BMdgL/opfLvTrwLmfium4kSelnLs70DYY3rYDwyHjqyFsnFQ==
   /gatsby-plugin-google-analytics/2.3.13_d034f24cb816a237a9251d0efffb95fd:
     dependencies:
       '@babel/runtime': 7.11.2
@@ -7085,6 +7106,19 @@ packages:
       react-helmet: ^5.1.3 || ^6.0.0
     resolution:
       integrity: sha512-AcXYwmS3r298JWs6iQ3OLNxIe8L8i5a2iSdLr/SDMpHqumYm7q/vB9kCX0et5wM7DIuZ7aPXDrdi5yDCAvU5lg==
+  /gatsby-plugin-react-helmet/3.3.12_bcbdd0a069f9a1f735477a0bc04efd71:
+    dependencies:
+      '@babel/runtime': 7.11.2
+      gatsby: 2.24.47_d034f24cb816a237a9251d0efffb95fd
+      react-helmet: 6.1.0_react@16.13.1
+    dev: false
+    engines:
+      node: '>=10.13.0'
+    peerDependencies:
+      gatsby: ^2.0.0
+      react-helmet: ^5.1.3 || ^6.0.0
+    resolution:
+      integrity: sha512-dRIi2RLUhO+R1OaG7TrI9k1xOPf0xDQZHx1tMIcwXEm3LWS+zwv0uX+RpyQ2lQE0L/NNhjfm253CAlcEBVN4ww==
   /gatsby-plugin-react-svg/3.0.0:
     dependencies:
       svg-react-loader: 0.4.6
@@ -7303,6 +7337,36 @@ packages:
     requiresBuild: true
     resolution:
       integrity: sha512-cX3+6dB3Tc6KYebYjVL0DGBvlnlJ43whmkVDKlcsSHyOKMkQBaCD4cKav3Im6iFa3jhmj5Z2MH20oPC26tHSTQ==
+  /gatsby-theme-material-ui-top-layout/1.0.3_7fcfce455dde9c639ca39ea2766d116b:
+    dependencies:
+      '@material-ui/core': 4.11.0_react-dom@16.13.1+react@16.13.1
+      gatsby: 2.24.47_d034f24cb816a237a9251d0efffb95fd
+      gatsby-plugin-react-helmet: 3.3.12_bcbdd0a069f9a1f735477a0bc04efd71
+      react-helmet: 6.1.0_react@16.13.1
+    dev: false
+    peerDependencies:
+      '@material-ui/core': '>=4.0.0'
+      gatsby: '>=2.0.75'
+      react-helmet: '>=5.2.0'
+    resolution:
+      integrity: sha512-mVnBDZTcQuy45EmM8cntP0CPAzhqH02HeYEhEBno+8dMnfsu6CX7tm1wlkBsWCLtD4ZZFH+SHm/xLEsyKPAH0w==
+  /gatsby-theme-material-ui/1.0.13_9deb066170afb57b6cf7e12e5f0f3c45:
+    dependencies:
+      '@material-ui/core': 4.11.0_react-dom@16.13.1+react@16.13.1
+      gatsby: 2.24.47_d034f24cb816a237a9251d0efffb95fd
+      gatsby-material-ui-components: 1.0.3_9deb066170afb57b6cf7e12e5f0f3c45
+      gatsby-plugin-compile-es6-packages: 2.1.0_gatsby@2.24.47
+      gatsby-plugin-material-ui: 2.1.10_gatsby@2.24.47
+      gatsby-plugin-webfonts: 1.1.3
+      gatsby-theme-material-ui-top-layout: 1.0.3_7fcfce455dde9c639ca39ea2766d116b
+      react-helmet: 6.1.0_react@16.13.1
+    dev: false
+    peerDependencies:
+      '@material-ui/core': '>=4.0.0'
+      gatsby: '>=2.0.75'
+      react: '*'
+    resolution:
+      integrity: sha512-8abDu/7BIjBkmVwNJu/qsLJIhIKxBX5ozIQJua/A20IEf94Jnh0berhPp3wnhuaasWi9WwJo48fuclVwJcLz3Q==
   /gatsby-transformer-sharp/2.5.13_afacab807aa4269a775ee27e55012225:
     dependencies:
       '@babel/runtime': 7.11.2
@@ -12661,6 +12725,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-eOf6vka5IO151Jfsw2NO9WpGX58W6wWmefK3I1zEGr0lOD0u8rwPaNqQL1aRxUaxLeKO3ArNh3VYg1KbaD+FFw==
+  /regex-escape/3.4.10:
+    dev: false
+    resolution:
+      integrity: sha512-qEqf7uzW+iYcKNLMDFnMkghhQBnGdivT6KqVQyKsyjSWnoFyooXVnxrw9dtv3AFLnD6VBGXxtZGAQNFGFTnCqA==
   /regex-not/1.0.2:
     dependencies:
       extend-shallow: 3.0.2
@@ -15779,14 +15847,13 @@ specifiers:
   gatsby-image: ^2.4.15
   gatsby-plugin-google-analytics: ^2.3.13
   gatsby-plugin-manifest: ^2.4.22
-  gatsby-plugin-material-ui: ^2.1.10
   gatsby-plugin-offline: ^3.2.23
   gatsby-plugin-pnpm: ^1.2.5
   gatsby-plugin-react-helmet: ^3.3.10
   gatsby-plugin-react-svg: ^3.0.0
   gatsby-plugin-sharp: ^2.6.26
-  gatsby-plugin-webfonts: ^1.1.3
   gatsby-source-filesystem: ^2.3.24
+  gatsby-theme-material-ui: ^1.0.13
   gatsby-transformer-sharp: ^2.5.12
   gh-pages: ^3.1.0
   lodash: ^4.17.20
