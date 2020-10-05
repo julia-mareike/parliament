@@ -43,15 +43,6 @@ export const Inputs = ({ year, setSeats }) => {
       [event.target.name]: value
     })
   }
-  const handleVoteFocus = event => {
-    let { value } = event.target
-    if (value === '0') {
-      setVotes({
-        ...currentVotes,
-        [event.target.name]: ''
-      })
-    }
-  }
   return (
     <>
       <Grid container direction={'column'} alignItems='center'>
@@ -109,9 +100,8 @@ export const Inputs = ({ year, setSeats }) => {
                   size='small'
                   label={`${formatName(party)}`}
                   name={party}
-                  value={currentVotes[party]}
+                  value={currentVotes[party] || ''}
                   onChange={handleVotesChange}
-                  onFocus={handleVoteFocus}
                 />
               </Grid>
               <Grid item xs={6}>
