@@ -29,6 +29,12 @@ const IndexPage = () => {
         </Grid>
         <Grid item xs={12}>
           <Typography variant={'body1'}>
+            ( on the left, the party vote column must add up to 100%, and on the right, electorates
+            can be between 0 - 71 )
+          </Typography>
+        </Grid>
+        <Grid item xs={12}>
+          <Typography variant={'body1'}>
             <Link
               to="/calculator"
               style={{ color: 'goldenrod' }}
