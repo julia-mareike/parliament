@@ -2,9 +2,8 @@ import React, { useState, useEffect } from 'react'
 import { Typography, Button, TextField, Grid } from '@material-ui/core'
 import { sum } from 'lodash'
 
+import { getSeatAllocations, formatName, useStyles } from '../utils'
 import { activeParties } from '../utils/data'
-import { getSeatAllocations, formatName, useStyles } from '../utils/'
-
 
 export const Inputs = ({ year, setSeats }) => {
   let activePartiesArray = Object.keys(activeParties)

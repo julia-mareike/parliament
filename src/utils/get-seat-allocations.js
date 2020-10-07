@@ -1,6 +1,5 @@
 import { calculateVotes, getSeats } from './calculate-seats'
 import { sortSeats } from './sort-seats'
-
 import { pastVotes } from './data'
 
 export const getSeatAllocations = (year, votes = null) => {
