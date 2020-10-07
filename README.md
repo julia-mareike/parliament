@@ -1,6 +1,18 @@
-## 🐝 hi
+## 🦆 parliament!
 
- install pnpm cause i like it
+this is a project to display what the nz parliament would look like, based on user-input party votes and electorates.
+
+it also displays past results, and current polls.
+
+![Parliament](src/images/screenshot.png)
+
+ ## 🐌 run your own parliament
+ 
+ parliament uses pnpm as a package manager
+ 
+ [pnpm](https://pnpm.js.org/en/)
+ 
+ to run locally:
  
  `npm i -g pnpm`
  
@@ -8,23 +20,10 @@
  
  `pnpm run develop`
  
- ## 🐌 to-do
+ to see a production build:
  
- - [x] display key of party colours & seats won
- - [ ] hover over seat = display party name?
- - [x] display party vote percentage per party - on left hand side?
- - [x] display electorate seats won - somehow, in a not-annoying way
- - [x] hook in saint lague formula - https://github.com/julia-mareike/parliament-builder/blob/master/client/utils.js
- - [ ] refactor calculation formula
- - [x] overhang is wrong... it needs to check overhangs _after_ calculating
- - [x] display seats won based on vote percentage (just console log)
- - [x] update parliament svg with seats won
- - [x] only update parliament svg when vote percentage === 100%
- - [ ] either display possible coalitions or allow ppl to compile themselves?
- - [x] add in all the other fringe parties
- - [ ] link parties to policy.nz?
- - [ ] tidy up this darn messy code
- - [x] decrease size of parliament svg slightly to remove mobile scrolling
- - [x] fix janky scroll tabs
+ `pnpm run build`
  
- ## 🐞 bye
+ `pnpm run serve`
+ 
+ ## 🐞 thanks bye

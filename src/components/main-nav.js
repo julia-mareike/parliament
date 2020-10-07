@@ -24,7 +24,7 @@ export const MainNav = ({ setAnchorEl, navItems }) => {
   return (
     <Grid container direction="row" className={headerWrap}>
       <Grid item xs={2} className={beehiveNav}>
-        <Beehive role='menu' onClick={event => openBeehiveNav(event)}/>
+        <Beehive role='menu' onClick={event => openBeehiveNav(event)} />
       </Grid>
       <Grid item xs={10} md={4} className={mainNav}>
         <Typography variant="h3">

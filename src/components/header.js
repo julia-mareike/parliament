@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import PropTypes from 'prop-types'
 
 import { MainNav } from './main-nav'
 import { DropdownNav } from './dropdown-nav'
@@ -15,14 +14,6 @@ const Header = () => {
       <DropdownNav anchorEl={anchorEl} setAnchorEl={setAnchorEl} navItems={navItems} />
     </header>
   )
-}
-
-Header.propTypes = {
-  siteTitle: PropTypes.string
-}
-
-Header.defaultProps = {
-  siteTitle: ``
 }
 
 export default Header
