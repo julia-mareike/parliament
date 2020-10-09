@@ -22,7 +22,7 @@
     "gatsby-plugin-pnpm": "^1.2.5",
     "gatsby-plugin-react-helmet": "^3.3.10",
     "gatsby-plugin-react-svg": "^3.0.0",
-    "gatsby-source-filesystem": "^2.3.24",
+    "gatsby-source-filesystem": "^2.3.34",
     "gatsby-theme-material-ui": "^1.0.13",
     "lodash": "^4.17.20",
     "prop-types": "^15.7.2",
