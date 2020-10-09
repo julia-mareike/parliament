@@ -2,7 +2,7 @@
   "name": "parliament-party",
   "private": true,
   "description": "Parliament party",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "author": "me + you",
   "dependencies": {
     "@material-ui/core": "^4.11.0",
@@ -13,7 +13,7 @@
     "gatsby-plugin-pnpm": "^1.2.5",
     "gatsby-plugin-react-helmet": "^3.3.10",
     "gatsby-plugin-react-svg": "^3.0.0",
-    "gatsby-source-filesystem": "^2.3.24",
+    "gatsby-source-filesystem": "^2.3.34",
     "gatsby-theme-material-ui": "^1.0.13",
     "lodash": "^4.17.20",
     "prop-types": "^15.7.2",
@@ -34,7 +34,7 @@
   "license": "0BSD",
   "scripts": {
     "build": "gatsby build",
-    "deploy": "gatsby build --prefix-paths && gh-pages -d public",
+    "deploy": "rm -rf public .cache && gatsby build --prefix-paths && gh-pages -d public",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start": "npm run develop",
