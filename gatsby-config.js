@@ -1,9 +1,10 @@
 module.exports = {
   pathPrefix: '/parliament',
   siteMetadata: {
-    title: `parliament`,
-    description: `it's parliament`,
-    author: `me + you`,
+    title: 'parliament',
+    description: `it's parliament! submit your election result predictions & see how many seats each party will get,
+    or check out past parliaments & poll results`,
+    author: 'me + you',
   },
   plugins: [
     `gatsby-plugin-pnpm`,
