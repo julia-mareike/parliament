@@ -21,8 +21,9 @@ follow the link on the `about` page to an excel spreadsheet, if you'd like to un
 no pull request is too small! truly. if you find a typo and want to fix it, please please do.
 i can't handle typoss.
 
-to open a pull request, first clone this repo to your own github.
-then, you can open a new branch, and start hacking away!
+to open a pull request, first fork this repo to your own github.
+then, open a new branch, and start hacking away!
+you can open a pull request from your fork to this repo.
 
 there are no open issues - so, feel free to open an issue on what you'd like to work on, and 
 then refer to that issue in your pull request / branch name / commit messages.

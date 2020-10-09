@@ -1,9 +1,18 @@
 {
-  "name": "parliament-party",
-  "private": true,
-  "description": "Parliament party",
+  "name": "parliament",
+  "description": "parliament seat calculator",
   "version": "1.0.0",
-  "author": "me + you",
+  "author": "julia + bam",
+  "scripts": {
+    "build": "gatsby build",
+    "deploy": "rm -rf public .cache && gatsby build --prefix-paths && gh-pages -d public",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+  },
   "dependencies": {
     "@material-ui/core": "^4.11.0",
     "gatsby": "^2.24.41",
@@ -29,24 +38,14 @@
     "prettier": "2.0.5"
   },
   "keywords": [
-    "gatsby"
+    "gatsby",
+    "saint laguë",
+    "parliament",
+    "svg"
   ],
-  "license": "0BSD",
-  "scripts": {
-    "build": "gatsby build",
-    "deploy": "rm -rf public .cache && gatsby build --prefix-paths && gh-pages -d public",
-    "develop": "gatsby develop",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
-    "start": "npm run develop",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
-  },
+  "license": "Hippocratic-2.1+",
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
-  },
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/julia-mareike/parliament"
   }
 }
