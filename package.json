@@ -2,7 +2,7 @@
   "name": "parliament-party",
   "private": true,
   "description": "Parliament party",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "author": "me + you",
   "dependencies": {
     "@material-ui/core": "^4.11.0",

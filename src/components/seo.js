@@ -49,7 +49,7 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           property: `og:image`,
-          content: `https://julia-mareike.github.io/parliament${file.publicURL}`,
+          content: `https://julia-mareike.github.io${file.publicURL}`,
         },
         {
           name: `twitter:card`,
