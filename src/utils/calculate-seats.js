@@ -1,5 +1,9 @@
 import { sum, values, forEach, max as _max, indexOf } from 'lodash'
 
+// Note: pretty sure I got inspiration for this calculation
+// from here a few years ago - thanks bud!
+// https://github.com/wombleton/saintelague
+
 export const formula = (votes, idx) => {
   return votes / (idx * 2 + 1)
 }
@@ -44,7 +48,7 @@ export const calculateVotes = (electorates, votes) => {
   return createVoteObject(proportional, electorates)
 }
 
-// this applies the Saint Lague calculation
+// this applies the Saint Laguë calculation
 let overhang
 let result
 
