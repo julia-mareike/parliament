@@ -1,11 +1,4 @@
 {
-<<<<<<< Updated upstream
-  "name": "parliament-party",
-  "private": true,
-  "description": "Parliament party",
-  "version": "0.1.0",
-  "author": "me + you",
-=======
   "name": "parliament",
   "description": "parliament seat calculator",
   "version": "1.0.0",
@@ -20,7 +13,6 @@
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
->>>>>>> Stashed changes
   "dependencies": {
     "@material-ui/core": "^4.11.0",
     "gatsby": "^2.24.41",
@@ -51,21 +43,7 @@
     "parliament",
     "svg"
   ],
-<<<<<<< Updated upstream
-  "license": "0BSD",
-  "scripts": {
-    "build": "gatsby build",
-    "deploy": "gatsby build --prefix-paths && gh-pages -d public",
-    "develop": "gatsby develop",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
-    "start": "npm run develop",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
-  },
-=======
   "license": "Hippocratic-2.1+",
->>>>>>> Stashed changes
   "repository": {
     "type": "git",
     "url": "https://github.com/julia-mareike/parliament"
