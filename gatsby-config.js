@@ -52,6 +52,13 @@ module.exports = {
         display: `minimal-ui`,
         icon: `src/svg/beehive-favicon.svg`,
       },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'images',
+        path: `${__dirname}/src/images/`,
+      }
     }
     // `gatsby-plugin-offline`,
   ],
