@@ -57,7 +57,6 @@ export const polls = {
       Labour: 47,
       Greens: 6,
       NZFirst: 2,
-      Māori: 0,
       ACT: 8.5,
       TOP: 2,
       NewConservative: 1,
