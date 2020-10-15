@@ -53,14 +53,15 @@ export const polls = {
   },
   oneNews: {
     votes: {
-      National: 32,
-      Labour: 47,
-      Greens: 6,
-      NZFirst: 2,
-      ACT: 8.5,
-      TOP: 2,
-      NewConservative: 1,
-      Advance: 1,
+      National: 31,
+      Labour: 45.5,
+      Greens: 8.5,
+      NZFirst: 3,
+      Māori: 1,
+      ACT: 8,
+      TOP: 1,
+      NewConservative: 1.5,
+      Advance: 0.5,
     },
     electorates: {
       National: 0,
