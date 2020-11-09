@@ -170,6 +170,30 @@ export const pastVotes = {
       Legalise: 0,
       Other: 0
     }
+  },
+  2020: {
+    votes: {
+      National: 25.6,
+      Labour: 50,
+      NZFirst: 2.6,
+      Greens: 7.9,
+      TOP: 1.5,
+      Māori: 1.2,
+      ACT: 7.6,
+      NewConservative: 1.5,
+      Advance: 1.0,
+      Other: 1.1
+    },
+    electorates: {
+      National: 23,
+      Labour: 46,
+      Greens: 1,
+      NZFirst: 0,
+      Māori: 1,
+      ACT: 1,
+      TOP: 0,
+      Other: 0
+    }
   }
 }
 
