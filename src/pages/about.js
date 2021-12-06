@@ -7,7 +7,7 @@ import SEO from '../components/seo'
 const IndexPage = () => {
   return (
     <Layout>
-      <SEO title="Parliament" />
+      <SEO title="About" />
       <Grid container direction={'column'} spacing={3}>
         <Grid item xs={12}>
           <Typography variant={'h6'}>

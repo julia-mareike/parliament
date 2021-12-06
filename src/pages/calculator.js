@@ -14,7 +14,7 @@ const IndexPage = () => {
 
   return (
     <Layout>
-      <SEO title="Parliament" />
+      <SEO title="Calculator" />
       <Grid container spacing={4} direction='row' justify="center" alignItems="flex-start">
         <Grid item xs={12} md={6} className={parliament} >
           <Parliament coordinates={coordinates} seats={seats} year={'2020'}/>

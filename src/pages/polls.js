@@ -52,7 +52,7 @@ const PollResults = () => {
 
   return (
     <Layout>
-      <SEO title='Parliament' />
+      <SEO title='Polls' />
       <Grid container spacing={2} direction='row' justify='center' alignItems='center' >
         <Grid item xs={12} md={6} className={parliament}>
           <Parliament coordinates={coordinates} seats={seats} />
