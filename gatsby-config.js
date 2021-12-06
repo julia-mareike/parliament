@@ -1,8 +1,8 @@
 module.exports = {
-  pathPrefix: '/parliament',
+  // pathPrefix: '/parliament', // removed for custom subdomain
   siteMetadata: {
     title: 'parliament',
-    description: `it's parliament! submit your election result predictions & see how many seats each party will get,
+    description: `it's parliament! check your election result predictions & see how many seats each party will get,
     or check out past parliaments & poll results`,
     author: 'me + you',
   },
