@@ -9,7 +9,7 @@ const IndexPage = () => {
   console.log('ᕕ( ᐛ )ᕗ')
   return (
     <Layout>
-      <SEO title="Parliament" />
+      <SEO title="Home" />
       <Grid container direction={'column'} spacing={3}>
         <Grid item xs={12}>
           <Typography variant={'h1'}>
